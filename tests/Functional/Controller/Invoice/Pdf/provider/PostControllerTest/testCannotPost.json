@@ -1,0 +1,86 @@
+{
+  "missing post": {
+    "user": "admin@test.fr",
+    "invoiceId": 1,
+    "post": {},
+    "expectedStatusCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "pdf": [
+          "Ce champ est manquant."
+        ]
+      }
+    }
+  },
+  "inexistant invoice": {
+    "user": "admin@test.fr",
+    "invoiceId": 456456,
+    "post": {},
+    "expectedCode": 404,
+    "expected": {
+      "error": "ResourceNotFound",
+      "messages": [
+        "Ressource non trouvée."
+      ]
+    }
+  },
+  "invoice belongs to a different client": {
+    "user": "admin@test.fr",
+    "invoiceId": 9,
+    "post": {},
+    "errorCode": 403,
+    "expected": {
+      "error": "AccessDenied",
+      "messages": [
+        "Accès rejeté."
+      ]
+    }
+  },
+  "inexistant file": {
+    "user": "admin@test.fr",
+    "invoiceId": 2,
+    "post": {
+      "pdf": 78932
+    },
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "pdf": [
+          "Doit être null ou un fichier existant ayant application/pdf comme mime type."
+        ]
+      }
+    }
+  },
+  "file with bad mime type": {
+    "user": "admin@test.fr",
+    "invoiceId": 2,
+    "post": {
+      "pdf": 3
+    },
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "pdf": [
+          "Doit être null ou un fichier existant ayant application/pdf comme mime type."
+        ]
+      }
+    }
+  },
+  "doesn't have permissions": {
+    "user": "polnareff@test.fr",
+    "invoiceId": 9,
+    "post": {
+      "pdf": 8
+    },
+    "errorCode": 403,
+    "expected": {
+      "error": "AccessDenied",
+      "messages": [
+        "Accès rejeté."
+      ]
+    }
+  }
+}

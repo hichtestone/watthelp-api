@@ -1,0 +1,72 @@
+{
+  "patch dashboard": {
+    "user": "admin@test.fr",
+    "id": 1,
+    "patch": [
+      {
+        "op": "replace",
+        "path": "/dashboard",
+        "value": [
+          {
+            "test": 14,
+            "dsqklj": "dqsdqs"
+          },
+          {
+            "qsmdlqks": "hahah!",
+            "aaaaa": {
+              "poaziea": 17.7
+            }
+          }
+        ]
+      }
+    ],
+    "expected": {
+      "id": 1,
+      "email": "admin@test.fr",
+      "first_name": "admin",
+      "last_name": "istrator",
+      "mobile": null,
+      "phone": "+33601020304",
+      "created_at": "@string@.isDateTime()",
+      "updated_at": "@string@.isDateTime()",
+      "super_admin": true,
+      "language": "fr",
+      "dashboard": [
+        {
+          "test": 14,
+          "dsqklj": "dqsdqs"
+        },
+        {
+          "qsmdlqks": "hahah!",
+          "aaaaa": {
+            "poaziea": 17.7
+          }
+        }
+      ]
+    }
+  },
+  "patch language": {
+    "user": "admin@test.fr",
+    "id": 1,
+    "patch": [
+      {
+        "op": "replace",
+        "path": "/language",
+        "value": "en"
+      }
+    ],
+    "expected": {
+      "id": 1,
+      "email": "admin@test.fr",
+      "first_name": "admin",
+      "last_name": "istrator",
+      "mobile": null,
+      "phone": "+33601020304",
+      "created_at": "@string@.isDateTime()",
+      "updated_at": "@string@.isDateTime()",
+      "super_admin": true,
+      "language": "en",
+      "dashboard": null
+    }
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "missing budget": {
+    "sort": null,
+    "filters": null,
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "filters": [
+          "Ce champ est manquant."
+        ]
+      }
+    }
+  },
+  "nonexistent sort": {
+    "sort": "whatever",
+    "filters": {
+      "budget": 1
+    },
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "sort": [
+          "Cette valeur doit être l'un des choix proposés."
+        ]
+      }
+    }
+  },
+  "nonexistent filter": {
+    "sort": null,
+    "filters": {
+      "whatever": 12,
+      "budget": 1
+    },
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "filters": {
+          "whatever": [
+            "Ce champ n'a pas été prévu."
+          ]
+        }
+      }
+    }
+  },
+  "Budget 456465 not found": {
+    "sort": null,
+    "filters": {
+      "budget": 456465
+    },
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "filters": {
+          "budget": [
+            "Selected budget doesn't exist."
+          ]
+        }
+      }
+    }
+  },
+  "Budget belongs to a different client": {
+    "sort": null,
+    "filters": {
+      "budget": 3
+    },
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "filters": {
+          "budget": [
+            "Selected budget doesn't exist."
+          ]
+        }
+      }
+    }
+  },
+  "Delivery point does not exist": {
+    "sort": null,
+    "filters": {
+      "delivery_point": 456456,
+      "budget": 1
+    },
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "filters": {
+          "delivery_point": [
+            "Selected delivery point doesn't exist."
+          ]
+        }
+      }
+    }
+  },
+  "Delivery point belongs to another client": {
+    "sort": null,
+    "filters": {
+      "delivery_point": 3,
+      "budget": 1
+    },
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "filters": {
+          "delivery_point": [
+            "Selected delivery point doesn't exist."
+          ]
+        }
+      }
+    }
+  }
+}

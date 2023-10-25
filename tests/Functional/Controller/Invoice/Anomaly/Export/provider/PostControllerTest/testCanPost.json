@@ -1,0 +1,26 @@
+{
+  "basic": {
+    "post": {},
+    "expectedContent": "[[\"Statut\",\"Référence facture\",\"Date facture\",\"Ref point de livraison\",\"Nom point de livraison\",\"Adresse point de livraison\",\"Puissance point de livraison\",\"Montant facture HT\",\"Montant facture TVA\",\"Montant facture TTC\",\"Type anomalie\",\"Date détection anomalie\",\"Valeur actuelle\",\"Valeur attendue\",\"Valeur précédente\",\"Ecart (€)\",\"Ecart (%)\",\"Ref facture précédente\",\"Date facture précédente\",\"Règle\",\"Détail\",\"Profit\"],[\"processing\",\"FL012018\",\"01/01/2018\",\"REF_DEV_POINT_1\",\"DeliveryPoint1\",\"1 Bd de la Croisette\",7.2,\"0,00€\",\"0,00€\",\"0,00€\",\"consumption\",\"01/01/2017\",null,null,null,\"1,00€\",\"4,97%\",null,null,null,\"anomaly1\",\"oui\"],[\"ignored\",\"FL032018\",\"01/03/2018\",\"REF_DEV_POINT_1\",\"DeliveryPoint1\",\"1 Bd de la Croisette\",7.2,\"0,00€\",\"0,00€\",\"0,00€\",\"unit_price\",\"01/02/2017\",null,null,null,\"0,20€\",\"17,00%\",null,null,null,\"anomaly2\",\"non\"],[\"solved\",\"FL092018\",\"01/09/2018\",null,null,null,null,\"0,00€\",\"0,00€\",\"0,00€\",\"index\",\"01/03/2017\",null,null,null,\"30,00€\",\"27,95%\",null,null,null,\"anomaly3\",\"non\"],[\"solved\",\"FL012019\",\"01/01/2019\",null,null,null,null,\"0,00€\",\"0,00€\",\"0,00€\",\"index\",\"01/04/2017\",null,null,null,\"0,03€\",\"0,97%\",null,null,null,\"anomaly4\",\"oui\"]]"
+  },
+  "filtered by status": {
+    "post": {
+      "filters": {
+        "status": "unsolved"
+      }
+    },
+    "expectedContent": "[[\"Statut\",\"Référence facture\",\"Date facture\",\"Ref point de livraison\",\"Nom point de livraison\",\"Adresse point de livraison\",\"Puissance point de livraison\",\"Montant facture HT\",\"Montant facture TVA\",\"Montant facture TTC\",\"Type anomalie\",\"Date détection anomalie\",\"Valeur actuelle\",\"Valeur attendue\",\"Valeur précédente\",\"Ecart (€)\",\"Ecart (%)\",\"Ref facture précédente\",\"Date facture précédente\",\"Règle\",\"Détail\",\"Profit\"]]"
+  },
+  "filtered by date and total": {
+    "post": {
+      "filters": {
+        "created": {
+          "from": "2017-02-02",
+          "to": "2017-12-31"
+        },
+        "total": 150
+      }
+    },
+    "expectedContent": "[[\"Statut\",\"Référence facture\",\"Date facture\",\"Ref point de livraison\",\"Nom point de livraison\",\"Adresse point de livraison\",\"Puissance point de livraison\",\"Montant facture HT\",\"Montant facture TVA\",\"Montant facture TTC\",\"Type anomalie\",\"Date détection anomalie\",\"Valeur actuelle\",\"Valeur attendue\",\"Valeur précédente\",\"Ecart (€)\",\"Ecart (%)\",\"Ref facture précédente\",\"Date facture précédente\",\"Règle\",\"Détail\",\"Profit\"],[\"solved\",\"FL092018\",\"01/09/2018\",null,null,null,null,\"0,00€\",\"0,00€\",\"0,00€\",\"index\",\"01/03/2017\",null,null,null,\"30,00€\",\"27,95%\",null,null,null,\"anomaly3\",\"non\"],[\"solved\",\"FL012019\",\"01/01/2019\",null,null,null,null,\"0,00€\",\"0,00€\",\"0,00€\",\"index\",\"01/04/2017\",null,null,null,\"0,03€\",\"0,97%\",null,null,null,\"anomaly4\",\"oui\"]]"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "basic": {
+    "params": {},
+    "expected": {
+      "consumption": 20150,
+      "subscription": 3375,
+      "taxes": {
+        "cspe": 1218,
+        "tdcfe": 117,
+        "tccfe": 225,
+        "cta": 380
+      }
+    }
+  },
+  "start date": {
+    "params": {
+      "start": "2018-04-01"
+    },
+    "expected": {
+      "consumption": 17094,
+      "subscription": 1669,
+      "taxes": {
+        "cspe": 588,
+        "tdcfe": 57,
+        "tccfe": 109,
+        "cta": 184
+      }
+    }
+  },
+  "end date": {
+    "params": {
+      "end": "2018-05-01"
+    },
+    "expected": {
+      "consumption": 4030,
+      "subscription": 2250,
+      "taxes": {
+        "cspe": 1218,
+        "tdcfe": 117,
+        "tccfe": 225,
+        "cta": 380
+      }
+    }
+  },
+  "start and end date": {
+    "params": {
+      "start": "2018-05-01",
+      "end": "2019-04-01"
+    },
+    "expected": {
+      "consumption": 4030,
+      "subscription": 1125,
+      "taxes": []
+    }
+  }
+}

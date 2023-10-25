@@ -1,0 +1,12 @@
+{
+  "doesn't have permission": {
+    "user": "polnareff@test.fr",
+    "errorCode": 403,
+    "expected": {
+      "error": "AccessDenied",
+      "messages": [
+        "Accès rejeté."
+      ]
+    }
+  }
+}

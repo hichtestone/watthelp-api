@@ -1,0 +1,58 @@
+{
+  "missing fields": {
+    "user": "admin@test.fr",
+    "post": {},
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "year": [
+          "Ce champ est manquant."
+        ]
+      }
+    }
+  },
+  "invalid type": {
+    "user": "admin@test.fr",
+    "post": {
+      "year": "2020"
+    },
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "year": [
+          "Cette valeur doit être de type integer."
+        ]
+      }
+    }
+  },
+  "budget already exists": {
+    "user": "admin@test.fr",
+    "post": {
+      "year": 2019
+    },
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "year": [
+          "Le budget de cette année existe déjà."
+        ]
+      }
+    }
+  },
+  "doesn't have permission": {
+    "user": "blanc@test.fr",
+    "post": {
+      "year": 2025
+    },
+    "errorCode": 403,
+    "expected": {
+      "error": "AccessDenied",
+      "messages": [
+        "Accès rejeté."
+      ]
+    }
+  }
+}

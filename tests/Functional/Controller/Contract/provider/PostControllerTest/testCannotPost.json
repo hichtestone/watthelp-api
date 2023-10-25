@@ -1,0 +1,197 @@
+{
+  "missing fields": {
+    "user": "admin@test.fr",
+    "post": {},
+    "expected_status_code": 400,
+    "expected_response": {
+      "error": "InvalidRequest",
+      "messages": {
+        "reference": [
+          "Ce champ est manquant."
+        ],
+        "provider": [
+          "Ce champ est manquant."
+        ],
+        "type": [
+          "Ce champ est manquant."
+        ],
+        "started_at": [
+          "Ce champ est manquant."
+        ]
+      }
+    }
+  },
+  "finished_at before started_at": {
+    "user": "admin@test.fr",
+    "post": {
+      "reference": "ref456645",
+      "started_at": "2020-05-12",
+      "finished_at": "2019-05-12",
+      "pricing_ids": [],
+      "provider": "OTHER",
+      "type": "negotiated"
+    },
+    "expected_status_code": 400,
+    "expected_response": {
+      "error": "InvalidRequest",
+      "messages": {
+        "finished_at": [
+          "Cette valeur doit être supérieure ou égale à 2020-05-12."
+        ]
+      }
+    }
+  },
+  "pricing id belonging to another client": {
+    "user": "admin@test.fr",
+    "post": {
+      "reference": "teqsddjklqs",
+      "started_at": "2019-04-05",
+      "finished_at": "2020-04-05",
+      "pricing_ids": [
+        1,
+        5
+      ],
+      "provider": "DIRECT_ENERGIE",
+      "type": "regulated"
+    },
+    "expected_status_code": 400,
+    "expected_response": {
+      "error": "InvalidRequest",
+      "messages": {
+        "pricing_ids": {
+          "1": [
+            "Selected pricing doesn't exist."
+          ]
+        }
+      }
+    }
+  },
+  "nonexistent pricing id": {
+    "user": "admin@test.fr",
+    "post": {
+      "reference": "teqsddjklqs",
+      "started_at": "2019-04-05",
+      "finished_at": "2020-04-05",
+      "pricing_ids": [
+        789789,
+        3
+      ],
+      "provider": "EDF",
+      "type": "negotiated"
+    },
+    "expected_status_code": 400,
+    "expected_response": {
+      "error": "InvalidRequest",
+      "messages": {
+        "pricing_ids": {
+          "0": [
+            "Selected pricing doesn't exist."
+          ]
+        }
+      }
+    }
+  },
+  "pricings overlap": {
+    "user": "admin@test.fr",
+    "post": {
+      "reference": "teqsddjklqs",
+      "started_at": "2019-04-05",
+      "finished_at": "2020-04-05",
+      "pricing_ids": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "provider": "EDF",
+      "type": "regulated"
+    },
+    "expected_status_code": 400,
+    "expected_response": {
+      "error": "InvalidRequest",
+      "messages": {
+        "pricing_ids": [
+          "Les tarifications 1 et 4 se chevauchent."
+        ]
+      }
+    }
+  },
+  "nonexistent provider": {
+    "user": "admin@test.fr",
+    "post": {
+      "reference": "teqsddjklqs",
+      "started_at": "2019-04-05",
+      "finished_at": "2020-04-05",
+      "pricing_ids": [],
+      "provider": "invalidprovider",
+      "type": "regulated"
+    },
+    "expected_status_code": 400,
+    "expected_response": {
+      "error": "InvalidRequest",
+      "messages": {
+        "provider": [
+          "Cette valeur doit être l'un des choix proposés."
+        ]
+      }
+    }
+  },
+  "nonexistent type": {
+    "user": "admin@test.fr",
+    "post": {
+      "reference": "teqsddjklqs",
+      "started_at": "2019-04-05",
+      "finished_at": "2020-04-05",
+      "pricing_ids": [],
+      "provider": "EDF",
+      "type": "nonexistenttype"
+    },
+    "expected_status_code": 400,
+    "expected_response": {
+      "error": "InvalidRequest",
+      "messages": {
+        "type": [
+          "Cette valeur doit être l'un des choix proposés."
+        ]
+      }
+    }
+  },
+  "invalid invoice_period": {
+    "user": "admin@test.fr",
+    "post": {
+      "reference": "teqsddjklqs",
+      "started_at": "2019-04-05",
+      "finished_at": "2020-04-05",
+      "pricing_ids": [],
+      "provider": "EDF",
+      "type": "regulated",
+      "invoice_period": "none sens"
+    },
+    "expected_status_code": 400,
+    "expected_response": {
+      "error": "InvalidRequest",
+      "messages": {
+        "invoice_period": [
+          "Cette valeur doit être l'un des choix proposés."
+        ]
+      }
+    }
+  },
+  "doesn't have permission": {
+    "user": "blanc@test.fr",
+    "post": {
+      "reference": "ref_65489462",
+      "started_at": "2020-08-15",
+      "provider": "OTHER",
+      "type": "negotiated",
+      "invoice_period": "2"
+    },
+    "expected_status_code": 403,
+    "expected_response": {
+      "error": "AccessDenied",
+      "messages": [
+        "Accès rejeté."
+      ]
+    }
+  }
+}

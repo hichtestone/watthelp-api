@@ -1,0 +1,14 @@
+{
+  "user 1": {
+    "id": 1,
+    "expected": "The client 1 has been deleted successfully."
+  },
+  "user 2": {
+    "id": 2,
+    "expected": "The client 2 has been deleted successfully."
+  },
+  "without users": {
+    "id": 3,
+    "expected": "The client 3 has been deleted successfully."
+  }
+}

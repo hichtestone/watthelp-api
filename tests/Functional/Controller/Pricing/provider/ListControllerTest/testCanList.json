@@ -1,0 +1,194 @@
+{
+  "basic": {
+    "user": "admin@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": null,
+    "sort_order": null,
+    "filters": null,
+    "expected": {
+      "count": 4,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 1,
+          "name": "Pricing_1",
+          "type": "negotiated",
+          "subscription_price": null,
+          "consumption_base_price": 12,
+          "started_at": "@string@.isDateTime()",
+          "finished_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 2,
+          "name": "Pricing_2",
+          "type": "negotiated",
+          "subscription_price": null,
+          "consumption_base_price": 175,
+          "started_at": "@string@.isDateTime()",
+          "finished_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 3,
+          "name": "Pricing_3",
+          "type": "negotiated",
+          "subscription_price": null,
+          "consumption_base_price": 723,
+          "started_at": "@string@.isDateTime()",
+          "finished_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 4,
+          "name": "Pricing_4",
+          "type": "negotiated",
+          "subscription_price": null,
+          "consumption_base_price": 812,
+          "started_at": "@string@.isDateTime()",
+          "finished_at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  },
+  "sorted by name DESC": {
+    "user": "admin@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": "name",
+    "sort_order": "desc",
+    "filters": null,
+    "expected": {
+      "count": 4,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 4,
+          "name": "Pricing_4",
+          "type": "negotiated",
+          "subscription_price": null,
+          "consumption_base_price": 812,
+          "started_at": "@string@.isDateTime()",
+          "finished_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 3,
+          "name": "Pricing_3",
+          "type": "negotiated",
+          "subscription_price": null,
+          "consumption_base_price": 723,
+          "started_at": "@string@.isDateTime()",
+          "finished_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 2,
+          "name": "Pricing_2",
+          "type": "negotiated",
+          "subscription_price": null,
+          "consumption_base_price": 175,
+          "started_at": "@string@.isDateTime()",
+          "finished_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 1,
+          "name": "Pricing_1",
+          "type": "negotiated",
+          "subscription_price": null,
+          "consumption_base_price": 12,
+          "started_at": "@string@.isDateTime()",
+          "finished_at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  },
+  "page 2 - sorted by startedAt": {
+    "user": "admin@test.fr",
+    "page": 2,
+    "per_page": 2,
+    "sort": "started_at",
+    "sort_order": "asc",
+    "filters": null,
+    "expected": {
+      "count": 4,
+      "page": 2,
+      "per_page": 2,
+      "data": [
+        {
+          "id": 2,
+          "name": "Pricing_2",
+          "type": "negotiated",
+          "subscription_price": null,
+          "consumption_base_price": 175,
+          "started_at": "@string@.isDateTime()",
+          "finished_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 3,
+          "name": "Pricing_3",
+          "type": "negotiated",
+          "subscription_price": null,
+          "consumption_base_price": 723,
+          "started_at": "@string@.isDateTime()",
+          "finished_at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  },
+  "filtered by type": {
+    "user": "fugain@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": null,
+    "sort_order": null,
+    "filters": {
+      "type": "negotiated"
+    },
+    "expected": {
+      "count": 1,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 6,
+          "name": "Pricing_6",
+          "type": "negotiated",
+          "subscription_price": null,
+          "consumption_base_price": 378,
+          "started_at": "@string@.isDateTime()",
+          "finished_at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  },
+  "restricted": {
+    "user": "blanc@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": null,
+    "sort_order": null,
+    "filters": null,
+    "expected": {
+      "count": 4,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 1,
+          "name": "Pricing_1"
+        },
+        {
+          "id": 2,
+          "name": "Pricing_2"
+        },
+        {
+          "id": 3,
+          "name": "Pricing_3"
+        },
+        {
+          "id": 4,
+          "name": "Pricing_4"
+        }
+      ]
+    }
+  }
+}

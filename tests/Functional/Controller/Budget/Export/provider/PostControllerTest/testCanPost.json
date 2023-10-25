@@ -1,0 +1,29 @@
+{
+  "budgets 1 and 2": {
+    "post": {
+      "filters": {
+        "ids": [
+          1,
+          2
+        ]
+      }
+    },
+    "expectedContent": "[[\"N\u00b0 Budget\",\"Client\",\"Ann\u00e9e\",\"Nombre d'heures de fonctionnement\",\"Prix moyen\",\"Point de livraison (R\u00e9f\u00e9rence)\",\"Puissance install\u00e9e\",\"Pourcentage appareillage (%)\",\"Gradation (%)\",\"Nombre d'heures de gradation\",\"Consommation avant travaux\",\"Travaux de r\u00e9novation (Oui\/Non)\",\"Date de r\u00e9alisation des travaux\",\"Puissance install\u00e9e apr\u00e8s travaux\",\"Pourcentage appareillage apr\u00e8s travaux (%)\",\"Gradation apr\u00e8s travaux (%)\",\"Nombre d'heures de gradation apr\u00e8s travaux\",\"Consommation apr\u00e8s travaux\",\"Consommation totale PDL\",\"Budget total PDL (\u20ac)\"],[1,\"Client1\",2018,3650,\"0,15\u20ac\",\"REF_DEV_POINT_1\",\"12.00kWh\",\"20,00%\",\"70,00%\",1600,\"45 648,00kWh\",\"Oui\",\"01/04/2018\",\"10.00kWh\",\"0,00%\",\"70,00%\",1600,\"31 700,00kWh\",\"36 349,33kWh\",\"5 452,40\u20ac\"],[1,\"Client1\",2018,3650,\"0,15\u20ac\",\"REF_DEV_POINT_2\",\"10.00kWh\",\"10,00%\",\"50,00%\",1800,\"30 250,00kWh\",\"Oui\",\"01/06/2018\",\"5.00kWh\",\"0,00%\",\"50,00%\",1800,\"13 750,00kWh\",\"22 000,00kWh\",\"3 300,00\u20ac\"],[2,\"Client1\",2019,3650,\"0,16\u20ac\",\"REF_DEV_POINT_1\",\"12.00kWh\",\"20,00%\",\"65,00%\",1500,\"45 000,00kWh\",\"Oui\",\"01/08/2019\",\"10.00kWh\",\"0,00%\",\"65,00%\",1500,\"31 250,00kWh\",\"40 998,67kWh\",\"6 559,79\u20ac\"],[2,\"Client1\",2019,3650,\"0,16\u20ac\",\"REF_DEV_POINT_2\",\"10.00kWh\",\"10,00%\",\"65,00%\",1500,\"34 375,00kWh\",\"Oui\",\"01/08/2019\",\"5.00kWh\",\"0,00%\",\"65,00%\",1600,\"15 625,00kWh\",\"28 125,00kWh\",\"4 500,00\u20ac\"]]"
+  },
+  "filter max_year": {
+    "post": {
+      "filters": {
+        "max_year": 2019
+      }
+    },
+    "expectedContent": "[[\"N\u00b0 Budget\",\"Client\",\"Ann\u00e9e\",\"Nombre d'heures de fonctionnement\",\"Prix moyen\",\"Point de livraison (R\u00e9f\u00e9rence)\",\"Puissance install\u00e9e\",\"Pourcentage appareillage (%)\",\"Gradation (%)\",\"Nombre d'heures de gradation\",\"Consommation avant travaux\",\"Travaux de r\u00e9novation (Oui\/Non)\",\"Date de r\u00e9alisation des travaux\",\"Puissance install\u00e9e apr\u00e8s travaux\",\"Pourcentage appareillage apr\u00e8s travaux (%)\",\"Gradation apr\u00e8s travaux (%)\",\"Nombre d'heures de gradation apr\u00e8s travaux\",\"Consommation apr\u00e8s travaux\",\"Consommation totale PDL\",\"Budget total PDL (\u20ac)\"],[1,\"Client1\",2018,3650,\"0,15\u20ac\",\"REF_DEV_POINT_1\",\"12.00kWh\",\"20,00%\",\"70,00%\",1600,\"45 648,00kWh\",\"Oui\",\"01/04/2018\",\"10.00kWh\",\"0,00%\",\"70,00%\",1600,\"31 700,00kWh\",\"36 349,33kWh\",\"5 452,40\u20ac\"],[1,\"Client1\",2018,3650,\"0,15\u20ac\",\"REF_DEV_POINT_2\",\"10.00kWh\",\"10,00%\",\"50,00%\",1800,\"30 250,00kWh\",\"Oui\",\"01/06/2018\",\"5.00kWh\",\"0,00%\",\"50,00%\",1800,\"13 750,00kWh\",\"22 000,00kWh\",\"3 300,00\u20ac\"],[2,\"Client1\",2019,3650,\"0,16\u20ac\",\"REF_DEV_POINT_1\",\"12.00kWh\",\"20,00%\",\"65,00%\",1500,\"45 000,00kWh\",\"Oui\",\"01/08/2019\",\"10.00kWh\",\"0,00%\",\"65,00%\",1500,\"31 250,00kWh\",\"40 998,67kWh\",\"6 559,79\u20ac\"],[2,\"Client1\",2019,3650,\"0,16\u20ac\",\"REF_DEV_POINT_2\",\"10.00kWh\",\"10,00%\",\"65,00%\",1500,\"34 375,00kWh\",\"Oui\",\"01/08/2019\",\"5.00kWh\",\"0,00%\",\"65,00%\",1600,\"15 625,00kWh\",\"28 125,00kWh\",\"4 500,00\u20ac\"]]"
+  },
+  "filter year": {
+    "post": {
+      "filters": {
+        "year": 2018
+      }
+    },
+    "expectedContent": "[[\"N\u00b0 Budget\",\"Client\",\"Ann\u00e9e\",\"Nombre d'heures de fonctionnement\",\"Prix moyen\",\"Point de livraison (R\u00e9f\u00e9rence)\",\"Puissance install\u00e9e\",\"Pourcentage appareillage (%)\",\"Gradation (%)\",\"Nombre d'heures de gradation\",\"Consommation avant travaux\",\"Travaux de r\u00e9novation (Oui\/Non)\",\"Date de r\u00e9alisation des travaux\",\"Puissance install\u00e9e apr\u00e8s travaux\",\"Pourcentage appareillage apr\u00e8s travaux (%)\",\"Gradation apr\u00e8s travaux (%)\",\"Nombre d'heures de gradation apr\u00e8s travaux\",\"Consommation apr\u00e8s travaux\",\"Consommation totale PDL\",\"Budget total PDL (\u20ac)\"],[1,\"Client1\",2018,3650,\"0,15\u20ac\",\"REF_DEV_POINT_1\",\"12.00kWh\",\"20,00%\",\"70,00%\",1600,\"45 648,00kWh\",\"Oui\",\"01/04/2018\",\"10.00kWh\",\"0,00%\",\"70,00%\",1600,\"31 700,00kWh\",\"36 349,33kWh\",\"5 452,40\u20ac\"],[1,\"Client1\",2018,3650,\"0,15\u20ac\",\"REF_DEV_POINT_2\",\"10.00kWh\",\"10,00%\",\"50,00%\",1800,\"30 250,00kWh\",\"Oui\",\"01/06/2018\",\"5.00kWh\",\"0,00%\",\"50,00%\",1800,\"13 750,00kWh\",\"22 000,00kWh\",\"3 300,00\u20ac\"]]"
+  }
+}

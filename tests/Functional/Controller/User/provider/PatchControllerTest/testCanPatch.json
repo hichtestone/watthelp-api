@@ -1,0 +1,93 @@
+{
+  "firstName and lastName": {
+    "user": "admin@test.fr",
+    "id": 2,
+    "patch": [
+      {
+        "op": "replace",
+        "path": "/firstName",
+        "value": "Gérard"
+      },
+      {
+        "op": "replace",
+        "path": "/lastName",
+        "value": "Depardieu"
+      }
+    ],
+    "expands": [],
+    "expected": {
+      "id": 2,
+      "email": "blanc@test.fr",
+      "first_name": "Gérard",
+      "last_name": "Depardieu",
+      "mobile": null,
+      "phone": "+376656652",
+      "created_at": "@string@.isDateTime()",
+      "updated_at": "@string@.isDateTime()",
+      "dashboard": null,
+      "language": "fr",
+      "super_admin": false
+    }
+  },
+  "email": {
+    "user": "admin@test.fr",
+    "id": 2,
+    "patch": [
+      {
+        "op": "replace",
+        "path": "/email",
+        "value": "gege@toto.fr"
+      }
+    ],
+    "expands": [],
+    "expected": {
+      "id": 2,
+      "email": "gege@toto.fr",
+      "first_name": "Michel",
+      "last_name": "Blanc",
+      "mobile": null,
+      "phone": "+376656652",
+      "created_at": "@string@.isDateTime()",
+      "updated_at": "@string@.isDateTime()",
+      "dashboard": null,
+      "language": "fr",
+      "super_admin": false
+    }
+  },
+  "avatar": {
+    "user": "admin@test.fr",
+    "id": 2,
+    "patch": [
+      {
+        "op": "replace",
+        "path": "/avatar",
+        "value": 9
+      }
+    ],
+    "expands": [
+      "user_avatar"
+    ],
+    "expected": {
+      "id": 2,
+      "email": "blanc@test.fr",
+      "first_name": "Michel",
+      "last_name": "Blanc",
+      "mobile": null,
+      "phone": "+376656652",
+      "avatar": {
+        "id": 9,
+        "name": "1/phpyWK3T1.png",
+        "raw": "https://sprint-watthelp-file.s3.eu-west-3.amazonaws.com/1/phpyWK3T1.png",
+        "thumb": "https://sprint-watthelp-file.s3.eu-west-3.amazonaws.com/1/thumb/phpyWK3T1.png",
+        "mime": "image/png",
+        "created_at": "@string@.isDateTime()",
+        "updated_at": "@string@.isDateTime()"
+      },
+      "created_at": "@string@.isDateTime()",
+      "updated_at": "@string@.isDateTime()",
+      "dashboard": null,
+      "language": "fr",
+      "super_admin": false
+    }
+  }
+}

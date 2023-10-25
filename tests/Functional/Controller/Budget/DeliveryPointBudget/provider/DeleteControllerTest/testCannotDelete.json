@@ -1,0 +1,81 @@
+{
+  "Budget 213654 not found": {
+    "user": "admin@test.fr",
+    "budgetId": 213654,
+    "body": {
+      "ids": [
+        1
+      ]
+    },
+    "errorCode": 404,
+    "expected": {
+      "error": "ResourceNotFound",
+      "messages": [
+        "Ressource non trouvée."
+      ]
+    }
+  },
+  "Budget belongs to another client": {
+    "user": "admin@test.fr",
+    "budgetId": 3,
+    "body": {
+      "ids": [
+        1
+      ]
+    },
+    "errorCode": 403,
+    "expected": {
+      "error": "AccessDenied",
+      "messages": [
+        "Accès rejeté."
+      ]
+    }
+  },
+  "Delivery Point Budget 456465 not found": {
+    "user": "admin@test.fr",
+    "budgetId": 1,
+    "body": {
+      "ids": [
+        456465
+      ]
+    },
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "ids": [
+          "This value should satisfy at least one of the following constraints: [1] Each element of this collection should satisfy its own set of constraints. [2] Cette valeur doit être identique à string \"*\"."
+        ]
+      }
+    }
+  },
+  "Delivery Point Budget does not belong to Budget": {
+    "user": "admin@test.fr",
+    "budgetId": 1,
+    "body": {
+      "ids": [
+        3
+      ]
+    },
+    "errorCode": 400,
+    "expected": {
+      "error": "Bad Request",
+      "messages": "L'entité 3 n'appartient pas au budget."
+    }
+  },
+  "doesn't have permission": {
+    "user": "blanc@test.fr",
+    "budgetId": 1,
+    "body": {
+      "ids": [2]
+    },
+    "errorCode": 403,
+    "expected": {
+      "error": "AccessDenied",
+      "messages": [
+        "Accès rejeté."
+      ]
+    }
+  }
+
+}

@@ -1,0 +1,211 @@
+{
+  "basic": {
+    "user": "admin@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": null,
+    "sort_order": null,
+    "filters": null,
+    "expected": {
+      "count": 4,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 1,
+          "status": "ok",
+          "created_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 2,
+          "status": "warning",
+          "created_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 3,
+          "status": "error",
+          "created_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 4,
+          "status": "ok",
+          "created_at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  },
+  "sorted by id DESC": {
+    "user": "admin@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": "id",
+    "sort_order": "desc",
+    "filters": null,
+    "expected": {
+      "count": 4,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 4,
+          "status": "ok",
+          "created_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 3,
+          "status": "error",
+          "created_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 2,
+          "status": "warning",
+          "created_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 1,
+          "status": "ok",
+          "created_at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  },
+  "page 2 - sorted by id": {
+    "user": "admin@test.fr",
+    "page": 2,
+    "per_page": 2,
+    "sort": "id",
+    "sort_order": "asc",
+    "filters": null,
+    "expected": {
+      "count": 4,
+      "page": 2,
+      "per_page": 2,
+      "data": [
+        {
+          "id": 3,
+          "status": "error",
+          "created_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 4,
+          "status": "ok",
+          "created_at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  },
+  "filtered by status ok": {
+    "user": "admin@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": null,
+    "sort_order": null,
+    "filters": {
+      "status": "ok"
+    },
+    "expected": {
+      "count": 2,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 1,
+          "status": "ok",
+          "created_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 4,
+          "status": "ok",
+          "created_at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  },
+  "filtered by invoices": {
+    "user": "admin@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": null,
+    "sort_order": null,
+    "filters": {
+      "invoices": [
+        2,
+        3
+      ]
+    },
+    "expected": {
+      "count": 2,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 2,
+          "status": "warning",
+          "created_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 3,
+          "status": "error",
+          "created_at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  },
+  "filtered by ids": {
+    "user": "admin@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": null,
+    "sort_order": null,
+    "filters": {
+      "ids": [
+        1,
+        4
+      ]
+    },
+    "expected": {
+      "count": 2,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 1,
+          "status": "ok",
+          "created_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 4,
+          "status": "ok",
+          "created_at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  },
+  "restricted": {
+    "user": "blanc@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": null,
+    "sort_order": null,
+    "filters": null,
+    "expected": {
+      "count": 4,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 1
+        },
+        {
+          "id": 2
+        },
+        {
+          "id": 3
+        },
+        {
+          "id": 4
+        }
+      ]
+    }
+  }
+}

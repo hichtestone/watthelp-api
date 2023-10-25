@@ -1,0 +1,122 @@
+# This file is the entry point to configure your own services.
+# Files in the packages/ subdirectory configure your dependencies.
+
+# Put parameters here that don't need to change on each machine where the app is deployed
+# https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
+parameters:
+    env(SECURITY_PASSWORD_LENGTH): 8
+    env(SECURITY_PASSWORD_REQUIRED_LETTER): 0
+    env(SECURITY_PASSWORD_REQUIRED_CASE_DIFF): 1
+    env(SECURITY_PASSWORD_REQUIRED_NUMBER): 0
+    env(SECURITY_PASSWORD_REQUIRED_SPECIAL_CHAR): 1
+
+services:
+    # default configuration for services in *this* file
+    _defaults:
+        autowire: true      # Automatically injects dependencies in your services.
+        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+        bind:
+            $env: '%env(APP_ENV)%'
+            $bucket: '%env(string:AWS_BUCKET)%'
+            $awsRegion: '%env(string:AWS_REGION)%'
+            $mercurePublishPath: '%env(MERCURE_PUBLISH_PATH)%'
+
+    # makes classes in src/ available to be used as services
+    # this creates a service per class whose id is the fully-qualified class name
+    App\:
+        resource: '../src/*'
+        exclude: '../src/{DependencyInjection,Entity,Migrations,Tests,Kernel.php,CorsHandler.php}'
+
+    # controllers are imported separately to make sure services can be injected
+    # as action arguments even if you don't extend any base controller class
+    App\Controller\:
+        resource: '../src/Controller'
+        tags: ['controller.service_arguments']
+
+    App\Security\Provider\JwtMercureProvider:
+        arguments:
+            $secret: '%env(MERCURE_JWT_KEY)%'
+
+
+    # add more service definitions when explicit configuration is needed
+    # please note that last definitions always *replace* previous ones
+
+    App\Validator\Constraint\User\PasswordSecurityValidator:
+        arguments:
+            $passwordLength: '%env(int:SECURITY_PASSWORD_LENGTH)%'
+            $letterRequired: '%env(bool:SECURITY_PASSWORD_REQUIRED_LETTER)%'
+            $caseDiffRequired: '%env(bool:SECURITY_PASSWORD_REQUIRED_CASE_DIFF)%'
+            $numberRequired: '%env(bool:SECURITY_PASSWORD_REQUIRED_NUMBER)%'
+            $specialCharRequired: '%env(bool:SECURITY_PASSWORD_REQUIRED_SPECIAL_CHAR)%'
+
+    app.messenger.sqs.consumer.import:
+        class: Bref\Symfony\Messenger\Service\Sqs\SqsConsumer
+        public: true
+        autowire: true
+        arguments:
+            # Pass the transport name used in config/packages/messenger.yaml
+            $transportName: 'import'
+
+    app.messenger.sqs.consumer.analyze:
+        class: Bref\Symfony\Messenger\Service\Sqs\SqsConsumer
+        public: true
+        autowire: true
+        arguments:
+            # Pass the transport name used in config/packages/messenger.yaml
+            $transportName: 'analyze'
+
+    app.messenger.sqs.consumer.export:
+        class: Bref\Symfony\Messenger\Service\Sqs\SqsConsumer
+        public: true
+        autowire: true
+        arguments:
+            # Pass the transport name used in config/packages/messenger.yaml
+            $transportName: 'export'
+
+    app.listener.authentication_success_response:
+        class: App\EventListener\AuthenticationSuccessListener
+        tags:
+            - { name: kernel.event_listener, event: lexik_jwt_authentication.on_authentication_success, method: onAuthenticationSuccessResponse }
+
+    app.listener.authentication_failure_response:
+        class: App\EventListener\AuthenticationFailureListener
+        tags:
+            - { name: kernel.event_listener, event: lexik_jwt_authentication.on_authentication_failure, method: onAuthenticationFailureResponse }
+
+    App\Analyzer\AnalyzerChain:
+        arguments: [!tagged app.analyzers]
+    
+    App\Import\Verifier\Invoice\VerifierManager:
+        arguments: [!tagged app.verifiers]
+
+    App\Import\Importer\Invoice\InvoiceImporterManager:
+        arguments: [!tagged app.invoice_importers]
+
+    App\Import\ImporterManager:
+        arguments: [!tagged app.importers]
+
+    App\Export\ExporterManager:
+        arguments: [!tagged app.exporters]
+
+    _instanceof:
+        App\Analyzer\AnalyzerInterface:
+            tags: ['app.analyzers']
+        App\Import\Verifier\Invoice\VerifierInterface:
+            tags: ['app.verifiers']
+        App\Import\Importer\Invoice\InvoiceImporterInterface:
+            tags: ['app.invoice_importers']
+        App\Import\ImporterInterface:
+            tags: ['app.importers']
+        App\Export\ExporterInterface:
+            tags: ['app.exporters']
+
+    Gedmo\Translatable\TranslatableListener:
+        tags:
+            - { name: doctrine.event_subscriber, connection: default }
+        calls:
+            - [ setAnnotationReader, [ "@annotation_reader" ] ]
+            - [ setDefaultLocale, [ fr ] ]
+            - [ setTranslatableLocale, [ fr ] ]
+            - [ setTranslationFallback, [ false ] ]
+
+    stof_doctrine_extensions.event_listener.locale: '@App\EventListener\UserLocaleSubscriber'

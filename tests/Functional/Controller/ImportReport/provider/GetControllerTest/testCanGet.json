@@ -1,0 +1,64 @@
+{
+  "Get import report 1": {
+    "user": "admin@test.fr",
+    "id": 1,
+    "expand": null,
+    "expected": {
+      "id": 1,
+      "status": "ok",
+      "messages": [],
+      "created_at": "@string@.isDateTime()"
+    }
+  },
+  "expand data": {
+    "user": "admin@test.fr",
+    "id": 1,
+    "expand": "import_report_invoices,import_report_import",
+    "expected": {
+      "id": 1,
+      "status": "ok",
+      "messages": [],
+      "invoices": [
+        {
+          "id": 1,
+          "reference": "FL012018",
+          "amount_ht": 900,
+          "amount_tva": 200,
+          "amount_ttc": 1100,
+          "emitted_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 2,
+          "reference": "FL032018",
+          "amount_ht": 1000,
+          "amount_tva": 200,
+          "amount_ttc": 1200,
+          "emitted_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 3,
+          "reference": "FL092018",
+          "amount_ht": 1000,
+          "amount_tva": 200,
+          "amount_ttc": 1200,
+          "emitted_at": "@string@.isDateTime()"
+        }
+      ],
+      "import": {
+        "id": 1,
+        "created_at": "@string@.isDateTime()",
+        "type": "invoice",
+        "provider": "EDF"
+      },
+      "created_at": "@string@.isDateTime()"
+    }
+  },
+  "restricted": {
+    "user": "blanc@test.fr",
+    "id": 2,
+    "expand": null,
+    "expected": {
+      "id": 2
+    }
+  }
+}

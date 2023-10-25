@@ -1,0 +1,35 @@
+{
+  "missing fields": {
+    "user": "admin@test.fr",
+    "post": {},
+    "expected_status_code": 400,
+    "expected_response": {
+      "error": "InvalidRequest",
+      "messages": {
+        "name": [
+          "Ce champ est manquant."
+        ],
+        "type": [
+          "Ce champ est manquant."
+        ],
+        "consumption_base_price": [
+          "Ce champ est manquant."
+        ],
+        "started_at": [
+          "Ce champ est manquant."
+        ]
+      }
+    }
+  },
+  "doesn't have permission": {
+    "user": "polnareff@test.fr",
+    "post": {},
+    "expected_status_code": 403,
+    "expected_response": {
+      "error": "AccessDenied",
+      "messages": [
+        "Accès rejeté."
+      ]
+    }
+  }
+}

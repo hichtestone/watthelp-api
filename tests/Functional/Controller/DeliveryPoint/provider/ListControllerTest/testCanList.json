@@ -1,0 +1,548 @@
+{
+  "basic": {
+    "user": "admin@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": null,
+    "sort_order": null,
+    "filters": null,
+    "expand": null,
+    "expected": {
+      "count": 2,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 1,
+          "name": "DeliveryPoint1",
+          "reference": "REF_DEV_POINT_1",
+          "code": "CODE_DEV_POINT_1",
+          "address": "1 Bd de la Croisette",
+          "latitude": "43.551420",
+          "longitude": "7.018060",
+          "meter_reference": "whatever",
+          "is_in_scope": true,
+          "scope_date": "@string@.isDateTime()",
+          "creation_mode": "scope_import",
+          "power": "7.2",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()",
+          "description": "description du pdl"
+        },
+        {
+          "id": 2,
+          "name": "DeliveryPoint2",
+          "reference": "REF_DEV_POINT_2",
+          "code": "CODE_DEV_POINT_2",
+          "address": "2 Bd de la Croisette",
+          "latitude": null,
+          "longitude": null,
+          "meter_reference": "whatever",
+          "is_in_scope": false,
+          "scope_date": null,
+          "creation_mode": "manual",
+          "power": "7.2",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()",
+          "description": null
+        }
+      ]
+    }
+  },
+  "sorted by code DESC": {
+    "user": "admin@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": "code",
+    "sort_order": "desc",
+    "filters": null,
+    "expand": null,
+    "expected": {
+      "count": 2,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 2,
+          "name": "DeliveryPoint2",
+          "reference": "REF_DEV_POINT_2",
+          "code": "CODE_DEV_POINT_2",
+          "address": "2 Bd de la Croisette",
+          "latitude": null,
+          "longitude": null,
+          "meter_reference": "whatever",
+          "is_in_scope": false,
+          "scope_date": null,
+          "power": "7.2",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()",
+          "description": null,
+          "creation_mode": "manual"
+        },
+        {
+          "id": 1,
+          "name": "DeliveryPoint1",
+          "reference": "REF_DEV_POINT_1",
+          "code": "CODE_DEV_POINT_1",
+          "address": "1 Bd de la Croisette",
+          "latitude": "43.551420",
+          "longitude": "7.018060",
+          "meter_reference": "whatever",
+          "is_in_scope": true,
+          "scope_date": "@string@.isDateTime()",
+          "power": "7.2",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()",
+          "description": "description du pdl",
+          "creation_mode": "scope_import"
+        }
+      ]
+    }
+  },
+  "page 2": {
+    "user": "admin@test.fr",
+    "page": 2,
+    "per_page": 1,
+    "sort": null,
+    "sort_order": null,
+    "filters": null,
+    "expand": null,
+    "expected": {
+      "count": 2,
+      "page": 2,
+      "per_page": 1,
+      "data": [
+        {
+          "id": 2,
+          "name": "DeliveryPoint2",
+          "reference": "REF_DEV_POINT_2",
+          "code": "CODE_DEV_POINT_2",
+          "address": "2 Bd de la Croisette",
+          "latitude": null,
+          "longitude": null,
+          "meter_reference": "whatever",
+          "is_in_scope": false,
+          "scope_date": null,
+          "power": "7.2",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()",
+          "description": null,
+          "creation_mode": "manual"
+        }
+      ]
+    }
+  },
+  "filter by reference": {
+    "user": "admin@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": null,
+    "sort_order": null,
+    "filters": {
+      "reference": "REF_DEV_POINT_2"
+    },
+    "expand": null,
+    "expected": {
+      "count": 1,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 2,
+          "name": "DeliveryPoint2",
+          "reference": "REF_DEV_POINT_2",
+          "code": "CODE_DEV_POINT_2",
+          "address": "2 Bd de la Croisette",
+          "latitude": null,
+          "longitude": null,
+          "meter_reference": "whatever",
+          "is_in_scope": false,
+          "scope_date": null,
+          "power": "7.2",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()",
+          "description": null,
+          "creation_mode": "manual"
+        }
+      ]
+    }
+  },
+  "expand contract and pricing data": {
+    "user": "admin@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": null,
+    "sort_order": null,
+    "filters": null,
+    "expand": "delivery_point_contract,contract_pricings",
+    "expected": {
+      "count": 2,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 1,
+          "name": "DeliveryPoint1",
+          "reference": "REF_DEV_POINT_1",
+          "code": "CODE_DEV_POINT_1",
+          "address": "1 Bd de la Croisette",
+          "latitude": "43.551420",
+          "longitude": "7.018060",
+          "meter_reference": "whatever",
+          "is_in_scope": true,
+          "scope_date": "@string@.isDateTime()",
+          "power": "7.2",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()",
+          "description": "description du pdl",
+          "creation_mode": "scope_import",
+          "contract": {
+            "id": 1,
+            "reference": "CONTRACT_REF_645894623",
+            "provider": "EDF",
+            "type": "negotiated",
+            "invoice_period": "6",
+            "started_at": "@string@.isDateTime()",
+            "finished_at": "@string@.isDateTime()",
+            "pricings": [
+              {
+                "id": 1,
+                "name": "Pricing_1",
+                "type": "negotiated",
+                "subscription_price": null,
+                "consumption_base_price": 12,
+                "started_at": "@string@.isDateTime()",
+                "finished_at": "@string@.isDateTime()"
+              }
+            ]
+          }
+        },
+        {
+          "id": 2,
+          "name": "DeliveryPoint2",
+          "reference": "REF_DEV_POINT_2",
+          "code": "CODE_DEV_POINT_2",
+          "address": "2 Bd de la Croisette",
+          "latitude": null,
+          "longitude": null,
+          "meter_reference": "whatever",
+          "is_in_scope": false,
+          "scope_date": null,
+          "power": "7.2",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()",
+          "description": null,
+          "creation_mode": "manual",
+          "contract": {
+            "id": 2,
+            "reference": "CONTRACT_REF_89756326",
+            "provider": "ENGIE",
+            "type": "negotiated",
+            "invoice_period": "1",
+            "started_at": "@string@.isDateTime()",
+            "finished_at": null,
+            "pricings": [
+              {
+                "id": 2,
+                "name": "Pricing_2",
+                "type": "negotiated",
+                "subscription_price": null,
+                "consumption_base_price": 175,
+                "started_at": "@string@.isDateTime()",
+                "finished_at": "@string@.isDateTime()"
+              },
+              {
+                "id": 3,
+                "name": "Pricing_3",
+                "type": "negotiated",
+                "subscription_price": null,
+                "consumption_base_price": 723,
+                "started_at": "@string@.isDateTime()",
+                "finished_at": "@string@.isDateTime()"
+              },
+              {
+                "id": 4,
+                "name": "Pricing_4",
+                "type": "negotiated",
+                "subscription_price": null,
+                "consumption_base_price": 812,
+                "started_at": "@string@.isDateTime()",
+                "finished_at": "@string@.isDateTime()"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "sort by contract desc": {
+    "user": "admin@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": "contract",
+    "sort_order": "desc",
+    "filters": null,
+    "expand": "delivery_point_contract",
+    "expected": {
+      "count": 2,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 2,
+          "name": "DeliveryPoint2",
+          "reference": "REF_DEV_POINT_2",
+          "code": "CODE_DEV_POINT_2",
+          "address": "2 Bd de la Croisette",
+          "latitude": null,
+          "longitude": null,
+          "meter_reference": "whatever",
+          "is_in_scope": false,
+          "scope_date": null,
+          "power": "7.2",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()",
+          "description": null,
+          "creation_mode": "manual",
+          "contract": {
+            "id": 2,
+            "reference": "CONTRACT_REF_89756326",
+            "provider": "ENGIE",
+            "type": "negotiated",
+            "invoice_period": "1",
+            "started_at": "@string@.isDateTime()",
+            "finished_at": null
+          }
+        },
+        {
+          "id": 1,
+          "name": "DeliveryPoint1",
+          "reference": "REF_DEV_POINT_1",
+          "code": "CODE_DEV_POINT_1",
+          "address": "1 Bd de la Croisette",
+          "latitude": "43.551420",
+          "longitude": "7.018060",
+          "meter_reference": "whatever",
+          "is_in_scope": true,
+          "scope_date": "@string@.isDateTime()",
+          "power": "7.2",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()",
+          "description": "description du pdl",
+          "creation_mode": "scope_import",
+          "contract": {
+            "id": 1,
+            "reference": "CONTRACT_REF_645894623",
+            "provider": "EDF",
+            "type": "negotiated",
+            "invoice_period": "6",
+            "started_at": "@string@.isDateTime()",
+            "finished_at": "@string@.isDateTime()"
+          }
+        }
+      ]
+    }
+  },
+  "filter by contract": {
+    "user": "admin@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": null,
+    "sort_order": null,
+    "filters": {
+      "contract": "2"
+    },
+    "expand": "delivery_point_contract",
+    "expected": {
+      "count": 1,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 2,
+          "name": "DeliveryPoint2",
+          "reference": "REF_DEV_POINT_2",
+          "code": "CODE_DEV_POINT_2",
+          "address": "2 Bd de la Croisette",
+          "latitude": null,
+          "longitude": null,
+          "meter_reference": "whatever",
+          "is_in_scope": false,
+          "scope_date": null,
+          "power": "7.2",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()",
+          "description": null,
+          "creation_mode": "manual",
+          "contract": {
+            "id": 2,
+            "reference": "CONTRACT_REF_89756326",
+            "provider": "ENGIE",
+            "type": "negotiated",
+            "invoice_period": "1",
+            "started_at": "@string@.isDateTime()",
+            "finished_at": null
+          }
+        }
+      ]
+    }
+  },
+  "filter by no_invoice_for_months 6": {
+    "user": "admin@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": null,
+    "sort_order": null,
+    "filters": {
+      "no_invoice_for_months": "6"
+    },
+    "expand": null,
+    "expected": {
+      "count": 1,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 2,
+          "name": "DeliveryPoint2",
+          "reference": "REF_DEV_POINT_2",
+          "code": "CODE_DEV_POINT_2",
+          "address": "2 Bd de la Croisette",
+          "latitude": null,
+          "longitude": null,
+          "meter_reference": "whatever",
+          "is_in_scope": false,
+          "scope_date": null,
+          "power": "7.2",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()",
+          "description": null,
+          "creation_mode": "manual"
+        }
+      ]
+    }
+  },
+  "filter by no_invoice_for_months 12": {
+    "user": "admin@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": null,
+    "sort_order": null,
+    "filters": {
+      "no_invoice_for_months": "12"
+    },
+    "expand": null,
+    "expected": {
+      "count": 0,
+      "page": 1,
+      "per_page": 100,
+      "data": []
+    }
+  },
+  "filter by is_in_scope": {
+    "user": "admin@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": null,
+    "sort_order": null,
+    "filters": {
+      "is_in_scope": "1"
+    },
+    "expand": null,
+    "expected": {
+      "count": 1,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 1,
+          "name": "DeliveryPoint1",
+          "reference": "REF_DEV_POINT_1",
+          "code": "CODE_DEV_POINT_1",
+          "address": "1 Bd de la Croisette",
+          "latitude": "43.551420",
+          "longitude": "7.018060",
+          "meter_reference": "whatever",
+          "power": "7.2",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()",
+          "description": "description du pdl",
+          "is_in_scope": true,
+          "scope_date": "@string@.isDateTime()",
+          "creation_mode": "scope_import"
+        }
+      ]
+    }
+  },
+  "sort by scope_date": {
+    "user": "admin@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": "scope_date",
+    "sort_order": "asc",
+    "filters": null,
+    "expand": null,
+    "expected": {
+      "count": 2,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 2,
+          "name": "DeliveryPoint2",
+          "reference": "REF_DEV_POINT_2",
+          "code": "CODE_DEV_POINT_2",
+          "address": "2 Bd de la Croisette",
+          "latitude": null,
+          "longitude": null,
+          "meter_reference": "whatever",
+          "power": "7.2",
+          "creation_mode": "manual",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()",
+          "description": null,
+          "is_in_scope": false,
+          "scope_date": null
+        },
+        {
+          "id": 1,
+          "name": "DeliveryPoint1",
+          "reference": "REF_DEV_POINT_1",
+          "code": "CODE_DEV_POINT_1",
+          "address": "1 Bd de la Croisette",
+          "latitude": "43.551420",
+          "longitude": "7.018060",
+          "meter_reference": "whatever",
+          "power": "7.2",
+          "creation_mode": "scope_import",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()",
+          "description": "description du pdl",
+          "is_in_scope": true,
+          "scope_date": "@string@.isDateTime()"
+        }
+      ]
+    }
+  },
+  "restricted": {
+    "user": "polnareff@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": null,
+    "sort_order": null,
+    "filters": null,
+    "expand": null,
+    "expected": {
+      "count": 1,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 3,
+          "name": "DeliveryPoint3",
+          "is_in_scope": true
+        }
+      ]
+    }
+  }
+}

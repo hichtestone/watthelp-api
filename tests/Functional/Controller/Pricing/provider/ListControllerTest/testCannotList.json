@@ -1,0 +1,30 @@
+{
+  "nonexistent sort": {
+    "sort": "whatever",
+    "filters": null,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "sort": [
+          "Cette valeur doit être l'un des choix proposés."
+        ]
+      }
+    }
+  },
+  "filter by nonexistent type": {
+    "sort": null,
+    "filters": {
+      "type": "doesntexist"
+    },
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "filters": {
+          "type": [
+            "Cette valeur doit être l'un des choix proposés."
+          ]
+        }
+      }
+    }
+  }
+}

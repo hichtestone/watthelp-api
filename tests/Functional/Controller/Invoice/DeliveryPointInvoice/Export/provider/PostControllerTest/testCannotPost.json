@@ -1,0 +1,59 @@
+{
+  "doesn't have permission": {
+    "user": "polnareff@test.fr",
+    "parameters": {},
+    "errorCode": 403,
+    "expected": {
+      "error": "AccessDenied",
+      "messages": [
+        "Accès rejeté."
+      ]
+    }
+  },
+  "dpi doesn't exist": {
+    "user": "admin@test.fr",
+    "parameters": {
+      "filters": {
+        "ids": [
+          456456
+        ]
+      }
+    },
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "filters": {
+          "ids": [
+            [
+              "Selected delivery point invoice doesn't exist."
+            ]
+          ]
+        }
+      }
+    }
+  },
+  "dpi belongs to another client": {
+    "user": "michel@berger.fr",
+    "parameters": {
+      "filters": {
+        "ids": [
+          1
+        ]
+      }
+    },
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "filters": {
+          "ids": [
+            [
+              "Selected delivery point invoice doesn't exist."
+            ]
+          ]
+        }
+      }
+    }
+  }
+}

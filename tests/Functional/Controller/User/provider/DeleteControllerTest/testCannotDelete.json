@@ -1,0 +1,35 @@
+{
+  "User 46547864 not found": {
+    "user": "admin@test.fr",
+    "id": 46547864,
+    "errorCode": 404,
+    "expected": {
+      "error": "ResourceNotFound",
+      "messages": [
+        "Ressource non trouvée."
+      ]
+    }
+  },
+  "user belongs to another client": {
+    "user": "admin@test.fr",
+    "id": 3,
+    "errorCode": 403,
+    "expected": {
+      "error": "AccessDenied",
+      "messages": [
+        "Accès rejeté."
+      ]
+    }
+  },
+  "doesn't have permission": {
+    "user": "blanc@test.fr",
+    "id": 1,
+    "errorCode": 403,
+    "expected": {
+      "error": "AccessDenied",
+      "messages": [
+        "Accès rejeté."
+      ]
+    }
+  }
+}

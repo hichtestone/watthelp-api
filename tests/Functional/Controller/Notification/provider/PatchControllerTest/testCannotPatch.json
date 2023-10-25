@@ -1,0 +1,28 @@
+{
+  "Nonexistent field": {
+    "user": "admin@test.fr",
+    "id": "1",
+    "patch": {
+      "operations": [
+        {
+          "op": "replace",
+          "path": "/nonesense",
+          "value": false
+        }
+      ]
+    },
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+          "operations": [
+            {
+              "path": [
+                "Cette valeur doit être identique à string \"/read\"."
+              ]
+            }
+          ]
+        }
+    }
+  }
+}

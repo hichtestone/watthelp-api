@@ -1,0 +1,233 @@
+{
+  "Budget 456465 not found": {
+    "user": "admin@test.fr",
+    "budgetId": 456465,
+    "deliveryPointBudgetId": 1,
+    "put": {},
+    "errorCode": 404,
+    "expected": {
+      "error": "ResourceNotFound",
+      "messages": [
+        "Ressource non trouvée."
+      ]
+    }
+  },
+  "Delivery Point Budget 456465 not found": {
+    "user": "admin@test.fr",
+    "budgetId": 1,
+    "deliveryPointBudgetId": 456465,
+    "put": {},
+    "errorCode": 404,
+    "expected": {
+      "error": "ResourceNotFound",
+      "messages": [
+        "Ressource non trouvée."
+      ]
+    }
+  },
+  "Delivery Point Budget does not belong to Budget": {
+    "user": "admin@test.fr",
+    "budgetId": 1,
+    "deliveryPointBudgetId": 3,
+    "put": {},
+    "errorCode": 403,
+    "expected": {
+      "error": "AccessDenied",
+      "messages": [
+        "Accès rejeté."
+      ]
+    }
+  },
+  "Budget belongs to a different client": {
+    "user": "admin@test.fr",
+    "budgetId": 3,
+    "deliveryPointBudgetId": 5,
+    "put": {},
+    "errorCode": 403,
+    "expected": {
+      "error": "AccessDenied",
+      "messages": [
+        "Accès rejeté."
+      ]
+    }
+  },
+  "Missing fields": {
+    "user": "admin@test.fr",
+    "budgetId": 1,
+    "deliveryPointBudgetId": 1,
+    "put": {},
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "delivery_point": [
+          "Ce champ est manquant."
+        ],
+        "installed_power": [
+          "Ce champ est manquant."
+        ],
+        "equipment_power_percentage": [
+          "Ce champ est manquant."
+        ],
+        "gradation": [
+          "Ce champ est manquant."
+        ],
+        "gradation_hours": [
+          "Ce champ est manquant."
+        ],
+        "sub_total_consumption": [
+          "Ce champ est manquant."
+        ],
+        "renovation": [
+          "Ce champ est manquant."
+        ],
+        "renovated_at": [
+          "Ce champ est manquant."
+        ],
+        "new_installed_power": [
+          "Ce champ est manquant."
+        ],
+        "new_equipment_power_percentage": [
+          "Ce champ est manquant."
+        ],
+        "new_gradation": [
+          "Ce champ est manquant."
+        ],
+        "new_gradation_hours": [
+          "Ce champ est manquant."
+        ],
+        "new_sub_total_consumption": [
+          "Ce champ est manquant."
+        ],
+        "total_consumption": [
+          "Ce champ est manquant."
+        ],
+        "total": [
+          "Ce champ est manquant."
+        ]
+      }
+    }
+  },
+  "Delivery point belongs to a different client": {
+    "user": "admin@test.fr",
+    "budgetId": 1,
+    "deliveryPointBudgetId": 1,
+    "put": {
+      "delivery_point": 3,
+      "installed_power": "12.5",
+      "equipment_power_percentage": 2000,
+      "gradation": 7000,
+      "gradation_hours": 1600,
+      "sub_total_consumption": 4564800,
+      "renovation": true,
+      "renovated_at": "2018-05-24",
+      "new_installed_power": 10,
+      "new_equipment_power_percentage": 0,
+      "new_gradation": 7000,
+      "new_gradation_hours": 1600,
+      "new_sub_total_consumption": 3170000,
+      "total_consumption": 3634933,
+      "total": 54524000000
+    },
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "delivery_point": [
+          "Selected delivery point doesn't exist."
+        ]
+      }
+    }
+  },
+  "Delivery point does not exist": {
+    "user": "admin@test.fr",
+    "budgetId": 1,
+    "deliveryPointBudgetId": 1,
+    "put": {
+      "delivery_point": 798789,
+      "installed_power": "12.5",
+      "equipment_power_percentage": 2000,
+      "gradation": 7000,
+      "gradation_hours": 1600,
+      "sub_total_consumption": 4564800,
+      "renovation": true,
+      "renovated_at": "2018-05-24",
+      "new_installed_power": 10,
+      "new_equipment_power_percentage": 0,
+      "new_gradation": 7000,
+      "new_gradation_hours": 1600,
+      "new_sub_total_consumption": 3170000,
+      "total_consumption": 3634933,
+      "total": 54524000000
+    },
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "delivery_point": [
+          "Selected delivery point doesn't exist."
+        ]
+      }
+    }
+  },
+  "Renovated at must belong to the same year as the budget": {
+    "user": "admin@test.fr",
+    "budgetId": 1,
+    "deliveryPointBudgetId": 1,
+    "put": {
+      "delivery_point": 1,
+      "installed_power": "12.5",
+      "equipment_power_percentage": 2000,
+      "gradation": 7000,
+      "gradation_hours": 1600,
+      "sub_total_consumption": 4564800,
+      "renovation": true,
+      "renovated_at": "2020-05-24",
+      "new_installed_power": 10,
+      "new_equipment_power_percentage": 0,
+      "new_gradation": 7000,
+      "new_gradation_hours": 1600,
+      "new_sub_total_consumption": 3170000,
+      "total_consumption": 3634933,
+      "total": 54524000000
+    },
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "renovated_at": [
+          "Doit faire partie de la même année que le budget."
+        ]
+      }
+    }
+  },
+  "doesn't have permission": {
+    "user": "blanc@test.fr",
+    "budgetId": 1,
+    "deliveryPointBudgetId": 1,
+    "put": {
+      "delivery_point": 1,
+      "installed_power": "12.5",
+      "equipment_power_percentage": 2000,
+      "gradation": 7000,
+      "gradation_hours": 1600,
+      "sub_total_consumption": 4564800,
+      "renovation": true,
+      "renovated_at": "2018-05-27",
+      "new_installed_power": 10,
+      "new_equipment_power_percentage": 0,
+      "new_gradation": 7000,
+      "new_gradation_hours": 1600,
+      "new_sub_total_consumption": 3170000,
+      "total_consumption": 3634933,
+      "total": 54524000000
+    },
+    "errorCode": 403,
+    "expected": {
+      "error": "AccessDenied",
+      "messages": [
+        "Accès rejeté."
+      ]
+    }
+  }
+}

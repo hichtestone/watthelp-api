@@ -1,0 +1,170 @@
+{
+  "nonexistent sort": {
+    "sort": "whatever",
+    "filters": null,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "sort": [
+          "Cette valeur doit être l'un des choix proposés."
+        ]
+      }
+    }
+  },
+  "nonexistent filter": {
+    "sort": null,
+    "filters": {
+      "whatever": 12
+    },
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "filters": {
+          "whatever": [
+            "Ce champ n'a pas été prévu."
+          ]
+        }
+      }
+    }
+  },
+  "nonexistent role id": {
+    "sort": null,
+    "filters": {
+      "ids": [
+        789645
+      ]
+    },
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "filters": {
+          "ids": [
+            [
+              "Selected role doesn't exist."
+            ]
+          ]
+        }
+      }
+    }
+  },
+  "nonexistent role exclude_ids": {
+    "sort": null,
+    "filters": {
+      "exclude_ids": [
+        789645
+      ]
+    },
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "filters": {
+          "exclude_ids": [
+            [
+              "Selected role doesn't exist."
+            ]
+          ]
+        }
+      }
+    }
+  },
+  "role belongs to another client": {
+    "sort": null,
+    "filters": {
+      "ids": [
+        4
+      ]
+    },
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "filters": {
+          "ids": [
+            [
+              "Selected role doesn't exist."
+            ]
+          ]
+        }
+      }
+    }
+  },
+  "excluded role belongs to another client": {
+    "sort": null,
+    "filters": {
+      "exclude_ids": [
+        4
+      ]
+    },
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "filters": {
+          "exclude_ids": [
+            [
+              "Selected role doesn't exist."
+            ]
+          ]
+        }
+      }
+    }
+  },
+  "nonexistent user id": {
+    "sort": null,
+    "filters": {
+      "users": [
+        789645
+      ]
+    },
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "filters": {
+          "users": [
+            [
+              "Selected user doesn't exist."
+            ]
+          ]
+        }
+      }
+    }
+  },
+  "user belongs to another client": {
+    "sort": null,
+    "filters": {
+      "users": [
+        3
+      ]
+    },
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "filters": {
+          "users": {
+            "0": [
+              "Selected user doesn't exist."
+            ]
+          }
+        }
+      }
+    }
+  },
+  "nonexistent permission": {
+    "sort": null,
+    "filters": {
+      "permissions": [
+        "whatever"
+      ]
+    },
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "filters": {
+          "permissions": [
+            [
+              "Cette valeur doit être l'un des choix proposés."
+            ]
+          ]
+        }
+      }
+    }
+  }
+}

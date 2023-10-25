@@ -1,0 +1,138 @@
+{
+  "missing fields": {
+    "user": "admin@test.fr",
+    "params": {},
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "period": [
+          "Ce champ est manquant."
+        ]
+      }
+    }
+  },
+  "no budget this year": {
+    "user": "admin@test.fr",
+    "params": {
+      "period": {
+        "start": "2020-01-01",
+        "end": "2020-12-31"
+      }
+    },
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "period": [
+          "Le budget de cette année n'existe pas."
+        ]
+      }
+    }
+  },
+  "missing period end": {
+    "user": "admin@test.fr",
+    "params": {
+      "period": {
+        "start": "2019-01-01"
+      }
+    },
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "period": {
+          "end": [
+            "Ce champ est manquant."
+          ]
+        }
+      }
+    }
+  },
+  "missing period start": {
+    "user": "admin@test.fr",
+    "params": {
+      "period": {
+        "end": "2019-01-01"
+      }
+    },
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "period": {
+          "start": [
+            "Ce champ est manquant."
+          ]
+        }
+      }
+    }
+  },
+  "period end and start don't belong to the same year": {
+    "user": "admin@test.fr",
+    "params": {
+      "period": {
+        "start": "2018-01-01",
+        "end": "2019-12-01"
+      }
+    },
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "period": [
+          "La début et la fin de la période doivent appartenir à la même année."
+        ]
+      }
+    }
+  },
+  "period end is before period start": {
+    "user": "admin@test.fr",
+    "params": {
+      "period": {
+        "start": "2019-06-01",
+        "end": "2019-01-01"
+      }
+    },
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "period": [
+          "Le début de la période doit être inférieur à la fin de la période."
+        ]
+      }
+    }
+  },
+  "period same month": {
+    "user": "admin@test.fr",
+    "params": {
+      "period": {
+        "start": "2019-01-01",
+        "end": "2019-01-15"
+      }
+    },
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "period": [
+          "La début et la fin de la période ne doivent pas appartenir au même mois."
+        ]
+      }
+    }
+  },
+  "doesn't have permission": {
+    "user": "blanc@test.fr",
+    "params": {
+      "years": "2020"
+    },
+    "errorCode": 403,
+    "expected": {
+      "error": "AccessDenied",
+      "messages": [
+        "Accès rejeté."
+      ]
+    }
+  }
+}

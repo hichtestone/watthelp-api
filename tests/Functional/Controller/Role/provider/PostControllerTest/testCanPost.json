@@ -1,0 +1,73 @@
+{
+  "basic": {
+    "expand": "role_permission_codes,role_users",
+    "post": {
+      "name": "Jean-Claude Van Damme"
+    },
+    "expected": {
+      "id": 6,
+      "name": "Jean-Claude Van Damme",
+      "description": null,
+      "created_at": "@string@.isDateTime()",
+      "updated_at": "@string@.isDateTime()",
+      "users": [],
+      "permissions": []
+    }
+  },
+  "full": {
+    "expand": "role_permission_codes,role_users",
+    "post": {
+      "name": "Jean-Claude Van Damme",
+      "description": "Presque aussi balèze que Kook",
+      "users": [
+        1,
+        2
+      ],
+      "permissions": [
+        1,
+        17,
+        25
+      ]
+    },
+    "expected": {
+      "id": 6,
+      "name": "Jean-Claude Van Damme",
+      "description": "Presque aussi balèze que Kook",
+      "created_at": "@string@.isDateTime()",
+      "updated_at": "@string@.isDateTime()",
+      "users": [
+        {
+          "id": 1,
+          "email": "admin@test.fr",
+          "first_name": "admin",
+          "last_name": "istrator",
+          "mobile": null,
+          "phone": "+33601020304",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()",
+          "dashboard": null,
+          "language": "fr",
+          "super_admin": true
+        },
+        {
+          "id": 2,
+          "email": "blanc@test.fr",
+          "first_name": "Michel",
+          "last_name": "Blanc",
+          "mobile": null,
+          "phone": "+376656652",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()",
+          "dashboard": null,
+          "language": "fr",
+          "super_admin": false
+        }
+      ],
+      "permissions": [
+        "system.user.view",
+        "management.contract.delete",
+        "management.invoice.analyze"
+      ]
+    }
+  }
+}

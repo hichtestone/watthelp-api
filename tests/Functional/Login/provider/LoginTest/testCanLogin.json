@@ -1,0 +1,142 @@
+{
+  "User - email": {
+    "email": "admin@test.fr",
+    "password": "admin",
+    "expand": "user_permission_codes,user_notifications",
+    "expected": {
+      "token": "@string@",
+      "client": {
+        "id": 1,
+        "name": "Client1",
+        "description": null,
+        "address": null,
+        "zip_code": "71450",
+        "city": "Blanzy",
+        "logo": {
+          "id": 9,
+          "name": "1/phpyWK3T1.png",
+          "raw": "https://sprint-watthelp-file.s3.eu-west-3.amazonaws.com/1/phpyWK3T1.png",
+          "thumb": "https://sprint-watthelp-file.s3.eu-west-3.amazonaws.com/1/thumb/phpyWK3T1.png",
+          "mime": "image/png",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        },
+        "enabled": true,
+        "created_at": "@string@.isDateTime()",
+        "updated_at": "@string@.isDateTime()",
+        "department": "71",
+        "insee": "71040",
+        "default_language": "fr"
+      },
+      "user": {
+        "id": 1,
+        "email": "admin@test.fr",
+        "first_name": "admin",
+        "last_name": "istrator",
+        "mobile": null,
+        "phone": "+33601020304",
+        "created_at": "@string@.isDateTime()",
+        "updated_at": "@string@.isDateTime()",
+        "dashboard": null,
+        "language": "fr",
+        "super_admin": true,
+        "notifications": [
+          {
+            "id": 1,
+            "message": "Le rapport de l'import est disponible",
+            "progress": null,
+            "url": "",
+            "is_read": false,
+            "created_at": "@string@.isDateTime()",
+            "updated_at": null,
+            "data": {
+              "report_id": 1,
+              "report_type": "invoice"
+            }
+          },
+          {
+            "id": 2,
+            "message": "Le rapport est disponible",
+            "progress": null,
+            "url": "",
+            "is_read": true,
+            "created_at": "@string@.isDateTime()",
+            "updated_at": "@string@.isDateTime()",
+            "data": null
+          },
+          {
+            "id": 3,
+            "message": "Le rapport de l'import est disponible",
+            "progress": null,
+            "url": "",
+            "is_read": false,
+            "created_at": "@string@.isDateTime()",
+            "updated_at": null,
+            "data": {
+              "report_id": 3,
+              "report_type": "invoice"
+            }
+          },
+          {
+            "id": 5,
+            "message": "Aucun import de facture n'a été effectué récemment, merci d'importer les nouvelles factures.",
+            "progress": null,
+            "url": null,
+            "is_read": false,
+            "created_at": "@string@.isDateTime()",
+            "updated_at": "@string@.isDateTime()",
+            "data": null
+          }
+        ],
+        "permissions": [
+          "system.user.view",
+          "system.user.edit",
+          "system.user.edit_password",
+          "system.user.delete",
+          "system.tax.view",
+          "system.tax.edit",
+          "system.tax.delete",
+          "system.pricing.view",
+          "system.pricing.edit",
+          "system.pricing.delete",
+          "system.role.view",
+          "system.role.edit",
+          "system.role.delete",
+          "system.permission.view",
+          "management.contract.view",
+          "management.contract.edit",
+          "management.contract.delete",
+          "management.delivery_point.view",
+          "management.delivery_point.edit",
+          "management.delivery_point.delete",
+          "management.delivery_point.map",
+          "management.invoice.view",
+          "management.invoice.edit",
+          "management.invoice.delete",
+          "management.invoice.analyze",
+          "management.analysis.view",
+          "management.analysis.delete",
+          "management.budget.view",
+          "management.budget.edit",
+          "management.budget.delete",
+          "management.anomaly.view",
+          "management.anomaly.edit",
+          "management.anomaly.delete",
+          "management.anomaly_note.edit",
+          "management.export.budget",
+          "management.export.anomaly",
+          "management.export.delivery_point",
+          "system.pricing.export",
+          "management.import.budget",
+          "management.import.invoice",
+          "management.import.scope",
+          "management.import.file",
+          "management.import_report.view",
+          "other.dashboard.view",
+          "system.pricing.import"
+        ]
+      },
+      "refresh_token": "@string@"
+    }
+  }
+}

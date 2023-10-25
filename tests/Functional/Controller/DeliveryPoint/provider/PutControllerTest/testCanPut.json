@@ -1,0 +1,80 @@
+{
+  "basic": {
+    "user": "blanc@test.fr",
+    "id": 2,
+    "expands": "power_history",
+    "put": {
+      "name": "WXCOI",
+      "reference": "xlkdwxkllccv",
+      "code": null,
+      "address": "465dsqjdklqsj",
+      "latitude": null,
+      "longitude": null,
+      "meter_reference": "whatever",
+      "power": "12.12",
+      "contract": 1
+    },
+    "expected": {
+      "id": 2,
+      "name": "WXCOI",
+      "reference": "xlkdwxkllccv",
+      "code": null,
+      "address": "465dsqjdklqsj",
+      "latitude": null,
+      "longitude": null,
+      "meter_reference": "whatever",
+      "is_in_scope": false,
+      "scope_date": null,
+      "creation_mode": "manual",
+      "power": "12.12",
+      "created_at": "@string@.isDateTime()",
+      "updated_at": "@string@.isDateTime()",
+      "description": null,
+      "power_history": [
+        {
+          "power": "12.12",
+          "at": "@string@.isDateTime()"
+        },
+        {
+          "power": "7.2",
+          "at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  },
+  "photo": {
+    "user": "blanc@test.fr",
+    "id": 2,
+    "expands": null,
+    "put": {
+      "name": "WXCOI",
+      "reference": "xlkdwxklc",
+      "code": "cooooooode",
+      "address": "465dsqjdklqsj",
+      "latitude": "654564.654",
+      "longitude": "654.87465",
+      "meter_reference": "whatever",
+      "power": "12.12",
+      "contract": 1,
+      "photo": 1,
+      "description": "test description"
+    },
+    "expected": {
+      "id": 2,
+      "name": "WXCOI",
+      "reference": "xlkdwxklc",
+      "code": "cooooooode",
+      "address": "465dsqjdklqsj",
+      "latitude": "654564.654",
+      "longitude": "654.87465",
+      "meter_reference": "whatever",
+      "is_in_scope": false,
+      "scope_date": null,
+      "power": "12.12",
+      "created_at": "@string@.isDateTime()",
+      "updated_at": "@string@.isDateTime()",
+      "description": "test description",
+      "creation_mode": "manual"
+    }
+  }
+}

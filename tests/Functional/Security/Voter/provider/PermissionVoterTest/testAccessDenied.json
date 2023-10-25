@@ -1,0 +1,14 @@
+{
+  "Missing contract.view": {
+    "user": "blanc@test.fr",
+    "permissions": "management.contract.delete"
+  },
+  "Missing only one permission": {
+    "user": "blanc@test.fr",
+    "permissions": ["system.role.view","system.pricing.delete","management.invoice.analyze","management.delivery_point.edit"]    
+  },
+  "Missing every permission": {
+    "user": "blanc@test.fr",
+    "permissions": ["system.tax.edit","system.pricing.delete"]
+  }
+}

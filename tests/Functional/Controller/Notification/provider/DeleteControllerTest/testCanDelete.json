@@ -1,0 +1,13 @@
+{
+  "Delete specific user notification": {
+    "ids": [
+      1,
+      2
+    ],
+    "existingCount": 2
+  },
+  "delete every notifications": {
+    "ids": "*",
+    "existingCount": 3
+  }
+}

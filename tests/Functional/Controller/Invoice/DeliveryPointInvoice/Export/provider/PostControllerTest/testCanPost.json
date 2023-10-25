@@ -1,0 +1,21 @@
+{
+  "with credit notes": {
+    "user": "michel@berger.fr",
+    "parameters": {},
+    "expected": "[[\"R\u00e9f\u00e9rence facture\",\"R\u00e9f\u00e9rence PDL\",\"Montant HT (\u20ac)\",\"Montant TVA (\u20ac)\",\"Montant TTC (\u20ac)\",\"Type de relev\u00e9\",\"Puissance souscrite\",\"D\u00e9but de consommation\",\"Fin de consommation\",\"Consommation (kWh)\",\"Consommation (\u20ac)\",\"Abonnement (\u20ac)\",\"TURPE (\u20ac)\",\"CSPE (\u20ac)\",\"CTA (\u20ac)\",\"TCFE (\u20ac)\",\"TDCFE (\u20ac)\",\"TCCFE (\u20ac)\"],[\"CLIENT2_CREDIT_NOTE\",\"REF_DEV_POINT_3\",\"-5 636,00\",\"-885,00\",\"-6 521,00\",\"R\u00e9el\",48,\"14\/08\/2020\",\"13\/10\/2020\",-6937,\"-789,00\",\"154,64\",null,\"156,08\",\"29,52\",\"55,17\",null,null]]"
+  },
+  "without credit notes": {
+    "user": "admin@test.fr",
+    "parameters": {},
+    "expected": "[[\"R\u00e9f\u00e9rence facture\",\"R\u00e9f\u00e9rence PDL\",\"Montant HT (\u20ac)\",\"Montant TVA (\u20ac)\",\"Montant TTC (\u20ac)\",\"Type de relev\u00e9\",\"Puissance souscrite\",\"D\u00e9but de consommation\",\"Fin de consommation\",\"Consommation (kWh)\",\"Consommation (\u20ac)\",\"Abonnement (\u20ac)\",\"TURPE (\u20ac)\",\"CSPE (\u20ac)\",\"CTA (\u20ac)\",\"TCFE (\u20ac)\",\"TDCFE (\u20ac)\",\"TCCFE (\u20ac)\"]]"
+  },
+  "with credit notes - filtered by id": {
+    "user": "michel@berger.fr",
+    "parameters": {
+      "filters": {
+        "ids": [12]
+      }
+    },
+    "expected": "[[\"R\u00e9f\u00e9rence facture\",\"R\u00e9f\u00e9rence PDL\",\"Montant HT (\u20ac)\",\"Montant TVA (\u20ac)\",\"Montant TTC (\u20ac)\",\"Type de relev\u00e9\",\"Puissance souscrite\",\"D\u00e9but de consommation\",\"Fin de consommation\",\"Consommation (kWh)\",\"Consommation (\u20ac)\",\"Abonnement (\u20ac)\",\"TURPE (\u20ac)\",\"CSPE (\u20ac)\",\"CTA (\u20ac)\",\"TCFE (\u20ac)\",\"TDCFE (\u20ac)\",\"TCCFE (\u20ac)\"],[\"CLIENT2_CREDIT_NOTE\",\"REF_DEV_POINT_3\",\"-5 636,00\",\"-885,00\",\"-6 521,00\",\"R\u00e9el\",48,\"14\/08\/2020\",\"13\/10\/2020\",-6937,\"-789,00\",\"154,64\",null,\"156,08\",\"29,52\",\"55,17\",null,null]]"
+  }
+}

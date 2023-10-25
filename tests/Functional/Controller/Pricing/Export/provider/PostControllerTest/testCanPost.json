@@ -1,0 +1,14 @@
+{
+  "basic": {
+    "post": {},
+    "expectedContent": "[[\"Nom\",\"Type\",\"Date de début\",\"Date de fin\",\"Consommation (cts €/kWh)\",\"Abonnement (€/kVA/mois)\"],[\"Pricing_1\",\"Offre de marché\",\"17/09/2019\",\"18/07/2020\",\"0,000\",null],[\"Pricing_2\",\"Offre de marché\",\"19/07/2020\",\"17/09/2020\",\"0,002\",null],[\"Pricing_3\",\"Offre de marché\",\"18/09/2020\",\"01/01/2021\",\"0,007\",null],[\"Pricing_4\",\"Offre de marché\",\"19/07/2018\",\"01/01/2020\",\"0,008\",null]]"
+  },
+  "filtered by name": {
+    "post": {
+      "filters": {
+        "name": "Pricing_4"
+      }
+    },
+    "expectedContent": "[[\"Nom\",\"Type\",\"Date de début\",\"Date de fin\",\"Consommation (cts €/kWh)\",\"Abonnement (€/kVA/mois)\"],[\"Pricing_4\",\"Offre de marché\",\"19/07/2018\",\"01/01/2020\",\"0,008\",null]]"
+  }
+}

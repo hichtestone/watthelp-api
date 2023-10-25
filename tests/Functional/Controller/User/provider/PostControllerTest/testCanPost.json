@@ -1,0 +1,98 @@
+{
+  "basic": {
+    "expand": null,
+    "post": {
+      "email": "test@test.fr",
+      "password": "testesT,",
+      "first_name": "Michel",
+      "last_name": "Blanc"
+    },
+    "expected": {
+      "id": 7,
+      "email": "test@test.fr",
+      "first_name": "Michel",
+      "last_name": "Blanc",
+      "mobile": null,
+      "phone": null,
+      "created_at": "@string@.isDateTime()",
+      "updated_at": "@string@.isDateTime()",
+      "dashboard": null,
+      "language": "fr",
+      "super_admin": false
+    }
+  },
+  "special characters": {
+    "expand": null,
+    "post": {
+      "email": "a!dm1n@te-st.fr",
+      "password": "!zaD_{_=@",
+      "first_name": "Mîchél",
+      "last_name": "Blànc",
+      "language": "en"
+    },
+    "expected": {
+      "id": 7,
+      "email": "a!dm1n@te-st.fr",
+      "first_name": "Mîchél",
+      "last_name": "Blànc",
+      "mobile": null,
+      "phone": null,
+      "created_at": "@string@.isDateTime()",
+      "updated_at": "@string@.isDateTime()",
+      "dashboard": null,
+      "language": "en",
+      "super_admin": false
+    }
+  },
+  "full": {
+    "expand": "user_roles,user_permissions",
+    "post": {
+      "email": "qsdjkl@test.fr",
+      "first_name": "Michelle",
+      "last_name": "Obama",
+      "phone": "0677889911",
+      "mobile": "0611223344",
+      "password": "Smarthelp1!",
+      "roles": [2]
+    },
+    "expected": {
+      "id": 7,
+      "email": "qsdjkl@test.fr",
+      "first_name": "Michelle",
+      "last_name": "Obama",
+      "mobile": "0611223344",
+      "phone": "0677889911",
+      "super_admin": false,
+      "created_at": "@string@.isDateTime()",
+      "updated_at": "@string@.isDateTime()",
+      "dashboard": null,
+      "language": "fr",
+      "roles": [
+        {
+          "id": 2,
+          "name": "ROLE_DEV",
+          "description": "Dev",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        }
+      ],
+      "permissions": [
+        {
+          "id": 18,
+          "code": "management.delivery_point.view",
+          "description": "Voir les points de livraison"
+        },
+        {
+          "id": 19,
+          "code": "management.delivery_point.edit",
+          "description": "Modifier un point de livraison"
+        },
+        {
+          "id": 20,
+          "code": "management.delivery_point.delete",
+          "description": "Supprimer un point de livraison"
+        }
+      ]
+    }
+  }
+}

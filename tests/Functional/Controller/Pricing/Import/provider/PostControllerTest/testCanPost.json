@@ -1,0 +1,13 @@
+{
+  "basic": {
+    "post": {
+      "file": 25
+    },
+    "expected": {
+      "id": 6,
+      "type": "pricing",
+      "provider": null,
+      "created_at": "@string@.isDateTime()"
+    }
+  }
+}

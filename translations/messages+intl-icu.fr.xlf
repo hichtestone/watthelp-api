@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="fr" trgLang="fr">
+    <file id="back">
+        <unit id="1" name="unauthorized_call">
+            <segment state="translated">
+                <source>unauthorized_call</source>
+                <target>Appel non autorisé.</target>
+            </segment>
+        </unit>
+        <unit id="2" name="access_denied">
+            <segment state="translated">
+                <source>access_denied</source>
+                <target>Accès rejeté.</target>
+            </segment>
+        </unit>
+        <unit id="3" name="resource_not_found">
+            <segment state="translated">
+                <source>resource_not_found</source>
+                <target>Ressource non trouvée.</target>
+            </segment>
+        </unit>
+        <unit id="4" name="method_not_allowed">
+            <segment state="translated">
+                <source>method_not_allowed</source>
+                <target>Méthode non autorisée.</target>
+            </segment>
+        </unit>
+        <unit id="5" name="unknown_error_has_occurred">
+            <segment state="translated">
+                <source>unknown_error_has_occurred</source>
+                <target>Une erreur inconnue est survenue.</target>
+            </segment>
+        </unit>
+        <unit id="6" name="incorrect_file_missing_sheet">
+            <segment state="translated">
+                <source>incorrect_file_missing_sheet</source>
+                <target>Le fichier est incorrect: l'onglet {sheet} n'existe pas.</target>
+            </segment>
+        </unit>
+        <unit id="7" name="incorrect_file_unexpected_value">
+            <segment state="translated">
+                <source>incorrect_file_unexpected_value</source>
+                <target>Le fichier{filename} est incorrect: Cellule {cell}, valeur: {actual_value}, nous attendions: {expected_value}.</target>
+            </segment>
+        </unit>
+        <unit id="8" name="sheet_is_incorrect">
+            <segment state="translated">
+                <source>sheet_is_incorrect</source>
+                <target>L'onglet {sheet} est incorrect:</target>
+            </segment>
+        </unit>
+        <unit id="9" name="cell">
+            <segment state="translated">
+                <source>cell</source>
+                <target>Cellule</target>
+            </segment>
+        </unit>
+        <unit id="10" name="year_is_required">
+            <segment state="translated">
+                <source>year_is_required</source>
+                <target>l'Année est obligatoire.</target>
+            </segment>
+        </unit>
+        <unit id="11" name="year_must_be_unique">
+            <segment state="translated">
+                <source>year_must_be_unique</source>
+                <target>l'Année doit être unique.</target>
+            </segment>
+        </unit>
+        <unit id="12" name="yearly_hours_operating_required">
+            <segment state="translated">
+                <source>yearly_hours_operating_required</source>
+                <target>le Nombre d'heures de fonctionnement annuel est obligatoire.</target>
+            </segment>
+        </unit>
+        <unit id="13" name="average_energy_price_excl_taxes_is_required">
+            <segment state="translated">
+                <source>average_energy_price_excl_taxes_is_required</source>
+                <target>le Prix moyen énergie HT est obligatoire.</target>
+            </segment>
+        </unit>
+        <unit id="14" name="year_is_missing_in_budget_sheet">
+            <segment state="translated">
+                <source>year_is_missing_in_budget_sheet</source>
+                <target>l'Année {year} n'existe pas dans l'onglet Budgets.</target>
+            </segment>
+        </unit>
+        <unit id="15" name="delivery_point_reference_is_required">
+            <segment state="translated">
+                <source>delivery_point_reference_is_required</source>
+                <target>la Référence PDL est obligatoire.</target>
+            </segment>
+        </unit>
+        <unit id="16" name="incorrect_file_ref_not_unique_for_year">
+            <segment state="translated">
+                <source>incorrect_file_ref_not_unique_for_year</source>
+                <target>Le fichier est incorrect: Cellule {cell}, la Référence {reference} pour l'année {year} n'est pas unique.</target>
+            </segment>
+        </unit>
+        <unit id="17" name="year_must_match_year_in_cell">
+            <segment state="translated">
+                <source>year_must_match_year_in_cell</source>
+                <target>la date doit appartenir à l'année {year} spécifiée dans la cellule {cell}.</target>
+            </segment>
+        </unit>
+        <unit id="18" name="delivery_point_does_not_exist">
+            <segment state="translated">
+                <source>delivery_point_does_not_exist</source>
+                <target>{count_delivery_points, plural,
+                    one {Le point de livraison {references} n'existe pas.}
+                    other {Les points de livraison {references} n'existent pas.}}</target>
+            </segment>
+        </unit>
+        <unit id="19" name="file_verification_ongoing">
+            <segment state="translated">
+                <source>file_verification_ongoing</source>
+                <target>Vérification du fichier en cours.</target>
+            </segment>
+        </unit>
+        <unit id="20" name="import_ongoing">
+            <segment state="translated">
+                <source>import_ongoing</source>
+                <target>Import en cours.</target>
+            </segment>
+        </unit>
+        <unit id="21" name="delivery_point_power_missing_on_invoice">
+            <segment state="translated">
+                <source>delivery_point_power_missing_on_invoice</source>
+                <target>La puissance du point de livraison {delivery_point} est manquante sur la facture {invoice}.</target>
+            </segment>
+        </unit>
+        <unit id="22" name="delivery_point_changed">
+            <segment state="translated">
+                <source>delivery_point_changed</source>
+                <target>{attribute, select, power {La puissance} address {L'adresse} other {}} du point de livraison {delivery_point} était {old_delivery_point_value} sur la facture {old_invoice}, mais elle est {new_delivery_point_value} sur la facture {new_invoice}.</target>
+            </segment>
+        </unit>
+        <unit id="23" name="could_not_find_delivery_point_corresponding_to_invoice">
+            <segment state="translated">
+                <source>could_not_find_delivery_point_corresponding_to_invoice</source>
+                <target>Impossible de trouver le point de livraison {delivery_point} correspondant à la facture {invoice} dans le fichier sites_elec.csv.</target>
+            </segment>
+        </unit>
+        <unit id="24" name="provider_not_supported">
+            <segment state="translated">
+                <source>provider_not_supported</source>
+                <target>Le fournisseur {provider} n'est pas pris en charge.</target>
+            </segment>
+        </unit>
+        <unit id="25" name="incorrect_file_attribute_mandatory">
+            <segment state="translated">
+                <source>incorrect_file_attribute_mandatory</source>
+                <target>Le fichier est incorrect: Cellule {cell}, {attribute, select, name {le Nom} reference {la Référence} address {l'Adresse} meter_reference {la Référence du compteur} consumption {la consommation} subscription {l'abonnement} other {}} est obligatoire.</target>
+            </segment>
+        </unit>
+        <unit id="26" name="incorrect_file_attribute_must_be_unique">
+            <segment state="translated">
+                <source>incorrect_file_attribute_must_be_unique</source>
+                <target>Le fichier est incorrect: Cellule {cell}, {attribute, select, reference {la Référence} code {le Code} other {}} doit être unique.</target>
+            </segment>
+        </unit>
+        <unit id="27" name="between_0_and_36">
+            <segment state="translated">
+                <source>between_0_and_36</source>
+                <target>entre 0,1 et 36</target>
+            </segment>
+        </unit>
+        <unit id="28" name="invoices_already_imported">
+            <segment state="translated">
+                <source>invoices_already_imported</source>
+                <target>{count_invoices, plural,
+                    one {La facture {invoices} a déjà été importée.}
+                    other {Les factures {invoices} ont déjà été importées.}}</target>
+            </segment>
+        </unit>
+        <unit id="29" name="incorrect_file_wrong_city">
+            <segment state="translated">
+                <source>incorrect_file_wrong_city</source>
+                <target>Le fichier{filename} est incorrect: la commune de la ligne {row} est invalide. Nous attendions la ville {city} ou le code postal {zipcode}.</target>
+            </segment>
+        </unit>        
+        <unit id="30" name="zero_or_empty">
+            <segment state="translated">
+                <source>zero_or_empty</source>
+                <target>0 ou vide</target>
+            </segment>
+        </unit>
+        <unit id="31" name="import_type_not_supported">
+            <segment state="translated">
+                <source>import_type_not_supported</source>
+                <target>Le type d'import {type} n'est pas pris en charge.</target>
+            </segment>
+        </unit>
+        <unit id="32" name="unit_price_missing">
+            <segment>
+                <source>unit_price_missing</source>
+                <target>Le prix unitaire est manquant.</target>
+            </segment>
+        </unit>
+        <unit id="33" name="consumption_index_finished_at_missing">
+            <segment>
+                <source>consumption_index_finished_at_missing</source>
+                <target>La date d'index de fin de consommation est manquante.</target>
+            </segment>
+        </unit>
+        <unit id="34" name="finished_at_missing">
+            <segment>
+                <source>finished_at_missing</source>
+                <target>La date de fin de {type, select, consumption {consommation} subscription {l'abonnement} other {}} est manquante.</target>
+            </segment>
+        </unit>
+        <unit id="35" name="consumption_index_started_at_missing">
+            <segment>
+                <source>consumption_index_started_at_missing</source>
+                <target>La date d'index de début de consommation est manquante.</target>
+            </segment>
+        </unit>
+        <unit id="36" name="started_at_missing">
+            <segment>
+                <source>started_at_missing</source>
+                <target>La date de début de {type, select, consumption {consommation} subscription {l'abonnement} other {}} est manquante.</target>
+            </segment>
+        </unit>
+        <unit id="37" name="no_previous_invoice_for_delivery_point">
+            <segment>
+                <source>no_previous_invoice_for_delivery_point</source>
+                <target>Aucune facture précédente pour ce point de livraison.</target>
+            </segment>
+        </unit>
+        <unit id="38" name="consumption_index_start_missing_in_current_invoice">
+            <segment>
+                <source>consumption_index_start_missing_in_current_invoice</source>
+                <target>L'index de début sur la facture courante est manquant.</target>
+            </segment>
+        </unit>
+        <unit id="39" name="consumption_index_finish_missing_in_previous_invoice">
+            <segment>
+                <source>consumption_index_finish_missing_in_previous_invoice</source>
+                <target>L'index de fin sur la facture précédente est manquant.</target>
+            </segment>
+        </unit>
+        <unit id="40" name="two_years_are_required">
+            <segment>
+                <source>two_years_are_required</source>
+                <target>2 années sont nécessaires.</target>
+            </segment>
+        </unit>
+        <unit id="41" name="no_consumption_in_year">
+            <segment>
+                <source>no_consumption_in_year</source>
+                <target>Consommation à 0 pour l'année {year, select, current {N} previous {N-1} other {}}.</target>
+            </segment>
+        </unit>
+        <unit id="42" name="consumption_quantity_missing">
+            <segment>
+                <source>consumption_quantity_missing</source>
+                <target>La quantité consommée est manquante.</target>
+            </segment>
+        </unit>
+        <unit id="43" name="ht_amount_missing">
+            <segment>
+                <source>ht_amount_missing</source>
+                <target>Le montant HT {type, select, subscription {de l'abonnement} consumption {de la consommation} tax {de la taxe {tax}} other {}} est manquant.</target>
+            </segment>
+        </unit>
+        <unit id="44" name="no_pricing_found_in_period">
+            <segment>
+                <source>no_pricing_found_in_period</source>
+                <target>Aucun tarif trouvé dans la période du {from} au {to}.</target>
+            </segment>
+        </unit>
+        <unit id="45" name="power_subscribed_missing">
+            <segment>
+                <source>power_subscribed_missing</source>
+                <target>La puissance souscrite est manquante.</target>
+            </segment>
+        </unit>
+        <unit id="46" name="subscription_missing">
+            <segment>
+                <source>subscription_missing</source>
+                <target>L'abonnement est manquant.</target>
+            </segment>
+        </unit>
+        <unit id="47" name="cta_missing">
+            <segment>
+                <source>cta_missing</source>
+                <target>La CTA est manquante.</target>
+            </segment>
+        </unit>
+        <unit id="48" name="index_finish_missing">
+            <segment>
+                <source>index_finish_missing</source>
+                <target>L'index de fin est manquant.</target>
+            </segment>
+        </unit>
+        <unit id="49" name="index_start_missing">
+            <segment>
+                <source>index_start_missing</source>
+                <target>L'index de début est manquant.</target>
+            </segment>
+        </unit>
+        <unit id="50" name="consumption_period_must_be_at_least_one_month_long">
+            <segment>
+                <source>consumption_period_must_be_at_least_one_month_long</source>
+                <target>La période de consommation doit être d'au moins un mois.</target>
+            </segment>
+        </unit>
+        <unit id="51" name="turpe_missing_in_period">
+            <segment>
+                <source>turpe_missing_in_period</source>
+                <target>La valeur du TURPE est introuvable pour la période du {from} au {to}.</target>
+            </segment>
+        </unit>
+        <unit id="52" name="no_delivery_point_invoice_at_least_one_year_old">
+            <segment>
+                <source>no_delivery_point_invoice_at_least_one_year_old</source>
+                <target>Aucune facture de point de livraison d'au moins un an n'a été trouvée.</target>
+            </segment>
+        </unit>
+        <unit id="53" name="previous_delivery_point_invoice_or_last_year_missing">
+            <segment>
+                <source>previous_delivery_point_invoice_or_last_year_missing</source>
+                <target>Facture de point de livraison précédente et/ou année précédente manquante(s).</target>
+            </segment>
+        </unit>
+        <unit id="54" name="index_finished_at_not_equal_to_finished_at">
+            <segment>
+                <source>index_finished_at_not_equal_to_finished_at</source>
+                <target>La date d'index de fin {index_finished_at, date, short} n'est pas identique à la date de fin de consommation {finished_at, date, short} (+/- 1 jour).</target>
+            </segment>
+        </unit>
+        <unit id="55" name="index_started_at_not_equal_to_started_at">
+            <segment>
+                <source>index_started_at_not_equal_to_started_at</source>
+                <target>La date d'index de début {index_started_at, date, short} n'est pas identique à la date de début de consommation {started_at, date, short} (+/- 1 jour).</target>
+            </segment>
+        </unit>
+        <unit id="56" name="index_start_not_equal_to_previous_index_finish">
+            <segment>
+                <source>index_start_not_equal_to_previous_index_finish</source>
+                <target>L'index de début n'est pas identique à l'index de fin de la facture précédente.</target>
+            </segment>
+        </unit>
+        <unit id="57" name="index_started_at_not_equal_to_previous_index_finished_at">
+            <segment>
+                <source>index_started_at_not_equal_to_previous_index_finished_at</source>
+                <target>La date de l'index de début {index_started_at, date, short} n'est pas identique à la date de l'index de fin de la facture précédente {previous_index_finished_at, date, short} à +/- 2 jours.</target>
+            </segment>
+        </unit>
+        <unit id="58" name="consumption_changed_more_than_x_percent">
+            <segment>
+                <source>consumption_changed_more_than_x_percent</source>
+                <target>La consommation a évoluée de plus de {percentage}%.</target>
+            </segment>
+        </unit>
+        <unit id="59" name="consumption_not_equal_to_indexes_difference">
+            <segment>
+                <source>consumption_not_equal_to_indexes_difference</source>
+                <target>La consommation {consumption} kWh ne correspond pas à la différence entre l'index de fin {finish_index} kWh et l'index de début {start_index} kWh.</target>
+            </segment>
+        </unit>
+        <unit id="60" name="amount_incorrect">
+            <segment>
+                <source>amount_incorrect</source>
+                <target>Le montant {amount_type, select, HT {HT } TVA {TVA } TTC {TTC } other{}}{type, select, subscription {de l'abonnement } consumption {de la consommation } TURPE {du TURPE } tax {de la taxe {tax} } other{}}est incorrect.</target>
+            </segment>
+        </unit>
+        <unit id="61" name="subscription_amount_exceeds_consumption_amount">
+            <segment>
+                <source>subscription_amount_exceeds_consumption_amount</source>
+                <target>Le montant HT de l'abonnement {subscription_amount} est supérieur au montant HT de la consommation {consumption_amount}.</target>
+            </segment>
+        </unit>
+        <unit id="62" name="unit_price_incorrect">
+            <segment>
+                <source>unit_price_incorrect</source>
+                <target>Le prix unitaire est incorrect.</target>
+            </segment>
+        </unit>
+        <unit id="63" name="no_real_invoice_for_more_than_a_year">
+            <segment>
+                <source>no_real_invoice_for_more_than_a_year</source>
+                <target>Aucun index relevé depuis plus d'un an.</target>
+            </segment>
+        </unit>
+        <unit id="64" name="no_delivery_point_invoice_emitted_for_more_than_a_year">
+            <segment>
+                <source>no_delivery_point_invoice_emitted_for_more_than_a_year</source>
+                <target>Aucune facture de ce point de livraison n'a été émise depuis plus d'un an.</target>
+            </segment>
+        </unit>
+        <unit id="65" name="power_subscribed_incorrect">
+            <segment>
+                <source>power_subscribed_incorrect</source>
+                <target>La puissance souscrite est incorrecte, elle devrait être entre {min, number, :: measure-unit/energy-kilowatt-hour} et {max, number, :: measure-unit/energy-kilowatt-hour}.</target>
+            </segment>
+        </unit>
+        <unit id="66" name="expected_value">
+            <segment>
+                <source>expected_value</source>
+                <target>Valeur attendue: {expected_value}</target>
+            </segment>
+        </unit>
+        <unit id="67" name="one_year_diff_applied_rules">
+            <segment>
+                <source>one_year_diff_applied_rules</source>
+                <target>La somme des consommations du {two_years_beforehand, date, short} au {one_year_beforehand, date, short}, égale à {consumption_year_before_last} kWh, a évoluée de {percentage}% par rapport à la somme des consommations du {one_year_beforehand, date, short} au {consumption_finished_at, date, short} qui est égale à {consumption_last_year} kWh.</target>
+            </segment>
+        </unit>
+        <unit id="68" name="consumption_total_tax_excluded_applied_rules">
+            <segment>
+                <source>consumption_total_tax_excluded_applied_rules</source>
+                <target>Tarifs trouvés du {from, date, short} au {to, date, short}, prix unitaire de consommation minimum: {minimum_base_price, number} €/kWh, prix unitaire de consommation maximum: {maximum_base_price, number} €/kWh. Consommation calculée: {finish_index, plural, =0 {} other {index de fin {finish_index, number, :: measure-unit/energy-kilowatt-hour} - }}{start_index, plural, =0 {} other {index de début {start_index, number, :: measure-unit/energy-kilowatt-hour}}} = {consumption, number, :: measure-unit/energy-kilowatt-hour}. Minimum {minimum, number, :: currency/EUR} = ({minimum_base_price, number} €/kWh x {consumption, number, :: measure-unit/energy-kilowatt-hour}) - {margin, number, :: currency/EUR}. Maximum {maximum, number, :: currency/EUR} = ({maximum_base_price, number} €/kWh x {consumption, number, :: measure-unit/energy-kilowatt-hour}) + {margin, number, :: currency/EUR}.</target>
+            </segment>
+        </unit>
+        <unit id="69" name="expected_value_between_x_y">
+            <segment>
+                <source>expected_value_between_x_y</source>
+                <target>Valeur attendue: entre {x} et {y}.</target>
+            </segment>
+        </unit>
+        <unit id="70" name="expected_value_give_or_take_two_days">
+            <segment>
+                <source>expected_value_give_or_take_two_days</source>
+                <target>Valeur attendue: {expected_value, date, short} (+/- 2 jours).</target>
+            </segment>
+        </unit>
+        <unit id="71" name="expected_value_inferior_to">
+            <segment>
+                <source>expected_value_inferior_to</source>
+                <target>Valeur attendue: inférieur à {expected_value}.</target>
+            </segment>
+        </unit>
+        <unit id="72" name="consumption_unit_price_applied_rules">
+            <segment>
+                <source>consumption_unit_price_applied_rules</source>
+                <target>Tarifs trouvés du {from, date, short} au {to, date, short}, tarif minimum: {minimum_base_price, number} €/kWh, tarif maximum: {maximum_base_price, number} €/kWh.</target>
+            </segment>
+        </unit>
+        <unit id="73" name="subscription_total_tax_excluded_applied_rules">
+            <segment>
+                <source>subscription_total_tax_excluded_applied_rules</source>
+                <target>Tarifs trouvés du {from, date, short} au {to, date, short}, prix mensuel de l'abonnement minimum: {minimum_base_price, number} €/kVA/mois, prix mensuel de l'abonnement maximum: {maximum_base_price, number} €/kVA/mois. Période trouvée: {period, number} mois. Puissance souscrite: {power_subscribed: number, :: .0 measure-unit/energy-kilowatt-hour}. Minimum {minimum, number, :: currency/EUR} = ({minimum_base_price, number} €/kVA/mois x {power_subscribed, number, :: measure-unit/energy-kilowatt-hour} x {period, number}) - {margin, number, :: currency/EUR}. Maximum {maximum, number, :: currency/EUR} = ({maximum_base_price, number} €/kVA/mois x {power_subscribed, number, :: measure-unit/energy-kilowatt-hour} x {period, number}) + {margin, number, :: currency/EUR}.</target>
+            </segment>
+        </unit>
+        <unit id="74" name="turpe_applied_rules">
+            <segment>
+                <source>turpe_applied_rules</source>
+                <target>Puissance souscrite: {power_subscribed, number, :: measure-unit/power-kilowatt}. Consommation: {consumption, number, :: measure-unit/energy-kilowatt-hour}. Nombre de jours d'abonnement: {subscription_days, number}. Composantes du TURPE trouvées du {from, date, short} au {to, date, short}. CG annuelle minimum: {min_annual_cg, number} €/an, CG annuelle maximum: {max_annual_cg, number} €/an. CG retenue minimum {min_cg, number, :: currency/EUR} = (CG annuelle min {min_annual_cg, number} / 365) x Nombre de jours d'abonnement {subscription_days, number}. CG retenue maximum {max_cg, number, :: currency/EUR} = (CG annuelle max {max_annual_cg, number} / 365) x Nombre de jours d'abonnement {subscription_days, number}. CC annuelle minimum: {min_annual_cc, number} €/an, CC annuelle maximum: {max_annual_cc, number} €/an. CC retenue minimum {min_cc, number, :: currency/EUR} = (CC annuelle min {min_annual_cc, number} / 365) x Nombre de jours d'abonnement {subscription_days, number}. CC retenue maximum {max_cc, number, :: currency/EUR} = (CC annuelle max {max_annual_cc, number} / 365) x Nombre de jours d'abonnement {subscription_days, number}. Coefficient pondérateur de la puissance minimum {min_cs_coeff_power, number} €/kVA. Coefficient pondérateur de la puissance maximum {max_cs_coeff_power, number} €/kVA. Coefficient pondérateur de l'énergie minimum {min_cs_coeff_energy, number} €/kWh. Coefficient pondérateur de l'énergie maximum {max_cs_coeff_energy, number} €/kWh. CS minimum {min_cs, number, :: currency/EUR}= ({min_cs_coeff_power, number} €/kW x {power_subscribed, number, :: measure-unit/power-kilowatt}) + (({min_cs_coeff_energy, number} €/kWh x {consumption, number, :: measure-unit/energy-kilowatt-hour} / 365) x {subscription_days, number}). CS maximum {max_cs, number, :: currency/EUR} = ({max_cs_coeff_power, number} €/kW x {power_subscribed, number, :: measure-unit/power-kilowatt}) + (({max_cs_coeff_energy, number} €/kWh x {consumption, number, :: measure-unit/energy-kilowatt-hour} / 365) x {subscription_days, number}). &lt;b&gt;Montant total minimum {total_min, number, :: currency/EUR}&lt;/b&gt; = CG retenue minimum {min_cg, number, :: currency/EUR} + CC retenue minimum {min_cc, number, :: currency/EUR} + CS minimum {min_cs, number, :: currency/EUR} - {margin, number, :: currency/EUR}. &lt;b&gt;Montant total maximum {total_max, number, :: currency/EUR}&lt;/b&gt; = CG retenue maximum {max_cg, number, :: currency/EUR} + CC retenue maximum {max_cc, number, :: currency/EUR} + CS maximum {max_cs, number, :: currency/EUR} + {margin, number, :: currency/EUR}.</target>
+            </segment>
+        </unit>
+        <unit id="75" name="tax_applied_rules">
+            <segment>
+                <source>tax_applied_rules</source>
+                <target>{tax} trouvées du {from, date, short} au {to, date, short}. {tax} minimum: {min_tax_unit_price, number} c€/kWh. {tax} maximum: {max_tax_unit_price, number} c€/kWh. Consommation: {consumption, number, :: measure-unit/energy-kilowatt-hour}. &lt;b&gt;Montant total minimum {total_min, number, :: currency/EUR}&lt;/b&gt; = (({min_tax_unit_price, number} c€/kWh / 100) x {consumption, number, :: measure-unit/energy-kilowatt-hour}) - {margin, number, :: currency/EUR}. &lt;b&gt;Montant total maximum {total_max, number, :: currency/EUR}&lt;/b&gt; = (({max_tax_unit_price, number} c€/kWh / 100) x {consumption, number, :: measure-unit/energy-kilowatt-hour}) + {margin, number, :: currency/EUR}.</target>
+            </segment>
+        </unit>
+        <unit id="76" name="tcfe_applied_rules">
+            <segment>
+                <source>tcfe_applied_rules</source>
+                <target>Taxes trouvées du {from, date, short} au {to, date, short}. TDCFE minimum: {min_tdcfe_unit_price, number} c€/kWh, TDCFE maximum: {max_tdcfe_unit_price, number} c€/kWh. TCCFE minimum: {min_tccfe_unit_price, number} c€/kWh, TCCFE maximum: {max_tccfe_unit_price, number} c€/kWh. Consommation: {consumption, number, :: measure-unit/energy-kilowatt-hour}. &lt;b&gt;Montant total minimum {total_min, number, :: currency/EUR}&lt;/b&gt; = ((({min_tdcfe_unit_price, number} c€/kWh + {min_tccfe_unit_price, number} c€/kWh) / 100) x {consumption, number, :: measure-unit/energy-kilowatt-hour}) - {margin, number, :: currency/EUR}. &lt;b&gt;Montant total maximum {total_max, number, :: currency/EUR}&lt;/b&gt; = ((({max_tdcfe_unit_price, number} c€/kWh + {max_tccfe_unit_price, number} c€/kWh) / 100) x {consumption, number, :: measure-unit/energy-kilowatt-hour}) - {margin, number, :: currency/EUR}.</target>
+            </segment>
+        </unit>
+        <unit id="77" name="cta_applied_rules">
+            <segment>
+                <source>cta_applied_rules</source>
+                <target>Pourcentage de CTA trouvées du {from, date, short} au {to, date, short}. CTA minimum: {min_cta, number} %, CTA maximum: {max_cta, number} %. Consommation: {consumption, number, :: measure-unit/energy-kilowatt-hour}.
+                Nombre de jours pris en compte: {number_of_days, number}. CG retenue minimum {min_cg, number, :: currency/EUR}. CG retenue maximum {max_cg, number, :: currency/EUR}. CC retenue minimum {min_cc, number, :: currency/EUR}. CC retenue maximum {max_cc, number, :: currency/EUR}. Part fixe de la CS retenue minimum {min_fixed_cs, number, :: currency/EUR}. Part fixe de la CS retenue maximum {max_fixed_cs, number, :: currency/EUR}. Part fixe du TURPE minimum {min_turpe, number, :: currency/EUR} = {min_cg, number, :: currency/EUR} + {min_cc, number, :: currency/EUR} + {min_fixed_cs, number, :: currency/EUR}. Part fixe du TURPE maximum {max_turpe, number, :: currency/EUR} = {max_cg, number, :: currency/EUR} + {max_cc, number, :: currency/EUR} + {max_fixed_cs, number, :: currency/EUR}. &lt;b&gt;Montant total minimum {total_min, number, :: currency/EUR}&lt;/b&gt; = ({min_turpe, number, :: currency/EUR} x {min_cta, number} / 100) - {margin, number, :: currency/EUR}. &lt;b&gt;Montant total maximum {total_max, number, :: currency/EUR}&lt;/b&gt; = ({max_turpe, number, :: currency/EUR} x {max_cta, number} / 100) - {margin, number, :: currency/EUR}.</target>
+            </segment>
+        </unit>
+        <unit id="78" name="total_tax_excluded_applied_rules_negotiated">
+            <segment>
+                <source>total_tax_excluded_applied_rules_negotiated</source>
+                <target>Consommation: {consumption, number, :: currency/EUR}. CG: {cg, number, :: currency/EUR}. CC: {cc, number, :: currency/EUR}. CS: {cs, number, :: currency/EUR}. Total TURPE: {total_turpe, number, :: currency/EUR} = {cg, number, :: currency/EUR} + {cc, number, :: currency/EUR} + {cs, number, :: currency/EUR}. {tccfe, plural, =0 {} other {TCCFE: {tccfe, number, :: currency/EUR}.}} {tdcfe, plural, =0 {} other {TDCFE: {tdcfe, number, :: currency/EUR}.}} {tcfe, plural, =0 {} other {TCFE: {tcfe, number, :: currency/EUR}.}} {cspe, plural, =0 {} other {CSPE: {cspe, number, :: currency/EUR}.}}{cta, plural, =0 {} other {CTA: {cta, number, :: currency/EUR}.}} Total taxes: {total_taxes, number, :: currency/EUR}. &lt;b&gt;Montant total minimum {total_min, number, :: currency/EUR}&lt;/b&gt; = {consumption, number, :: currency/EUR} + {total_turpe, number, :: currency/EUR} + {total_taxes, number, :: currency/EUR} - {margin, number, :: currency/EUR}. &lt;b&gt;Montant total maximum {total_min, number, :: currency/EUR}&lt;/b&gt; = {consumption, number, :: currency/EUR} + {total_turpe, number, :: currency/EUR} + {total_taxes, number, :: currency/EUR} + {margin, number, :: currency/EUR}.</target>
+            </segment>
+        </unit>
+        <unit id="79" name="total_tax_excluded_applied_rules_regulated">
+            <segment>
+                <source>total_tax_excluded_applied_rules_regulated</source>
+                <target>Consommation: {consumption, number, :: currency/EUR}. Abonnement: {subscription, number, :: currency/EUR}. {tccfe, plural, =0 {} other {TCCFE: {tccfe, number, :: currency/EUR}.}} {tdcfe, plural, =0 {} other {TDCFE: {tdcfe, number, :: currency/EUR}.}} {tcfe, plural, =0 {} other {TCFE: {tcfe, number, :: currency/EUR}.}} {cspe, plural, =0 {} other {CSPE: {cspe, number, :: currency/EUR}.}}{cta, plural, =0 {} other {CTA: {cta, number, :: currency/EUR}.}} Total taxes: {total_taxes, number, :: currency/EUR}. &lt;b&gt;Montant total minimum {total_min, number, :: currency/EUR}&lt;/b&gt; = {consumption, number, :: currency/EUR} + {subscription, number, :: currency/EUR} + {total_taxes, number, :: currency/EUR} - {margin, number, :: currency/EUR}. &lt;b&gt;Montant total maximum {total_min, number, :: currency/EUR}&lt;/b&gt; = {consumption, number, :: currency/EUR} + {subscription, number, :: currency/EUR} + {total_taxes, number, :: currency/EUR} + {margin, number, :: currency/EUR}.</target>
+            </segment>
+        </unit>
+        <unit id="80" name="total_tax_included_applied_rules_negotiated">
+            <segment>
+                <source>total_tax_included_applied_rules_negotiated</source>
+                <target>Consommation HT: {consumption_ht, number, :: currency/EUR}. Consommation TTC {consumption_ttc, number, :: currency/EUR} = {consumption_ht, number, :: currency/EUR} x (1 + (20/100)). CG HT: {cg_ht, number, :: currency/EUR}. CG TTC {cg_ttc, number, :: currency/EUR} = {cg_ht, number, :: currency/EUR} x (1 + (5,5/100)). CC HT: {cc_ht, number, :: currency/EUR}. CC TTC {cc_ttc, number, :: currency/EUR} = {cc_ht, number, :: currency/EUR} x (1 + (5,5/100)). Part fixe de la CS HT: {cs_fixed_ht, number, :: currency/EUR}. Part fixe de la CS TTC {cs_fixed_ttc, number, :: currency/EUR} = {cs_fixed_ht, number, :: currency/EUR} x (1 + (5,5/100)). Part variable de la CS HT: {cs_variable_ht, number, :: currency/EUR}. Part variable de la CS TTC {cs_variable_ttc, number, :: currency/EUR} = {cs_variable_ht, number, :: currency/EUR} x (1 + (20/100)). Total TURPE TTC {total_turpe_ttc, number, :: currency/EUR} = {cg_ttc, number, :: currency/EUR} + {cc_ttc, number, :: currency/EUR} + {cs_fixed_ttc, number, :: currency/EUR} + {cs_variable_ttc, number, :: currency/EUR}.{tccfe_ht, plural, =0 {} other {TCCFE HT: {tccfe_ht, number, :: currency/EUR}. TCCFE TTC {tccfe_ttc, number, :: currency/EUR} = {tccfe_ht, number, :: currency/EUR} x (1 + (20/100)).}}{tdcfe_ht, plural, =0 {} other {TDCFE HT: {tdcfe_ht, number, :: currency/EUR}. TDCFE TTC {tdcfe_ttc, number, :: currency/EUR} = {tdcfe_ht, number, :: currency/EUR} x (1 + (20/100)).}}{tcfe_ht, plural, =0 {} other {TCFE HT: {tcfe_ht, number, :: currency/EUR}. TCFE TTC {tcfe_ttc, number, :: currency/EUR} = {tcfe_ht, number, :: currency/EUR} x (1 + (20/100)).}}{cspe_ht, plural, =0 {} other {CSPE HT: {cspe_ht, number, :: currency/EUR}. CSPE TTC {cspe_ttc, number, :: currency/EUR} = {cspe_ht, number, :: currency/EUR} x (1 + (20/100)).}}{cta_ht, plural, =0 {} other {CTA HT: {cta_ht, number, :: currency/EUR}. CTA TTC {cta_ttc, number, :: currency/EUR} = {cta_ht, number, :: currency/EUR} x (1 + (5,5/100)).}}Total taxes TTC: {total_taxes_ttc, number, :: currency/EUR}.&lt;b&gt;Montant total minimum TTC {total_min, number, :: currency/EUR}&lt;/b&gt; = {consumption_ttc, number, :: currency/EUR} + {total_turpe_ttc, number, :: currency/EUR} + {total_taxes_ttc, number, :: currency/EUR} - {margin, number, :: currency/EUR}.&lt;b&gt;Montant total maximum TTC {total_max, number, :: currency/EUR}&lt;/b&gt; = {consumption_ttc, number, :: currency/EUR} + {total_turpe_ttc, number, :: currency/EUR} + {total_taxes_ttc, number, :: currency/EUR} + {margin, number, :: currency/EUR}.</target>
+            </segment>
+        </unit>
+        <unit id="81" name="total_tax_included_applied_rules_regulated">
+            <segment>
+                <source>total_tax_included_applied_rules_regulated</source>
+                <target>Consommation HT: {consumption_ht, number, :: currency/EUR}. Consommation TTC {consumption_ttc, number, :: currency/EUR} = {consumption_ht, number, :: currency/EUR} x (1 + (20/100)).Abonnement HT: {subscription_ht, number, :: currency/EUR}. Abonnement TTC {subscription_ttc, number, :: currency/EUR} = {subscription_ht, number, :: currency/EUR} x (1 + (5,5/100)).{tccfe_ht, plural, =0 {} other {TCCFE HT: {tccfe_ht, number, :: currency/EUR}. TCCFE TTC {tccfe_ttc, number, :: currency/EUR} = {tccfe_ht, number, :: currency/EUR} x (1 + (20/100)).}}{tdcfe_ht, plural, =0 {} other {TDCFE HT: {tdcfe_ht, number, :: currency/EUR}. TDCFE TTC {tdcfe_ttc, number, :: currency/EUR} = {tdcfe_ht, number, :: currency/EUR} x (1 + (20/100)).}}{tcfe_ht, plural, =0 {} other {TCFE HT: {tcfe_ht, number, :: currency/EUR}. TCFE TTC {tcfe_ttc, number, :: currency/EUR} = {tcfe_ht, number, :: currency/EUR} x (1 + (20/100)).}}{cspe_ht, plural, =0 {} other {CSPE HT: {cspe_ht, number, :: currency/EUR}. CSPE TTC {cspe_ttc, number, :: currency/EUR} = {cspe_ht, number, :: currency/EUR} x (1 + (20/100)).}}{cta_ht, plural, =0 {} other {CTA HT: {cta_ht, number, :: currency/EUR}. CTA TTC {cta_ttc, number, :: currency/EUR} = {cta_ht, number, :: currency/EUR} x (1 + (5,5/100)).}}Total taxes TTC: {total_taxes_ttc, number, :: currency/EUR}.&lt;b&gt;Montant total minimum TTC {total_min, number, :: currency/EUR}&lt;/b&gt; = {consumption_ttc, number, :: currency/EUR} + {subscription_ttc, number, :: currency/EUR} + {total_taxes_ttc, number, :: currency/EUR} - {margin, number, :: currency/EUR}.&lt;b&gt;Montant total maximum TTC {total_max, number, :: currency/EUR}&lt;/b&gt; = {consumption_ttc, number, :: currency/EUR} + {subscription_ttc, number, :: currency/EUR} + {total_taxes_ttc, number, :: currency/EUR} + {margin, number, :: currency/EUR}.</target>
+            </segment>
+        </unit>
+        <unit id="82" name="total_tax_applied_rules_negotiated">
+            <segment>
+                <source>total_tax_applied_rules_negotiated</source>
+                <target>Consommation HT: {consumption_ht, number, :: currency/EUR}. Consommation TVA {consumption_tva, number, :: currency/EUR} = {consumption_ht, number, :: currency/EUR} x (20/100). CG HT: {cg_ht, number, :: currency/EUR}. CG TVA {cg_tva, number, :: currency/EUR} = {cg_ht, number, :: currency/EUR} x (5,5/100)). CC HT: {cc_ht, number, :: currency/EUR}. CC TVA {cc_tva, number, :: currency/EUR} = {cc_ht, number, :: currency/EUR} x (5,5/100)). Part fixe de la CS HT: {cs_fixed_ht, number, :: currency/EUR}. Part fixe de la CS TVA {cs_fixed_tva, number, :: currency/EUR} = {cs_fixed_ht, number, :: currency/EUR} x (5,5/100)). Part variable de la CS HT: {cs_variable_ht, number, :: currency/EUR}. Part variable de la CS TVA {cs_variable_tva, number, :: currency/EUR} = {cs_variable_ht, number, :: currency/EUR} x (20/100). Total TURPE TVA {total_turpe_tva, number, :: currency/EUR} = {cg_tva, number, :: currency/EUR} + {cc_tva, number, :: currency/EUR} + {cs_fixed_tva, number, :: currency/EUR} + {cs_variable_tva, number, :: currency/EUR}.{tccfe_ht, plural, =0 {} other {TCCFE HT: {tccfe_ht, number, :: currency/EUR}. TCCFE TVA {tccfe_tva, number, :: currency/EUR} = {tccfe_ht, number, :: currency/EUR} x (20/100).}}{tdcfe_ht, plural, =0 {} other {TDCFE HT: {tdcfe_ht, number, :: currency/EUR}. TDCFE TVA {tdcfe_tva, number, :: currency/EUR} = {tdcfe_ht, number, :: currency/EUR} x (20/100).}}{tcfe_ht, plural, =0 {} other {TCFE HT: {tcfe_ht, number, :: currency/EUR}. TCFE TVA {tcfe_tva, number, :: currency/EUR} = {tcfe_ht, number, :: currency/EUR} x (20/100).}}{cspe_ht, plural, =0 {} other {CSPE HT: {cspe_ht, number, :: currency/EUR}. CSPE TVA {cspe_tva, number, :: currency/EUR} = {cspe_ht, number, :: currency/EUR} x (20/100).}}{cta_ht, plural, =0 {} other {CTA HT: {cta_ht, number, :: currency/EUR}. CTA TVA {cta_tva, number, :: currency/EUR} = {cta_ht, number, :: currency/EUR} x (5,5/100).}}Total taxes TVA: {total_taxes_tva, number, :: currency/EUR}.&lt;b&gt;Montant total minimum TVA {total_min, number, :: currency/EUR}&lt;/b&gt; = {consumption_tva, number, :: currency/EUR} + {total_turpe_tva, number, :: currency/EUR} + {total_taxes_tva, number, :: currency/EUR} - {margin, number, :: currency/EUR}.&lt;b&gt;Montant total maximum TVA {total_max, number, :: currency/EUR}&lt;/b&gt; = {consumption_tva, number, :: currency/EUR} + {total_turpe_tva, number, :: currency/EUR} + {total_taxes_tva, number, :: currency/EUR} + {margin, number, :: currency/EUR}.</target>
+            </segment>
+        </unit>
+        <unit id="83" name="total_tax_applied_rules_regulated">
+            <segment>
+                <source>total_tax_applied_rules_regulated</source>
+                <target>Consommation HT: {consumption_ht, number, :: currency/EUR}. Consommation TVA {consumption_tva, number, :: currency/EUR} = {consumption_ht, number, :: currency/EUR} x (20/100).Abonnement HT: {subscription_ht, number, :: currency/EUR}. Abonnement TVA {subscription_tva, number, :: currency/EUR} = {subscription_ht, number, :: currency/EUR} x (5,5/100)).{tccfe_ht, plural, =0 {} other {TCCFE HT: {tccfe_ht, number, :: currency/EUR}. TCCFE TVA {tccfe_tva, number, :: currency/EUR} = {tccfe_ht, number, :: currency/EUR} x (20/100).}}{tdcfe_ht, plural, =0 {} other {TDCFE HT: {tdcfe_ht, number, :: currency/EUR}. TDCFE TVA {tdcfe_tva, number, :: currency/EUR} = {tdcfe_ht, number, :: currency/EUR} x (20/100).}}{tcfe_ht, plural, =0 {} other {TCFE HT: {tcfe_ht, number, :: currency/EUR}. TCFE TVA {tcfe_tva, number, :: currency/EUR} = {tcfe_ht, number, :: currency/EUR} x (20/100).}}{cspe_ht, plural, =0 {} other {CSPE HT: {cspe_ht, number, :: currency/EUR}. CSPE TVA {cspe_tva, number, :: currency/EUR} = {cspe_ht, number, :: currency/EUR} x (20/100).}}{cta_ht, plural, =0 {} other {CTA HT: {cta_ht, number, :: currency/EUR}. CTA TVA {cta_tva, number, :: currency/EUR} = {cta_ht, number, :: currency/EUR} x (5,5/100).}}Total taxes TVA: {total_taxes_tva, number, :: currency/EUR}.&lt;b&gt;Montant total minimum TVA {total_min, number, :: currency/EUR}&lt;/b&gt; = {consumption_tva, number, :: currency/EUR} + {subscription_tva, number, :: currency/EUR} + {total_taxes_tva, number, :: currency/EUR} - {margin, number, :: currency/EUR}.&lt;b&gt;Montant total maximum TVA {total_max, number, :: currency/EUR}&lt;/b&gt; = {consumption_tva, number, :: currency/EUR} + {subscription_tva, number, :: currency/EUR} + {total_taxes_tva, number, :: currency/EUR} + {margin, number, :: currency/EUR}.</target>
+            </segment>
+        </unit>
+        <unit id="84" name="one_year_no_invoice_applied_rules">
+            <segment>
+                <source>one_year_no_invoice_applied_rules</source>
+                <target>Aucune facture émise du {from, date, short} au {to, date, short}.</target>
+            </segment>
+        </unit>
+        <unit id="85" name="could_not_get_min_max_tax">
+            <segment>
+                <source>could_not_get_min_max_tax</source>
+                <target>Impossible de récupérer les valeurs minimum et maximum de la taxe.</target>
+            </segment>
+        </unit>
+    </file>
+</xliff>

@@ -1,0 +1,112 @@
+{
+  "basic": {
+    "roleId": 2,
+    "expand": "role_permission_codes,role_users",
+    "put": {
+      "name": "Dragostea din tei"
+    },
+    "expected": {
+      "id": 2,
+      "name": "Dragostea din tei",
+      "description": "Dev",
+      "created_at": "@string@.isDateTime()",
+      "updated_at": "@string@.isDateTime()",
+      "users": [
+        {
+          "id": 2,
+          "email": "blanc@test.fr",
+          "first_name": "Michel",
+          "last_name": "Blanc",
+          "mobile": null,
+          "phone": "+376656652",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()",
+          "dashboard": null,
+          "language": "fr",
+          "super_admin": false
+        }
+      ],
+      "permissions": [
+        "management.delivery_point.view",
+        "management.delivery_point.edit",
+        "management.delivery_point.delete"
+      ]
+    }
+  },
+  "reset users and permissions": {
+    "roleId": 1,
+    "expand": "role_permission_codes,role_users",
+    "put": {
+      "name": "Dragostea din tei",
+      "description": "Best song in history",
+      "users": [],
+      "permissions": []
+    },
+    "expected": {
+      "id": 1,
+      "users": [],
+      "name": "Dragostea din tei",
+      "description": "Best song in history",
+      "created_at": "@string@.isDateTime()",
+      "updated_at": "@string@.isDateTime()",
+      "permissions": []
+    }
+  },
+  "Full": {
+    "roleId": 1,
+    "expand": "role_permission_codes,role_users",
+    "put": {
+      "name": "Dragostea din tei",
+      "description": "Best song in history",
+      "users": [
+        1,
+        2
+      ],
+      "permissions": [
+        15,
+        16,
+        17
+      ]
+    },
+    "expected": {
+      "id": 1,
+      "users": [
+        {
+          "id": 1,
+          "email": "admin@test.fr",
+          "first_name": "admin",
+          "last_name": "istrator",
+          "mobile": null,
+          "phone": "+33601020304",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()",
+          "dashboard": null,
+          "language": "fr",
+          "super_admin": true
+        },
+        {
+          "id": 2,
+          "email": "blanc@test.fr",
+          "first_name": "Michel",
+          "last_name": "Blanc",
+          "mobile": null,
+          "phone": "+376656652",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()",
+          "dashboard": null,
+          "language": "fr",
+          "super_admin": false
+        }
+      ],
+      "name": "Dragostea din tei",
+      "description": "Best song in history",
+      "created_at": "@string@.isDateTime()",
+      "updated_at": "@string@.isDateTime()",
+      "permissions": [
+        "management.contract.view",
+        "management.contract.edit",
+        "management.contract.delete"
+      ]
+    }
+  }
+}

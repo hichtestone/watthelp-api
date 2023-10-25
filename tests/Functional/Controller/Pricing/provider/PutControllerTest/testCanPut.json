@@ -1,0 +1,43 @@
+{
+  "negotiated": {
+    "user": "admin@test.fr",
+    "id": 1,
+    "put": {
+      "name": "testname",
+      "type": "negotiated",
+      "consumption_base_price": 154,
+      "started_at": "2005-08-15",
+      "finished_at": "2020-07-16"
+    },
+    "expected": {
+      "id": 1,
+      "name": "testname",
+      "type": "negotiated",
+      "subscription_price": null,
+      "consumption_base_price": 154,
+      "started_at": "@string@.isDateTime()",
+      "finished_at": "@string@.isDateTime()"
+    }
+  },
+  "regulated": {
+    "user": "michel@berger.fr",
+    "id": 6,
+    "put": {
+      "name": "testname",
+      "type": "regulated",
+      "subscription_price": 4565,
+      "consumption_base_price": 727,
+      "started_at": "2005-08-15",
+      "finished_at": "2020-07-16"
+    },
+    "expected": {
+      "id": 6,
+      "name": "testname",
+      "type": "regulated",
+      "subscription_price": 4565,
+      "consumption_base_price": 727,
+      "started_at": "@string@.isDateTime()",
+      "finished_at": "@string@.isDateTime()"
+    }
+  }
+}

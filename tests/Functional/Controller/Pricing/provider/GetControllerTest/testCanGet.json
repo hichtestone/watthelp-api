@@ -1,0 +1,23 @@
+{
+  "Get pricing 2": {
+    "user": "admin@test.fr",
+    "id": 2,
+    "expected": {
+      "id": 2,
+      "name": "Pricing_2",
+      "type": "negotiated",
+      "subscription_price": null,
+      "consumption_base_price": 175,
+      "started_at": "@string@.isDateTime()",
+      "finished_at": "@string@.isDateTime()"
+    }
+  },
+  "restricted": {
+    "user": "blanc@test.fr",
+    "id": 2,
+    "expected": {
+      "id": 2,
+      "name": "Pricing_2"      
+    }
+  }
+}

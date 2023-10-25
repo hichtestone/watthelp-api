@@ -1,0 +1,76 @@
+version: '3.4'
+
+services:
+  mysql:
+    restart: always
+    image: mysql:5.7
+    environment:
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=root
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=watthelp
+    container_name: mysql
+    ports:
+      - 3306:3306
+    volumes:
+      - /var/lib/mysql
+
+  # --- PhpMyAdmin ---
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    depends_on:
+      - mysql
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+    container_name: phpmyadmin
+    ports:
+      - 6600:80
+    links:
+      - mysql
+
+  php:
+    container_name: php
+    build:
+      context: .
+      target: symfony_docker_php
+    depends_on:
+      - mysql
+    links:
+      - mysql
+    volumes:
+      # Comment out the next line in production
+      - .:/srv/app:rw,cached
+      # If you develop on Linux, comment out the following volumes to just use bind-mounted project directory from host
+  #      - /srv/app/var/
+  #      - /srv/app/var/cache/
+  #      - /srv/app/var/logs/
+  #      - /srv/app/var/sessions/
+
+  nginx:
+    build:
+      context: .
+      target: symfony_docker_nginx
+    depends_on:
+      - php
+    volumes:
+      # Comment out the next line in production
+      - ./docker/nginx/conf.d:/etc/nginx/conf.d:ro
+      - ./public:/srv/app/public:ro
+    ports:
+      - '80:80'
+
+  # --- Mercure :) ---
+  mercure:
+    image: dunglas/mercure
+    container_name: watthelp-mercure
+    environment:
+      - JWT_KEY=S5ZmDTvcr3pyA6dKTAusbVsfXUVgLRtK
+      - ALLOW_ANONYMOUS=1
+      - CORS_ALLOWED_ORIGINS=*
+      - PUBLISH_ALLOWED_ORIGINS=*
+      - DEMO=1
+    ports:
+      - "3000:80"
+    expose:
+      - "80"

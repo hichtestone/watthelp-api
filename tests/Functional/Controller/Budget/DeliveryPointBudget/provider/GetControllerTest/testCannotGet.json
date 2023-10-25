@@ -1,0 +1,46 @@
+{
+  "Budget 456465 not found": {
+    "budgetId": 456465,
+    "deliveryPointBudgetId": 1,
+    "errorCode": 404,
+    "expected": {
+      "error": "ResourceNotFound",
+      "messages": [
+        "Ressource non trouvée."
+      ]
+    }
+  },
+  "Delivery Point Budget 456465 not found": {
+    "budgetId": 1,
+    "deliveryPointBudgetId": 456465,
+    "errorCode": 404,
+    "expected": {
+      "error": "ResourceNotFound",
+      "messages": [
+        "Ressource non trouvée."
+      ]
+    }
+  },
+  "Delivery Point Budget does not belong to Budget": {
+    "budgetId": 1,
+    "deliveryPointBudgetId": 3,
+    "errorCode": 403,
+    "expected": {
+      "error": "AccessDenied",
+      "messages": [
+        "Accès rejeté."
+      ]
+    }
+  },
+  "Budget belongs to a different client": {
+    "budgetId": 3,
+    "deliveryPointBudgetId": 5,
+    "errorCode": 403,
+    "expected": {
+      "error": "AccessDenied",
+      "messages": [
+        "Accès rejeté."
+      ]
+    }
+  }
+}

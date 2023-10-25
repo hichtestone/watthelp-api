@@ -1,0 +1,48 @@
+nelmio_api_doc:
+    documentation:
+        definitions:
+            bad_request:
+                description: "400 Bad request."
+                type: object
+                properties:
+                    error:
+                        type: string
+                        example: "Bad Request"
+                    messages:
+                        type: "object"
+
+            not_found:
+                description: "404 Not found."
+                type: object
+                properties:
+                    error:
+                        type: string
+                        example: "Not found"
+                    messages:
+                        type: "object"
+
+            forbidden:
+                description: "403 Forbidden."
+                type: object
+                properties:
+                    error:
+                        type: string
+                        example: "Access Denied"
+                    messages:
+                        type: "object"
+
+        info:
+            title: Watthelp API
+            description: Documentation of watthelp project
+            version: alpha
+        securityDefinitions:
+            Bearer:
+                type: apiKey
+                description: 'Value: Bearer {jwt}'
+                name: Authorization
+                in: header
+        security:
+            - Bearer: []
+    areas:
+        path_patterns:
+            - ^(?!/doc$)

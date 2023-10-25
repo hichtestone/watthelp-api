@@ -1,0 +1,68 @@
+{
+  "Get analysis 2": {
+    "user": "admin@test.fr",
+    "id": 2,
+    "expand": null,
+    "expected": {
+      "id": 2,
+      "status": "warning",
+      "created_at": "@string@.isDateTime()"
+    }
+  },
+  "expand data": {
+    "user": "admin@test.fr",
+    "id": 1,
+    "expand": "analysis_invoice,analysis_delivery_point_invoice_analyses,analysis_item_analyses,delivery_point_invoice_analysis_item_analyses",
+    "expected": {
+      "id": 1,
+      "status": "ok",
+      "created_at": "@string@.isDateTime()",
+      "invoice": {
+        "id": 1,
+        "reference": "FL012018",
+        "amount_ht": 900,
+        "amount_tva": 200,
+        "amount_ttc": 1100,
+        "emitted_at": "@string@.isDateTime()"
+      },
+      "delivery_point_invoice_analyses": [
+        {
+          "id": 1,
+          "item_analyses": [
+            {
+              "id": 1,
+              "analyzer": null,
+              "group": "invoice",
+              "status": "warning",
+              "messages": [
+                "Impossible de trouver une date de fin de consommation."
+              ],
+              "field": "consumption.finished_at"
+            }
+          ],
+          "status": "ok"
+        }
+      ],
+      "item_analyses": [
+        {
+          "id": 1,
+          "analyzer": null,
+          "group": "invoice",
+          "status": "warning",
+          "messages": [
+            "Impossible de trouver une date de fin de consommation."
+          ],
+          "field": "consumption.finished_at"
+        }
+      ]
+    }
+  },
+  "Get analysis 3": {
+    "user": "blanc@test.fr",
+    "id": 3,
+    "expand": null,
+    "expected": {
+      "id": 3
+    }
+  }
+}

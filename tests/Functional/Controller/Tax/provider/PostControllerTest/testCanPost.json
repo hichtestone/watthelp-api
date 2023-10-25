@@ -1,0 +1,21 @@
+{
+  "basic": {
+    "post": {
+      "cspe": 114,
+      "tdcfe": 479,
+      "tccfe": 12,
+      "cta": 2704,
+      "started_at": "2020-05-12",
+      "finished_at": "2020-07-16"
+    },
+    "expected": {
+      "id": 8,
+      "cspe": 114,
+      "tdcfe": 479,
+      "tccfe": 12,
+      "cta": 2704,
+      "started_at": "@string@.isDateTime()",
+      "finished_at": "@string@.isDateTime()"
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "Get contract 2": {
+    "user": "admin@test.fr",
+    "id": 2,
+    "expand": null,
+    "expected": {
+      "id": 2,
+      "reference": "CONTRACT_REF_89756326",
+      "provider": "ENGIE",
+      "type": "negotiated",
+      "invoice_period": "1",
+      "started_at": "@string@.isDateTime()",
+      "finished_at": null
+    }
+  },
+  "Expand data contract 1": {
+    "user": "admin@test.fr",
+    "id": 1,
+    "expand": "contract_pricings",
+    "expected": {
+      "id": 1,
+      "reference": "CONTRACT_REF_645894623",
+      "provider": "EDF",
+      "type": "negotiated",
+      "invoice_period": "6",
+      "started_at": "@string@.isDateTime()",
+      "finished_at": "@string@.isDateTime()",
+      "pricings": [
+        {
+          "id": 1,
+          "name": "Pricing_1",
+          "type": "negotiated",
+          "subscription_price": null,
+          "consumption_base_price": 12,
+          "started_at": "@string@.isDateTime()",
+          "finished_at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  },
+  "Restricted": {
+    "user": "blanc@test.fr",
+    "id": 1,
+    "expand": null,
+    "expected": {
+      "id": 1
+    }
+  }
+}

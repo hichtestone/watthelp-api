@@ -1,0 +1,94 @@
+{
+  "Budget 456465 not found": {
+    "user": "admin@test.fr",
+    "id": 456465,
+    "put": {
+      "average_price": 4658974,
+      "total_hours": 3650
+    },
+    "errorCode": 404,
+    "expected": {
+      "error": "ResourceNotFound",
+      "messages": [
+        "Ressource non trouvée."
+      ]
+    }
+  },
+  "Belongs to a different client": {
+    "user": "admin@test.fr",
+    "id": 3,
+    "put": {
+      "average_price": 4658974,
+      "total_hours": 3650
+    },
+    "errorCode": 403,
+    "expected": {
+      "error": "AccessDenied",
+      "messages": [
+        "Accès rejeté."
+      ]
+    }
+  },
+  "missing fields": {
+    "user": "admin@test.fr",
+    "id": 1,
+    "put": {},
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "average_price": [
+          "Ce champ est manquant."
+        ],
+        "total_hours": [
+          "Ce champ est manquant."
+        ]
+      }
+    }
+  },
+  "invalid type": {
+    "user": "admin@test.fr",
+    "id": 1,
+    "put": {
+      "total_consumption": "6912300",
+      "total_amount": "110596800000",
+      "average_price": "1600000",
+      "total_hours": "3650"
+    },
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "average_price": [
+          "Cette valeur doit être de type integer."
+        ],
+        "total_hours": [
+          "Cette valeur doit être de type integer."
+        ],
+        "total_consumption": [
+          "Cette valeur doit être de type integer."
+        ],
+        "total_amount": [
+          "Cette valeur doit être de type integer."
+        ]
+      }
+    }
+  },
+  "doesn't have permission": {
+    "user": "blanc@test.fr",
+    "id": 1,
+    "put": {
+      "total_consumption": 6912300,
+      "total_amount": 110596800000,
+      "average_price": 1600000,
+      "total_hours": 3650
+    },
+    "expected_status_code": 403,
+    "expected_response": {
+      "error": "AccessDenied",
+      "messages": [
+        "Accès rejeté."
+      ]
+    }
+  }
+}

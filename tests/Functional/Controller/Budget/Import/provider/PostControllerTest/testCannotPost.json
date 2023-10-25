@@ -1,0 +1,87 @@
+{
+  "missing fields": {
+    "user": "admin@test.fr",
+    "post": {},
+    "expected_status_code": 400,
+    "expected_response": {
+      "error": "InvalidRequest",
+      "messages": {
+        "file": [
+          "Ce champ est manquant."
+        ]
+      }
+    }
+  },
+  "invalid sheet names": {
+    "user": "admin@test.fr",
+    "post": {
+      "file": 2
+    },
+    "expected_status_code": 400,
+    "expected_response": {
+      "error": "Bad Request",
+      "messages": "Le fichier est incorrect: l'onglet Budgets n'existe pas.Le fichier est incorrect: l'onglet Budgets PDL n'existe pas."
+    }
+  },
+  "invalid columns": {
+    "user": "admin@test.fr",
+    "post": {
+      "file": 20
+    },
+    "expected_status_code": 400,
+    "expected_response": {
+      "error": "Bad Request",
+      "messages": "Le fichier Budgets est incorrect: Cellule B1, valeur: Nombre d'heures de  annuel, nous attendions: Nombre d'heures de fonctionnement annuel.Le fichier Budgets PDL est incorrect: Cellule B1, valeur: PDL, nous attendions: Référence PDL.Le fichier Budgets PDL est incorrect: Cellule G1, valeur: Gradation (%, nous attendions: Gradation (%).Le fichier Budgets PDL est incorrect: Cellule K1, valeur: Mois de réalisation des travaux (1 à 12), nous attendions: Date de réalisation des travaux.Le fichier Budgets PDL est incorrect: Cellule L1, valeur: , nous attendions: Puissance installée après travaux (kWh)."
+    }
+  },
+  "invalid mime type": {
+    "user": "admin@test.fr",
+    "post": {
+      "file": 4
+    },
+    "expected_status_code": 400,
+    "expected_response": {
+      "error": "InvalidRequest",
+      "messages": {
+        "file": [
+          "Le type du fichier est incorrect, un fichier excel est attendu."
+        ]
+      }
+    }
+  },
+  "invalid budget sheet data": {
+    "user": "admin@test.fr",
+    "post": {
+      "file": 21
+    },
+    "expected_status_code": 400,
+    "expected_response": {
+      "error": "Bad Request",
+      "messages": "L'onglet Budgets est incorrect: Cellule A4, l'Année doit être unique.L'onglet Budgets est incorrect: Cellule B5, le Nombre d'heures de fonctionnement annuel est obligatoire.L'onglet Budgets est incorrect: Cellule C5, le Prix moyen énergie HT est obligatoire."
+    }
+  },
+  "invalid dp budget sheet data": {
+    "user": "admin@test.fr",
+    "post": {
+      "file": 22
+    },
+    "expected_status_code": 400,
+    "expected_response": {
+      "error": "Bad Request",
+      "messages": "L'onglet Budgets PDL est incorrect: Cellule A2, l'Année est obligatoire.L'onglet Budgets PDL est incorrect: Cellule B3, la Référence PDL est obligatoire.L'onglet Budgets PDL est incorrect: Cellule K3, la date doit appartenir à l'année 2021 spécifiée dans la cellule A3.Le fichier est incorrect: Cellule J4, valeur: , nous attendions: \"oui\" ou \"non\".Le fichier est incorrect: Cellule B6, la Référence REF_DEV_POINT_1 pour l'année 2022 n'est pas unique.Le fichier est incorrect: Cellule J6, valeur: ah, nous attendions: \"oui\" ou \"non\".L'onglet Budgets PDL est incorrect: Cellule A7, l'Année 2023 n'existe pas dans l'onglet Budgets.Le ou les point(s) de livraison REF_DEV_POINT_3 n'existent pas."
+    }
+  },
+  "doesn't have permission": {
+    "user": "blanc@test.fr",
+    "post": {
+      "file": 20
+    },
+    "errorCode": 403,
+    "expected": {
+      "error": "AccessDenied",
+      "messages": [
+        "Accès rejeté."
+      ]
+    }
+  }
+}

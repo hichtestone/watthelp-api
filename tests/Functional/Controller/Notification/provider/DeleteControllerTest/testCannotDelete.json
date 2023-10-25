@@ -1,0 +1,26 @@
+{
+  "Notification 7887898989 not found": {
+    "ids": [
+      7887898989
+    ],
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "ids": [
+          "This value should satisfy at least one of the following constraints: [1] Each element of this collection should satisfy its own set of constraints. [2] Cette valeur doit être identique à string \"*\"."
+        ]
+      }
+    }
+  },
+  "Notification belongs to another user": {
+    "ids": [
+      4
+    ],
+    "errorCode": 400,
+    "expected": {
+      "error": "Bad Request",
+      "messages": "L'entité n'appartient pas à l'utilisateur."
+    }
+  }
+}

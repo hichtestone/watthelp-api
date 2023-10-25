@@ -1,0 +1,86 @@
+{
+  "basic": {
+    "expand": null,
+    "post": {
+      "reference": "ref_65489462",
+      "started_at": "2020-08-15",
+      "provider": "OTHER",
+      "type": "negotiated",
+      "invoice_period": "2"
+    },
+    "expected": {
+      "id": 6,
+      "reference": "ref_65489462",
+      "provider": "OTHER",
+      "type": "negotiated",
+      "invoice_period": "2",
+      "started_at": "@string@.isDateTime()",
+      "finished_at": null
+    }
+  },
+  "with finished_at": {
+    "expand": "contract_pricings",
+    "post": {
+      "reference": "ref_65489462",
+      "provider": "EDF",
+      "type": "negotiated",
+      "invoice_period": "6",
+      "started_at": "2020-01-01",
+      "finished_at": "2021-01-01"
+    },
+    "expected": {
+      "id": 6,
+      "reference": "ref_65489462",
+      "provider": "EDF",
+      "type": "negotiated",
+      "invoice_period": "6",
+      "started_at": "@string@.isDateTime()",
+      "finished_at": "@string@.isDateTime()",
+      "pricings": []
+    }
+  },
+  "with pricings": {
+    "expand": "contract_pricings",
+    "post": {
+      "reference": "ref_65489462",
+      "started_at": "2020-01-01",
+      "finished_at": "2021-01-01",
+      "provider": "ENGIE",
+      "type": "negotiated",
+      "invoice_period": null,
+      "pricing_ids": [
+        3,
+        4
+      ]
+    },
+    "expected": {
+      "id": 6,
+      "reference": "ref_65489462",
+      "provider": "ENGIE",
+      "type": "negotiated",
+      "invoice_period": null,
+      "started_at": "@string@.isDateTime()",
+      "finished_at": "@string@.isDateTime()",
+      "pricings": [
+        {
+          "id": 3,
+          "name": "Pricing_3",
+          "type": "negotiated",
+          "subscription_price": null,
+          "consumption_base_price": 723,
+          "started_at": "@string@.isDateTime()",
+          "finished_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 4,
+          "name": "Pricing_4",
+          "type": "negotiated",
+          "subscription_price": null,
+          "consumption_base_price": 812,
+          "started_at": "@string@.isDateTime()",
+          "finished_at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "nonexistent sort": {
+    "sort": "whatever",
+    "filters": null,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "sort": [
+          "Cette valeur doit être l'un des choix proposés."
+        ]
+      }
+    }
+  }
+}

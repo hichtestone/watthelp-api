@@ -1,0 +1,107 @@
+{
+  "basic": {
+    "user": "blanc@test.fr",
+    "id": 2,
+    "expand": null,
+    "put": {
+      "email": "blanc@test.fr",
+      "first_name": "Michel",
+      "last_name": "Blanc"
+    },
+    "expected": {
+      "id": 2,
+      "email": "blanc@test.fr",
+      "first_name": "Michel",
+      "last_name": "Blanc",
+      "phone": "+376656652",
+      "mobile": null,
+      "created_at": "@string@.isDateTime()",
+      "updated_at": "@string@.isDateTime()",
+      "dashboard": null,
+      "language": "fr",
+      "super_admin": false
+    }
+  },
+  "special characters": {
+    "user": "blanc@test.fr",
+    "id": 2,
+    "expand": null,
+    "put": {
+      "email": "a!dm1n@te-st.fr",
+      "first_name": "Mîchél",
+      "last_name": "Blànc"
+    },
+    "expected": {
+      "id": 2,
+      "email": "a!dm1n@te-st.fr",
+      "first_name": "Mîchél",
+      "last_name": "Blànc",
+      "phone": "+376656652",
+      "mobile": null,
+      "created_at": "@string@.isDateTime()",
+      "updated_at": "@string@.isDateTime()",
+      "dashboard": null,
+      "language": "fr",
+      "super_admin": false
+    }
+  },
+  "full": {
+    "user": "blanc@test.fr",
+    "id": 2,
+    "expand": "user_roles",
+    "put": {
+      "email": "qsdjkl@test.fr",
+      "first_name": "Michelle",
+      "last_name": "Obama",
+      "phone": "0677889911",
+      "mobile": "0611223344",
+      "password": "Smarthelp1!",
+      "roles": [3]
+    },
+    "expected": {
+      "id": 2,
+      "email": "qsdjkl@test.fr",
+      "first_name": "Michelle",
+      "last_name": "Obama",
+      "phone": "0677889911",
+      "mobile": "0611223344",
+      "created_at": "@string@.isDateTime()",
+      "updated_at": "@string@.isDateTime()",
+      "dashboard": null,
+      "language": "fr",
+      "super_admin": false,
+      "roles": [
+        {
+            "id": 3,
+            "name": "ROLE_MANAGER",
+            "description": "Manager",
+            "created_at": "@string@.isDateTime()",
+            "updated_at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  },
+  "other user": {
+    "user": "admin@test.fr",
+    "id": 2,
+    "expand": null,
+    "put": {
+      "email": "blanc@test.fr",
+      "first_name": "Michel",
+      "last_name": "Blanc"
+    },
+    "expected": {
+      "id": 2,
+      "email": "blanc@test.fr",
+      "first_name": "Michel",
+      "last_name": "Blanc",
+      "phone": "+376656652",
+      "mobile": null,
+      "created_at": "@string@.isDateTime()",
+      "updated_at": "@string@.isDateTime()",
+      "dashboard": null,
+      "language": "fr",
+      "super_admin": false
+    }
+  }
+}

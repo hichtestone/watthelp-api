@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="fr" trgLang="en">
+    <file id="validators">
+        <unit id="1" name="file_type_incorrect_expected_excel">
+            <segment state="translated">
+                <source>Le type du fichier est incorrect, un fichier excel est attendu.</source>
+                <target>The file type is incorrect, an excel file was expected.</target>
+            </segment>
+        </unit>
+        <unit id="2" name="file_type_incorrect_expected_zip">
+            <segment>
+                <source>Le type du fichier est incorrect, une archive zip est attendue.</source>
+                <target></target>
+            </segment>
+        </unit>
+        <unit id="3" name="pricing_type_must_match_contract_type">
+            <segment>
+                <source>La tarification doit être du même type que le contrat.</source>
+                <target></target>
+            </segment>
+        </unit>
+        <unit id="4" name="entity_does_not_belong_to_user">
+            <segment>
+                <source>L'entité n'appartient pas à l'utilisateur.</source>
+                <target></target>
+            </segment>
+        </unit>
+        <unit id="5" name="must_be_same_year_as_budget">
+            <segment>
+                <source>Doit faire partie de la même année que le budget.</source>
+                <target></target>
+            </segment>
+        </unit>
+        <unit id="6" name="entity_does_not_belong_to_budget">
+            <segment>
+                <source>L'entité {entityId} n'appartient pas au budget.</source>
+                <target></target>
+            </segment>
+        </unit>
+        <unit id="7" name="only_images_are_accepted">
+            <segment>
+                <source>Seules les images sont acceptées.</source>
+                <target></target>
+            </segment>
+        </unit>
+        <unit id="8" name="must_be_null_or_existing_pdf">
+            <segment>
+                <source>Doit être null ou un fichier existant ayant application/pdf comme mime type.</source>
+                <target></target>
+            </segment>
+        </unit>
+        <unit id="9" name="budget_of_year_already_exists">
+            <segment>
+                <source>Le budget de cette année existe déjà.</source>
+                <target></target>
+            </segment>
+        </unit>
+        <unit id="10" name="pricings_overlap">
+            <segment>
+                <source>Les tarifications {first_pricing} et {second_pricing} se chevauchent.</source>
+                <target></target>
+            </segment>
+        </unit>
+        <unit id="11" name="reference_already_exists">
+            <segment>
+                <source>Cette reference existe déjà.</source>
+                <target></target>
+            </segment>
+        </unit>
+        <unit id="12" name="code_already_exists">
+            <segment>
+                <source>Ce code existe déjà.</source>
+                <target></target>
+            </segment>
+        </unit>
+        <unit id="13" name="subscription_price_must_be_provided_if_regulated">
+            <segment>
+                <source>Le prix de l'abonnement doit être spécifié si la tarification est de type TRV.</source>
+                <target></target>
+            </segment>
+        </unit>
+        <unit id="14" name="subscription_price_cant_be_provided_if_negotiated">
+            <segment>
+                <source>Le prix de l'abonnement ne doit pas être spécifié si la tarification est de type Offre de marché.</source>
+                <target></target>
+            </segment>
+        </unit>
+        <unit id="15" name="budget_of_year_does_not_exist">
+            <segment>
+                <source>Le budget de cette année n'existe pas.</source>
+                <target></target>
+            </segment>
+        </unit>
+        <unit id="16" name="budget_of_year_is_incomplete">
+            <segment>
+                <source>Le budget de l'année {year} est incomplet.</source>
+                <target></target>
+            </segment>
+        </unit>
+        <unit id="17" name="email_address_already_used">
+            <segment>
+                <source>Cette adresse email est déjà utilisée.</source>
+                <target></target>
+            </segment>
+        </unit>
+    </file>
+</xliff>

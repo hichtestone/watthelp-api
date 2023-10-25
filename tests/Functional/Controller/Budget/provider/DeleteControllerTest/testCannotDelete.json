@@ -1,0 +1,45 @@
+{
+  "Missing fields": {
+    "user": "admin@test.fr",
+    "body": {},
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "ids": [
+          "Ce champ est manquant."
+        ]
+      }
+    }
+  },
+  "Budget belongs to another client": {
+    "user": "admin@test.fr",
+    "body": {
+      "ids": [
+        3
+      ]
+    },
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "ids": [
+          "This value should satisfy at least one of the following constraints: [1] Each element of this collection should satisfy its own set of constraints. [2] Cette valeur doit être identique à string \"*\"."
+        ]
+      }
+    }
+  },
+  "doesn't have permission": {
+    "user": "blanc@test.fr",
+    "body": {
+      "ids": [1]
+    },
+    "errorCode": 403,
+    "expected": {
+      "error": "AccessDenied",
+      "messages": [
+        "Accès rejeté."
+      ]
+    }
+  }
+}

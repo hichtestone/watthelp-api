@@ -1,0 +1,407 @@
+{
+  "basic": {
+    "user": "admin@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": null,
+    "sort_order": null,
+    "filters": null,
+    "expected": {
+      "count": 3,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 1,
+          "name": "ROLE_ADMIN",
+          "description": "Administrator",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 2,
+          "name": "ROLE_DEV",
+          "description": "Dev",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 3,
+          "name": "ROLE_MANAGER",
+          "description": "Manager",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  },
+  "sorted by id desc": {
+    "user": "admin@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": "id",
+    "sort_order": "desc",
+    "filters": null,
+    "expected": {
+      "count": 3,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 3,
+          "name": "ROLE_MANAGER",
+          "description": "Manager",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 2,
+          "name": "ROLE_DEV",
+          "description": "Dev",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 1,
+          "name": "ROLE_ADMIN",
+          "description": "Administrator",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  },
+  "sorted by name asc": {
+    "user": "admin@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": "name",
+    "sort_order": "asc",
+    "filters": null,
+    "expected": {
+      "count": 3,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 1,
+          "name": "ROLE_ADMIN",
+          "description": "Administrator",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 2,
+          "name": "ROLE_DEV",
+          "description": "Dev",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 3,
+          "name": "ROLE_MANAGER",
+          "description": "Manager",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  },
+  "sorted by description desc": {
+    "user": "admin@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": "description",
+    "sort_order": "desc",
+    "filters": null,
+    "expected": {
+      "count": 3,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 3,
+          "name": "ROLE_MANAGER",
+          "description": "Manager",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 2,
+          "name": "ROLE_DEV",
+          "description": "Dev",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 1,
+          "name": "ROLE_ADMIN",
+          "description": "Administrator",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  },
+  "sorted by createdAt asc": {
+    "user": "admin@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": "created_at",
+    "sort_order": "asc",
+    "filters": null,
+    "expected": {
+      "count": 3,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 2,
+          "name": "ROLE_DEV",
+          "description": "Dev",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 1,
+          "name": "ROLE_ADMIN",
+          "description": "Administrator",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 3,
+          "name": "ROLE_MANAGER",
+          "description": "Manager",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  },
+  "sorted by updatedAt desc": {
+    "user": "admin@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": "updated_at",
+    "sort_order": "desc",
+    "filters": null,
+    "expected": {
+      "count": 3,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 3,
+          "name": "ROLE_MANAGER",
+          "description": "Manager",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 1,
+          "name": "ROLE_ADMIN",
+          "description": "Administrator",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 2,
+          "name": "ROLE_DEV",
+          "description": "Dev",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  },
+  "page 2": {
+    "user": "admin@test.fr",
+    "page": 2,
+    "per_page": 2,
+    "sort": null,
+    "sort_order": null,
+    "filters": null,
+    "expected": {
+      "count": 3,
+      "page": 2,
+      "per_page": 2,
+      "data": [
+        {
+          "id": 3,
+          "name": "ROLE_MANAGER",
+          "description": "Manager",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  },
+  "filtered by ids": {
+    "user": "admin@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": null,
+    "sort_order": null,
+    "filters": {
+      "ids": [
+        1,
+        3
+      ]
+    },
+    "expected": {
+      "count": 2,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 1,
+          "name": "ROLE_ADMIN",
+          "description": "Administrator",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 3,
+          "name": "ROLE_MANAGER",
+          "description": "Manager",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  },
+  "filtered by exclude_ids": {
+    "user": "admin@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": null,
+    "sort_order": null,
+    "filters": {
+      "exclude_ids": [
+        2
+      ]
+    },
+    "expected": {
+      "count": 2,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 1,
+          "name": "ROLE_ADMIN",
+          "description": "Administrator",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 3,
+          "name": "ROLE_MANAGER",
+          "description": "Manager",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  },
+  "filtered by permissions": {
+    "user": "admin@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": null,
+    "sort_order": null,
+    "filters": {
+      "permissions": [
+        "management.delivery_point.view"
+      ]
+    },
+    "expected": {
+      "count": 2,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 1,
+          "name": "ROLE_ADMIN",
+          "description": "Administrator",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 2,
+          "name": "ROLE_DEV",
+          "description": "Dev",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  },
+  "filtered by name": {
+    "user": "admin@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": null,
+    "sort_order": null,
+    "filters": {
+      "name": "manager"
+    },
+    "expected": {
+      "count": 1,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 3,
+          "name": "ROLE_MANAGER",
+          "description": "Manager",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  },
+  "filtered by description": {
+    "user": "admin@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": null,
+    "sort_order": null,
+    "filters": {
+      "description": "Dev"
+    },
+    "expected": {
+      "count": 1,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 2,
+          "name": "ROLE_DEV",
+          "description": "Dev",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  },
+  "restricted": {
+    "user": "polnareff@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": null,
+    "sort_order": null,
+    "filters": null,
+    "expected": {
+      "count": 1,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 4,
+          "name": "ROLE_ADMIN"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "invoice 1": {
+    "invoiceId": 1,
+    "existingAnalyses": 1,
+    "expectedAnalyses": 1,
+    "expected": {}
+  },
+  "invoice 5": {
+    "invoiceId": 5,
+    "existingAnalyses": 0,
+    "expectedAnalyses": 1,
+    "expected": {}
+  }
+}

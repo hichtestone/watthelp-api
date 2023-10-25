@@ -1,0 +1,14 @@
+{
+  "nonexistent permission": {
+    "user": "admin@test.fr",
+    "permissions": "whatever"
+  },
+  "one nonexistent permission": {
+    "user": "admin@test.fr",
+    "permissions": ["management.contract.view","donot.exist"]
+  },
+  "multiple nonexistent permission": {
+    "user": "admin@test.fr",
+    "permissions": ["what.ever","donot.exist"]
+  }
+}

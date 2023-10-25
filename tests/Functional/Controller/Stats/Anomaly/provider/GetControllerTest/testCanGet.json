@@ -1,0 +1,11 @@
+{
+  "basic": {
+    "expected": {
+      "num_anomalies": "4",
+      "stat_ignored": "1",
+      "stat_unsolved": "0",
+      "stat_processing": "1",
+      "stat_solved": "2"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "Admin": {
+    "email": "admin@test.fr",
+    "password": "admin",
+    "expected": {
+      "refresh_token": "@string@",
+      "token": "@string@",
+      "user": []
+    }
+  }
+}

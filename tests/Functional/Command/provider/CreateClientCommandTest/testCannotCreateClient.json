@@ -1,0 +1,14 @@
+{
+  "email already taken": {
+    "arguments": {
+      "clientName": "LeClient",
+      "clientLanguage": "fr",
+      "userEmail": "admin@test.fr",
+      "userPassword": "admin",
+      "userFirstname": "Eude-Grégoire",
+      "userLastname": "Martin"
+    },
+    "options": {},
+    "expected": "A client with the mail address admin@test.fr already exists"
+  }
+}

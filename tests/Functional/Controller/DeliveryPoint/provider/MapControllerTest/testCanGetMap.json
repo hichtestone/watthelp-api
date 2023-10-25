@@ -1,0 +1,20 @@
+{
+  "Can get map": {
+    "expected": [
+      {
+        "id": 1,
+        "address": "1 Bd de la Croisette",
+        "longitude": "7.018060",
+        "latitude": "43.551420",
+        "is_in_scope": true
+      },
+      {
+        "id": 2,
+        "address": "2 Bd de la Croisette",
+        "longitude": null,
+        "latitude": null,
+        "is_in_scope": false
+      }
+    ]
+  }
+}

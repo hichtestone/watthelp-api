@@ -1,0 +1,41 @@
+{
+  "Notification 1 is read": {
+    "user": "admin@test.fr",
+    "id": "1",
+    "patch": {
+      "operations": [
+        {
+          "op": "replace",
+          "path": "/read",
+          "value": true
+        }
+      ]
+    }
+  },
+  "Unread notification 2 by setting it up to false": {
+    "user": "admin@test.fr",
+    "id": "2",
+    "patch": {
+      "operations": [
+        {
+          "op": "replace",
+          "path": "/read",
+          "value": false
+        }
+      ]
+    }
+  },
+  "Mark all notification as read": {
+    "user": "admin@test.fr",
+    "id": "*",
+    "patch": {
+      "operations": [
+        {
+          "op": "replace",
+          "path": "/read",
+          "value": false
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "period end is before period start": {
+    "user": "admin@test.fr",
+    "params": {
+      "start": "2020-01-01",
+      "end": "2019-06-01"
+    },
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": [
+        "Le début de la période doit être inférieur à la fin de la période."
+      ]
+    }
+  },
+  "doesn't have permission": {
+    "user": "blanc@test.fr",
+    "params": {},
+    "errorCode": 403,
+    "expected": {
+      "error": "AccessDenied",
+      "messages": [
+        "Accès rejeté."
+      ]
+    }
+  }
+}

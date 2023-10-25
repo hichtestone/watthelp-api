@@ -1,0 +1,425 @@
+{
+  "Get delivery point 3": {
+    "user": "michel@berger.fr",
+    "id": 3,
+    "expand": null,
+    "expected": {
+      "id": 3,
+      "name": "DeliveryPoint3",
+      "reference": "REF_DEV_POINT_3",
+      "code": null,
+      "address": "3 Bd de la Croisette",
+      "latitude": null,
+      "longitude": null,
+      "meter_reference": "whatever",
+      "is_in_scope": true,
+      "scope_date": "@string@.isDateTime()",
+      "creation_mode": "invoice_import",
+      "power": "7.3",
+      "created_at": "@string@.isDateTime()",
+      "updated_at": "@string@.isDateTime()",
+      "description": "description pdl"
+    }
+  },
+  "expand data": {
+    "user": "admin@test.fr",
+    "id": 1,
+    "expand": "delivery_point_contract,delivery_point_photo,delivery_point_delivery_point_invoices,delivery_point_invoice_invoice,delivery_point_invoice_invoice_consumption,delivery_point_invoice_invoice_subscription,delivery_point_invoice_invoice_taxes,delivery_point_invoice_delivery_point_invoice_analysis,delivery_point_invoice_analysis_item_analyses,power_history",
+    "expected": {
+      "id": 1,
+      "name": "DeliveryPoint1",
+      "reference": "REF_DEV_POINT_1",
+      "code": "CODE_DEV_POINT_1",
+      "address": "1 Bd de la Croisette",
+      "latitude": "43.551420",
+      "longitude": "7.018060",
+      "meter_reference": "whatever",
+      "is_in_scope": true,
+      "scope_date": "@string@.isDateTime()",
+      "creation_mode": "scope_import",
+      "power": "7.2",
+      "created_at": "@string@.isDateTime()",
+      "updated_at": "@string@.isDateTime()",
+      "contract": {
+        "id": 1,
+        "reference": "CONTRACT_REF_645894623",
+        "started_at": "@string@.isDateTime()",
+        "finished_at": "@string@.isDateTime()",
+        "type": "negotiated",
+        "invoice_period": "6",
+        "provider": "EDF"
+      },
+      "photo": {
+        "id": 1,
+        "name": "file1.png",
+        "raw": "000000001/file1.png",
+        "thumb": "000000001/thumb/file1.png",
+        "mime": "image/png",
+        "created_at": "@string@.isDateTime()",
+        "updated_at": "@string@.isDateTime()"
+      },
+      "description": "description du pdl",
+      "delivery_point_invoices": [
+        {
+          "id": 1,
+          "amount_ht": 4636,
+          "amount_tva": 5321,
+          "amount_ttc": 685,
+          "power_subscribed": "48.0",
+          "type": "estimated",
+          "invoice": {
+            "id": 1,
+            "reference": "FL012018",
+            "amount_ht": 900,
+            "amount_tva": 200,
+            "amount_ttc": 1100,
+            "emitted_at": "@string@.isDateTime()"
+          },
+          "consumption": {
+            "id": 1,
+            "index_start": 40903,
+            "index_started_at": "@string@.isDateTime()",
+            "index_finish": 43272,
+            "index_finished_at": "@string@.isDateTime()",
+            "started_at": "@string@.isDateTime()",
+            "finished_at": "@string@.isDateTime()",
+            "quantity": 2369,
+            "unit_price": 546,
+            "total": 2015
+          },
+          "subscription": {
+            "id": 1,
+            "total": 1125,
+            "quantity": 1,
+            "unit_price": 1125,
+            "started_at": "@string@.isDateTime()",
+            "finished_at": "@string@.isDateTime()"
+          },
+          "taxes": [
+            {
+              "id": 1,
+              "type": "cspe",
+              "quantity": 369,
+              "unit_price": 165,
+              "total": 609,
+              "started_at": "@string@.isDateTime()",
+              "finished_at": "@string@.isDateTime()"
+            },
+            {
+              "id": 2,
+              "type": "tdcfe",
+              "quantity": 369,
+              "unit_price": 317,
+              "total": 117,
+              "started_at": "@string@.isDateTime()",
+              "finished_at": "@string@.isDateTime()"
+            },
+            {
+              "id": 3,
+              "type": "tccfe",
+              "quantity": 369,
+              "unit_price": 609,
+              "total": 225,
+              "started_at": "@string@.isDateTime()",
+              "finished_at": "@string@.isDateTime()"
+            },
+            {
+              "id": 4,
+              "type": "cta",
+              "quantity": 1404,
+              "unit_price": 2704,
+              "total": 380,
+              "started_at": null,
+              "finished_at": null
+            },
+            {
+              "id": 5,
+              "type": "cspe",
+              "quantity": 369,
+              "unit_price": 165,
+              "total": 609,
+              "started_at": "@string@.isDateTime()",
+              "finished_at": "@string@.isDateTime()"
+            }
+          ],
+          "delivery_point_invoice_analysis": {
+            "id": 1,
+            "item_analyses": [
+              {
+                "id": 1,
+                "analyzer": null,
+                "group": "invoice",
+                "status": "warning",
+                "messages": [
+                  "Impossible de trouver une date de fin de consommation."
+                ],
+                "field": "consumption.finished_at"
+              }
+            ],
+            "status": "ok"
+          }
+        },
+        {
+          "id": 2,
+          "amount_ht": 4636,
+          "amount_tva": 5321,
+          "amount_ttc": 685,
+          "power_subscribed": "48.0",
+          "type": "estimated",
+          "invoice": {
+            "id": 2,
+            "reference": "FL032018",
+            "amount_ht": 1000,
+            "amount_tva": 200,
+            "amount_ttc": 1200,
+            "emitted_at": "@string@.isDateTime()"
+          },
+          "consumption": {
+            "id": 2,
+            "index_start": 43272,
+            "index_started_at": "@string@.isDateTime()",
+            "index_finish": 44154,
+            "index_finished_at": "@string@.isDateTime()",
+            "started_at": "@string@.isDateTime()",
+            "finished_at": "@string@.isDateTime()",
+            "quantity": 882,
+            "unit_price": 546,
+            "total": 2015
+          },
+          "subscription": {
+            "id": 2,
+            "total": 1125,
+            "quantity": 1,
+            "unit_price": 1125,
+            "started_at": "@string@.isDateTime()",
+            "finished_at": "@string@.isDateTime()"
+          },
+          "taxes": [],
+          "delivery_point_invoice_analysis": {
+            "id": 2,
+            "item_analyses": [
+              {
+                "id": 2,
+                "analyzer": null,
+                "group": null,
+                "status": "ok",
+                "messages": [],
+                "field": null
+              }
+            ],
+            "status": "ok"
+          }
+        },
+        {
+          "id": 3,
+          "amount_ht": 4636,
+          "amount_tva": 5321,
+          "amount_ttc": 685,
+          "power_subscribed": "48.0",
+          "type": "estimated",
+          "invoice": {
+            "id": 3,
+            "reference": "FL092018",
+            "amount_ht": 1000,
+            "amount_tva": 200,
+            "amount_ttc": 1200,
+            "emitted_at": "@string@.isDateTime()"
+          },
+          "consumption": {
+            "id": 3,
+            "index_start": 44154,
+            "index_started_at": "@string@.isDateTime()",
+            "index_finish": 44988,
+            "index_finished_at": "@string@.isDateTime()",
+            "started_at": "@string@.isDateTime()",
+            "finished_at": "@string@.isDateTime()",
+            "quantity": 834,
+            "unit_price": 546,
+            "total": 2015
+          },
+          "subscription": {
+            "id": 3,
+            "total": 1125,
+            "quantity": 1,
+            "unit_price": 1125,
+            "started_at": "@string@.isDateTime()",
+            "finished_at": "@string@.isDateTime()"
+          },
+          "taxes": [],
+          "delivery_point_invoice_analysis": null
+        },
+        {
+          "id": 4,
+          "amount_ht": 4636,
+          "amount_tva": 5321,
+          "amount_ttc": 685,
+          "power_subscribed": "48.0",
+          "type": "estimated",
+          "invoice": {
+            "id": 4,
+            "reference": "FL012019",
+            "amount_ht": 900,
+            "amount_tva": 200,
+            "amount_ttc": 1100,
+            "emitted_at": "@string@.isDateTime()"
+          },
+          "consumption": {
+            "id": 4,
+            "index_start": 47213,
+            "index_started_at": "@string@.isDateTime()",
+            "index_finish": 49544,
+            "index_finished_at": "@string@.isDateTime()",
+            "started_at": "@string@.isDateTime()",
+            "finished_at": "@string@.isDateTime()",
+            "quantity": 2661,
+            "unit_price": 546,
+            "total": 2015
+          },
+          "subscription": null,
+          "taxes": [],
+          "delivery_point_invoice_analysis": null
+        },
+        {
+          "id": 5,
+          "amount_ht": 4636,
+          "amount_tva": 5321,
+          "amount_ttc": 685,
+          "power_subscribed": "48.0",
+          "type": "estimated",
+          "invoice": {
+            "id": 5,
+            "reference": "FL032019",
+            "amount_ht": 1000,
+            "amount_tva": 200,
+            "amount_ttc": 1200,
+            "emitted_at": "@string@.isDateTime()"
+          },
+          "consumption": {
+            "id": 5,
+            "index_start": 49544,
+            "index_started_at": "@string@.isDateTime()",
+            "index_finish": 51319,
+            "index_finished_at": "@string@.isDateTime()",
+            "started_at": "@string@.isDateTime()",
+            "finished_at": "@string@.isDateTime()",
+            "quantity": 1775,
+            "unit_price": 546,
+            "total": 2015
+          },
+          "subscription": null,
+          "taxes": [],
+          "delivery_point_invoice_analysis": null
+        },
+        {
+          "id": 6,
+          "amount_ht": 4636,
+          "amount_tva": 5321,
+          "amount_ttc": 685,
+          "power_subscribed": "48.0",
+          "type": "estimated",
+          "invoice": {
+            "id": 6,
+            "reference": "FL092019",
+            "amount_ht": 1000,
+            "amount_tva": 200,
+            "amount_ttc": 1200,
+            "emitted_at": "@string@.isDateTime()"
+          },
+          "consumption": {
+            "id": 6,
+            "index_start": 53319,
+            "index_started_at": "@string@.isDateTime()",
+            "index_finish": 54122,
+            "index_finished_at": "@string@.isDateTime()",
+            "started_at": "@string@.isDateTime()",
+            "finished_at": "@string@.isDateTime()",
+            "quantity": 803,
+            "unit_price": 546,
+            "total": 2015
+          },
+          "subscription": null,
+          "taxes": [],
+          "delivery_point_invoice_analysis": null
+        },
+        {
+          "id": 7,
+          "amount_ht": 4636,
+          "amount_tva": 5321,
+          "amount_ttc": 685,
+          "power_subscribed": "48.0",
+          "type": "estimated",
+          "invoice": {
+            "id": 7,
+            "reference": "FL032020",
+            "amount_ht": 1000,
+            "amount_tva": 200,
+            "amount_ttc": 1200,
+            "emitted_at": "@string@.isDateTime()"
+          },
+          "consumption": {
+            "id": 7,
+            "index_start": 49544,
+            "index_started_at": "@string@.isDateTime()",
+            "index_finish": 51319,
+            "index_finished_at": "@string@.isDateTime()",
+            "started_at": "@string@.isDateTime()",
+            "finished_at": "@string@.isDateTime()",
+            "quantity": 1775,
+            "unit_price": 546,
+            "total": 2015
+          },
+          "subscription": null,
+          "taxes": [],
+          "delivery_point_invoice_analysis": null
+        },
+        {
+          "id": 8,
+          "amount_ht": 4636,
+          "amount_tva": 5321,
+          "amount_ttc": 685,
+          "power_subscribed": "48.0",
+          "type": "estimated",
+          "invoice": {
+            "id": 8,
+            "reference": "FL092020",
+            "amount_ht": 1000,
+            "amount_tva": 200,
+            "amount_ttc": 1200,
+            "emitted_at": "@string@.isDateTime()"
+          },
+          "consumption": {
+            "id": 8,
+            "index_start": 53319,
+            "index_started_at": "@string@.isDateTime()",
+            "index_finish": 54122,
+            "index_finished_at": "@string@.isDateTime()",
+            "started_at": "@string@.isDateTime()",
+            "finished_at": "@string@.isDateTime()",
+            "quantity": 803,
+            "unit_price": 546,
+            "total": 2015
+          },
+          "subscription": null,
+          "taxes": [],
+          "delivery_point_invoice_analysis": null
+        }
+      ],
+      "power_history": [
+        {
+          "power": "7.2",
+          "at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  },
+  "restricted": {
+    "user": "polnareff@test.fr",
+    "id": 3,
+    "expand": null,
+    "expected": {
+      "id": 3,
+      "name": "DeliveryPoint3",
+      "is_in_scope": true
+    }
+  }
+}

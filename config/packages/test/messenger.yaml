@@ -1,0 +1,6 @@
+framework:
+  messenger:
+    transports:
+        import: 'sync://'
+        analyze: 'sync://'
+        export: 'sync://'

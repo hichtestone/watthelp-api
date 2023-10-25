@@ -1,0 +1,14 @@
+{
+  "basic": {
+    "post": {},
+    "expectedContent": "[[\"Nom\",\"Référence\",\"Code\",\"Adresse\",\"Latitude\",\"Longitude\",\"Référence compteur\",\"Puissance\",\"Description\",\"Dans périmètre\",\"Date périmètre\"],[\"DeliveryPoint1\",\"REF_DEV_POINT_1\",\"CODE_DEV_POINT_1\",\"1 Bd de la Croisette\",43.55142,7.01806,\"whatever\",7.2,\"description du pdl\",\"oui\",\"15/08/2020\"],[\"DeliveryPoint2\",\"REF_DEV_POINT_2\",\"CODE_DEV_POINT_2\",\"2 Bd de la Croisette\",null,null,\"whatever\",7.2,null,\"non\",\"\"]]"
+  },
+  "in scope": {
+    "post": {
+      "filters": {
+        "is_in_scope": 1
+      }
+    },
+    "expectedContent": "[[\"Nom\",\"R\u00e9f\u00e9rence\",\"Code\",\"Adresse\",\"Latitude\",\"Longitude\",\"R\u00e9f\u00e9rence compteur\",\"Puissance\",\"Description\",\"Dans p\u00e9rim\u00e8tre\",\"Date p\u00e9rim\u00e8tre\"],[\"DeliveryPoint1\",\"REF_DEV_POINT_1\",\"CODE_DEV_POINT_1\",\"1 Bd de la Croisette\",43.55142,7.01806,\"whatever\",7.2,\"description du pdl\",\"oui\",\"15\/08\/2020\"]]"
+  }
+}

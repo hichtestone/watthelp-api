@@ -1,0 +1,121 @@
+{
+  "whole year 2018": {
+    "params": {
+      "period": {
+        "start": "2018-01-01",
+        "end": "2018-12-31"
+      }
+    },
+    "expected": {
+      "consumed": [
+        49000,
+        39200,
+        131000,
+        105900,
+        null,
+        null,
+        39400,
+        44000,
+        null,
+        null,
+        null,
+        null
+      ],
+      "budgeted": [
+        621180,
+        516486,
+        509507,
+        425752,
+        376895,
+        335018,
+        362936,
+        418773,
+        467630,
+        552780,
+        596053,
+        630861
+      ]
+    }
+  },
+  "filtered by period": {
+    "params": {
+      "period": {
+        "start": "2019-07-15",
+        "end": "2019-12-15"
+      }
+    },
+    "expected": {
+      "consumed": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        41600,
+        84800,
+        null,
+        null,
+        null,
+        null
+      ],
+      "budgeted": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        235780,
+        496098,
+        553976,
+        654849,
+        706113,
+        348762
+      ]
+    }
+  },
+  "filtered by delivery point": {
+    "params": {
+      "period": {
+        "start": "2019-01-01",
+        "end": "2019-12-31"
+      },
+      "delivery_point_filters": {
+        "ids": [
+          1
+        ]
+      }
+    },
+    "expected": {
+      "consumed": [
+        98500,
+        79000,
+        null,
+        null,
+        null,
+        null,
+        37900,
+        42400,
+        null,
+        null,
+        null,
+        65300
+      ],
+      "budgeted": [
+        436469,
+        362907,
+        358003,
+        299153,
+        264824,
+        235399,
+        255016,
+        294249,
+        328578,
+        388408,
+        418814,
+        443272
+      ]
+    }
+  }
+}

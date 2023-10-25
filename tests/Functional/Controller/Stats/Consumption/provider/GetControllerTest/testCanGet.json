@@ -1,0 +1,120 @@
+{
+  "2019": {
+    "params": {
+      "years": [
+        "2019"
+      ]
+    },
+    "expected": {
+      "2019": [
+        985,
+        790,
+        null,
+        null,
+        null,
+        null,
+        758,
+        848,
+        null,
+        null,
+        null,
+        653
+      ]
+    }
+  },
+  "2019-2020": {
+    "params": {
+      "years": [
+        "2019",
+        "2020"
+      ]
+    },
+    "expected": {
+      "2019": [
+        985,
+        790,
+        null,
+        null,
+        null,
+        null,
+        758,
+        848,
+        null,
+        null,
+        null,
+        653
+      ],
+      "2020": [
+        2377,
+        1407,
+        null,
+        null,
+        null,
+        null,
+        758,
+        848,
+        null,
+        null,
+        null,
+        null
+      ]
+    }
+  },
+  "filtered by delivery point 1": {
+    "params": {
+      "years": [
+        "2019"
+      ],
+      "delivery_point_filters": {
+        "ids": [
+          1
+        ]
+      }
+    },
+    "expected": {
+      "2019": [
+        985,
+        790,
+        null,
+        null,
+        null,
+        null,
+        379,
+        424,
+        null,
+        null,
+        null,
+        653
+      ]
+    }
+  },
+  "filtered by period": {
+    "params": {
+      "years": [
+        "2019"
+      ],
+      "period": {
+        "start_day": 15,
+        "start_month": 7,
+        "end_day": 31,
+        "end_month": 12
+      }
+    },
+    "expected": {
+      "2019": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        416,
+        848,
+        null,
+        null,
+        null,
+        653
+      ]
+    }
+  }
+}

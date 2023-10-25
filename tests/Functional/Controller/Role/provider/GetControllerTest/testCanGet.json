@@ -1,0 +1,126 @@
+{
+  "basic - role 1": {
+    "user": "admin@test.fr",
+    "id": 1,
+    "expand": null,
+    "expected": {
+      "id": 1,
+      "name": "ROLE_ADMIN",
+      "description": "Administrator",
+      "created_at": "@string@.isDateTime()",
+      "updated_at": "@string@.isDateTime()"
+    }
+  },
+  "expand data - role 2": {
+    "user": "admin@test.fr",
+    "id": 2,
+    "expand": "role_users,role_permissions",
+    "expected": {
+      "id": 2,
+      "name": "ROLE_DEV",
+      "description": "Dev",
+      "created_at": "@string@.isDateTime()",
+      "updated_at": "@string@.isDateTime()",
+      "users": [
+        {
+          "id": 2,
+          "email": "blanc@test.fr",
+          "first_name": "Michel",
+          "last_name": "Blanc",
+          "mobile": null,
+          "phone": "+376656652",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()",
+          "dashboard": null,
+          "language": "fr",
+          "super_admin": false
+        }
+      ],
+      "permissions": [
+        {
+          "id": 18,
+          "code": "management.delivery_point.view",
+          "description": "Voir les points de livraison"
+        },
+        {
+          "id": 19,
+          "code": "management.delivery_point.edit",
+          "description": "Modifier un point de livraison"
+        },
+        {
+          "id": 20,
+          "code": "management.delivery_point.delete",
+          "description": "Supprimer un point de livraison"
+        }
+      ]
+    }
+  },
+  "expand data role_permission_codes - role admin": {
+    "user": "michel@berger.fr",
+    "id": 4,
+    "expand": "role_permission_codes",
+    "expected": {
+      "id": 4,
+      "name": "ROLE_ADMIN",
+      "description": "Administrator",
+      "created_at": "@string@.isDateTime()",
+      "updated_at": "@string@.isDateTime()",
+      "permissions": [
+        "system.user.view",
+        "system.user.edit",
+        "system.user.edit_password",
+        "system.user.delete",
+        "system.tax.view",
+        "system.tax.edit",
+        "system.tax.delete",
+        "system.pricing.view",
+        "system.pricing.edit",
+        "system.pricing.delete",
+        "system.role.view",
+        "system.role.edit",
+        "system.role.delete",
+        "system.permission.view",
+        "management.contract.view",
+        "management.contract.edit",
+        "management.contract.delete",
+        "management.delivery_point.view",
+        "management.delivery_point.edit",
+        "management.delivery_point.delete",
+        "management.delivery_point.map",
+        "management.invoice.view",
+        "management.invoice.edit",
+        "management.invoice.delete",
+        "management.invoice.analyze",
+        "management.analysis.view",
+        "management.analysis.delete",
+        "management.budget.view",
+        "management.budget.edit",
+        "management.budget.delete",
+        "management.anomaly.view",
+        "management.anomaly.edit",
+        "management.anomaly.delete",
+        "management.anomaly_note.edit",
+        "management.export.budget",
+        "management.export.anomaly",
+        "management.export.delivery_point",
+        "system.pricing.export",
+        "management.import.budget",
+        "management.import.invoice",
+        "management.import.scope",
+        "management.import.file",
+        "management.import_report.view",
+        "other.dashboard.view",
+        "system.pricing.import"
+      ]
+    }
+  },
+  "restricted": {
+    "user": "polnareff@test.fr",
+    "id": 4,
+    "expand": null,
+    "expected": {
+      "id": 4,
+      "name": "ROLE_ADMIN"
+    }
+  }
+}

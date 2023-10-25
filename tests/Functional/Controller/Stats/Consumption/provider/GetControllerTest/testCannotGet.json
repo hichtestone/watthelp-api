@@ -1,0 +1,112 @@
+{
+  "missing year": {
+    "user": "admin@test.fr",
+    "params": {},
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "years": [
+          "Ce champ est manquant."
+        ]
+      }
+    }
+  },
+  "year is not numeric": {
+    "user": "admin@test.fr",
+    "params": {
+      "years": [
+        "douze"
+      ]
+    },
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "years": [
+          [
+            "Cette valeur doit être de type numeric."
+          ]
+        ]
+      }
+    }
+  },
+  "invalid year": {
+    "user": "admin@test.fr",
+    "params": {
+      "years": [
+        "4659836"
+      ]
+    },
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "years": [
+          "La date 1/1/4659836 est invalide.",
+          "La date 31/12/4659836 est invalide."
+        ]
+      }
+    }
+  },
+  "missing period end day": {
+    "user": "admin@test.fr",
+    "params": {
+      "years": [
+        "2020"
+      ],
+      "period": {
+        "start_day": "01",
+        "start_month": "03",
+        "end_month": "12"
+      }
+    },
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "period": {
+          "end_day": [
+            "Ce champ est manquant."
+          ]
+        }
+      }
+    }
+  },
+  "period end is before period start": {
+    "user": "admin@test.fr",
+    "params": {
+      "years": [
+        2019
+      ],
+      "period": {
+        "start_day": "15",
+        "start_month": "09",
+        "end_day": "01",
+        "end_month": "02"
+      }
+    },
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "period": [
+          "Le début de la période doit être inférieur à la fin de la période."
+        ]
+      }
+    }
+  },
+  "doesn't have permission": {
+    "user": "blanc@test.fr",
+    "params": {
+      "years": "2020"
+    },
+    "errorCode": 403,
+    "expected": {
+      "error": "AccessDenied",
+      "messages": [
+        "Accès rejeté."
+      ]
+    }
+  }
+}

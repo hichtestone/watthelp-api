@@ -1,0 +1,131 @@
+{
+  "basic": {
+    "user": "admin@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": null,
+    "sort_order": null,
+    "filters": null,
+    "expected": {
+      "count": 3,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 1,
+          "message": "Le rapport de l'import est disponible",
+          "progress": null,
+          "url": "",
+          "is_read": false,
+          "data": {
+            "report_id": 1,
+            "report_type": "invoice"
+          },
+          "created_at": "@string@.isDateTime()",
+          "updated_at": null
+        },
+        {
+          "id": 2,
+          "message": "Le rapport est disponible",
+          "progress": null,
+          "url": "",
+          "is_read": true,
+          "data": null,
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 3,
+          "message": "Le rapport de l'import est disponible",
+          "progress": null,
+          "url": "",
+          "is_read": false,
+          "data": {
+            "report_id": 3,
+            "report_type": "invoice"  
+          },
+          "created_at": "@string@.isDateTime()",
+          "updated_at": null
+        }
+      ]
+    }
+  },
+  "sorted by id DESC": {
+    "user": "admin@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": "id",
+    "sort_order": "desc",
+    "filters": null,
+    "expected": {
+      "count": 3,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 3,
+          "message": "Le rapport de l'import est disponible",
+          "progress": null,
+          "url": "",
+          "is_read": false,
+          "data": {
+            "report_id": 3,
+            "report_type": "invoice"
+          },
+          "created_at": "@string@.isDateTime()",
+          "updated_at": null
+        },
+        {
+          "id": 2,
+          "message": "Le rapport est disponible",
+          "progress": null,
+          "url": "",
+          "is_read": true,
+          "data": null,
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 1,
+          "message": "Le rapport de l'import est disponible",
+          "progress": null,
+          "url": "",
+          "is_read": false,
+          "data": {
+            "report_id": 1,
+            "report_type": "invoice"
+          },
+          "created_at": "@string@.isDateTime()",
+          "updated_at": null
+        }
+      ]
+    }
+  },
+  "filtered by is_read - sorted by id desc": {
+    "user": "admin@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": "id",
+    "sort_order": "desc",
+    "filters": {
+      "is_read": true
+    },
+    "expected": {
+      "count": 1,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 2,
+          "message": "Le rapport est disponible",
+          "progress": null,
+          "url": "",
+          "is_read": true,
+          "data": null,
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  }
+}

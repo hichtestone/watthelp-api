@@ -1,0 +1,57 @@
+{
+  "nonexistent filter": {
+    "user": "admin@test.fr",
+    "post": {
+      "filters": {
+        "douze": 12
+      }
+    },
+    "expected_status_code": 400,
+    "expected_response": {
+      "error": "InvalidRequest",
+      "messages": {
+        "filters": {
+          "douze": [
+            "Ce champ n'a pas été prévu."
+          ]
+        }
+      }
+    }
+  },
+  "nonexistent delivery points": {
+    "user": "admin@test.fr",
+    "post": {
+      "filters": {
+        "ids": [
+          456
+        ]
+      }
+    },
+    "expected_status_code": 400,
+    "expected_response": {
+      "error": "InvalidRequest",
+      "messages": {
+        "filters": {
+          "ids": [
+            [
+              "Selected delivery point doesn't exist."
+            ]
+          ]
+        }
+      }
+    }
+  },
+  "doesn't have permission": {
+    "user": "blanc@test.fr",
+    "post": {
+      "filters": {}
+    },
+    "errorCode": 403,
+    "expected": {
+      "error": "AccessDenied",
+      "messages": [
+        "Accès rejeté."
+      ]
+    }
+  }
+}

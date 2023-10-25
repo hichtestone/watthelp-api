@@ -1,0 +1,13 @@
+{
+  "basic": {
+    "post": {
+      "file": 5
+    },
+    "expected": {
+      "id": 6,
+      "type": "scope",
+      "provider": null,
+      "created_at": "@string@.isDateTime()"
+    }
+  }
+}

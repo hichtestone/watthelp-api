@@ -1,0 +1,35 @@
+{
+  "Tax 213654 not found": {
+    "user": "admin@test.fr",
+    "id": 213654,
+    "errorCode": 404,
+    "expected": {
+      "error": "ResourceNotFound",
+      "messages": [
+        "Ressource non trouvée."
+      ]
+    }
+  },
+  "Tax belongs to another client": {
+    "user": "admin@test.fr",
+    "id": 7,
+    "errorCode": 403,
+    "expected": {
+      "error": "AccessDenied",
+      "messages": [
+        "Accès rejeté."
+      ]
+    }
+  },
+  "doesn't have permission": {
+    "user": "blanc@test.fr",
+    "id": 1,
+    "expected_status_code": 403,
+    "expected_response": {
+      "error": "AccessDenied",
+      "messages": [
+        "Accès rejeté."
+      ]
+    }
+  }
+}

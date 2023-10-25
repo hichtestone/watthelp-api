@@ -1,0 +1,35 @@
+{
+  "Analysis 456465 not found": {
+    "user": "admin@test.fr",
+    "invoiceId": 456465,
+    "errorCode": 404,
+    "expected": {
+      "error": "ResourceNotFound",
+      "messages": [
+        "Ressource non trouvée."
+      ]
+    }
+  },
+  "Belongs to a different client": {
+    "user": "admin@test.fr",
+    "invoiceId": 9,
+    "errorCode": 403,
+    "expected": {
+      "error": "AccessDenied",
+      "messages": [
+        "Accès rejeté."
+      ]
+    }
+  },
+  "doesn't have permission": {
+    "user": "polnareff@test.fr",
+    "invoiceId": 9,
+    "errorCode": 403,
+    "expected": {
+      "error": "AccessDenied",
+      "messages": [
+        "Accès rejeté."
+      ]
+    }
+  }
+}

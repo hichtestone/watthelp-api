@@ -1,0 +1,481 @@
+{
+  "basic": {
+    "user": "admin@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": null,
+    "sort_order": null,
+    "filters": null,
+    "expected": {
+      "count": 4,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 1,
+          "applied_rules": null,
+          "old_value": null,
+          "current_value": null,
+          "expected_value": null,
+          "type": "consumption",
+          "status": "processing",
+          "content": "anomaly1",
+          "total": 10000000,
+          "total_percentage": 4.97,
+          "profit": "client",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 2,
+          "applied_rules": null,
+          "old_value": null,
+          "current_value": null,
+          "expected_value": null,
+          "type": "unit_price",
+          "status": "ignored",
+          "content": "anomaly2",
+          "total": 2000000,
+          "total_percentage": 17.0,
+          "profit": "provider",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 3,
+          "applied_rules": null,
+          "old_value": null,
+          "current_value": null,
+          "expected_value": null,
+          "type": "index",
+          "status": "solved",
+          "content": "anomaly3",
+          "total": 300000000,
+          "total_percentage": 27.95,
+          "profit": "provider",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 4,
+          "applied_rules": null,
+          "old_value": null,
+          "current_value": null,
+          "expected_value": null,
+          "type": "index",
+          "status": "solved",
+          "content": "anomaly4",
+          "total": 300000,
+          "total_percentage": 0.97,
+          "profit": "client",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  },
+  "sorted by id DESC": {
+    "user": "admin@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": "id",
+    "sort_order": "desc",
+    "filters": null,
+    "expected": {
+      "count": 4,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 4,
+          "applied_rules": null,
+          "old_value": null,
+          "current_value": null,
+          "expected_value": null,
+          "type": "index",
+          "status": "solved",
+          "content": "anomaly4",
+          "total": 300000,
+          "total_percentage": 0.97,
+          "profit": "client",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 3,
+          "applied_rules": null,
+          "old_value": null,
+          "current_value": null,
+          "expected_value": null,
+          "type": "index",
+          "status": "solved",
+          "content": "anomaly3",
+          "total": 300000000,
+          "total_percentage": 27.95,
+          "profit": "provider",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 2,
+          "applied_rules": null,
+          "old_value": null,
+          "current_value": null,
+          "expected_value": null,
+          "type": "unit_price",
+          "status": "ignored",
+          "content": "anomaly2",
+          "total": 2000000,
+          "total_percentage": 17.0,
+          "profit": "provider",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 1,
+          "applied_rules": null,
+          "old_value": null,
+          "current_value": null,
+          "expected_value": null,
+          "type": "consumption",
+          "status": "processing",
+          "content": "anomaly1",
+          "total": 10000000,
+          "total_percentage": 4.97,
+          "profit": "client",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  },
+  "page 2 - sorted by id": {
+    "user": "admin@test.fr",
+    "page": 2,
+    "per_page": 2,
+    "sort": "id",
+    "sort_order": "asc",
+    "filters": null,
+    "expected": {
+      "count": 4,
+      "page": 2,
+      "per_page": 2,
+      "data": [
+        {
+          "id": 3,
+          "applied_rules": null,
+          "old_value": null,
+          "current_value": null,
+          "expected_value": null,
+          "type": "index",
+          "status": "solved",
+          "content": "anomaly3",
+          "total": 300000000,
+          "total_percentage": 27.95,
+          "profit": "provider",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 4,
+          "applied_rules": null,
+          "old_value": null,
+          "current_value": null,
+          "expected_value": null,
+          "type": "index",
+          "status": "solved",
+          "content": "anomaly4",
+          "total": 300000,
+          "total_percentage": 0.97,
+          "profit": "client",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  },
+  "filtered by status solved": {
+    "user": "admin@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": null,
+    "sort_order": null,
+    "filters": {
+      "status": "solved",
+      "created": {
+        "from": "2016-01-01",
+        "to": "2021-01-01"
+      }
+    },
+    "expected": {
+      "count": 2,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 3,
+          "applied_rules": null,
+          "old_value": null,
+          "current_value": null,
+          "expected_value": null,
+          "type": "index",
+          "status": "solved",
+          "content": "anomaly3",
+          "total": 300000000,
+          "total_percentage": 27.95,
+          "profit": "provider",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 4,
+          "applied_rules": null,
+          "old_value": null,
+          "current_value": null,
+          "expected_value": null,
+          "type": "index",
+          "status": "solved",
+          "content": "anomaly4",
+          "total": 300000,
+          "total_percentage": 0.97,
+          "profit": "client",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  },
+  "filtered by invoices": {
+    "user": "admin@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": null,
+    "sort_order": null,
+    "filters": {
+      "invoices": [
+        1,
+        3
+      ],
+      "created": {
+        "from": "2016-01-01",
+        "to": "2021-01-01"
+      }
+    },
+    "expected": {
+      "count": 2,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 1,
+          "applied_rules": null,
+          "old_value": null,
+          "current_value": null,
+          "expected_value": null,
+          "type": "consumption",
+          "status": "processing",
+          "content": "anomaly1",
+          "total": 10000000,
+          "total_percentage": 4.97,
+          "profit": "client",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 3,
+          "applied_rules": null,
+          "old_value": null,
+          "current_value": null,
+          "expected_value": null,
+          "type": "index",
+          "status": "solved",
+          "content": "anomaly3",
+          "total": 300000000,
+          "total_percentage": 27.95,
+          "profit": "provider",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  },
+  "filtered by created date": {
+    "user": "admin@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": null,
+    "sort_order": null,
+    "filters": {
+      "created": {
+        "from": "2017-01-02",
+        "to": "2017-02-01"
+      }
+    },
+    "expected": {
+      "count": 2,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 1,
+          "applied_rules": null,
+          "old_value": null,
+          "current_value": null,
+          "expected_value": null,
+          "type": "consumption",
+          "status": "processing",
+          "content": "anomaly1",
+          "total": 10000000,
+          "total_percentage": 4.97,
+          "profit": "client",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 2,
+          "applied_rules": null,
+          "old_value": null,
+          "current_value": null,
+          "expected_value": null,
+          "type": "unit_price",
+          "status": "ignored",
+          "content": "anomaly2",
+          "total": 2000000,
+          "total_percentage": 17.0,
+          "profit": "provider",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  },
+  "filtered by total": {
+    "user": "admin@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": null,
+    "sort_order": null,
+    "filters": {
+      "created": {
+        "from": "2016-12-31",
+        "to": "2027-02-01"
+      },
+      "total": "250000000"
+    },
+    "expected": {
+      "count": 1,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 3,
+          "applied_rules": null,
+          "old_value": null,
+          "current_value": null,
+          "expected_value": null,
+          "type": "index",
+          "status": "solved",
+          "content": "anomaly3",
+          "total": 300000000,
+          "total_percentage": 27.95,
+          "profit": "provider",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  },
+  "filtered by total_percentage - sorted by total_percentage DESC": {
+    "user": "admin@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": "total_percentage",
+    "sort_order": "desc",
+    "filters": {
+      "total_percentage": 4.97
+    },
+    "expected": {
+      "count": 3,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 3,
+          "applied_rules": null,
+          "old_value": null,
+          "current_value": null,
+          "expected_value": null,
+          "type": "index",
+          "status": "solved",
+          "content": "anomaly3",
+          "total": 300000000,
+          "total_percentage": 27.95,
+          "profit": "provider",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 2,
+          "applied_rules": null,
+          "old_value": null,
+          "current_value": null,
+          "expected_value": null,
+          "type": "unit_price",
+          "status": "ignored",
+          "content": "anomaly2",
+          "total": 2000000,
+          "total_percentage": 17,
+          "profit": "provider",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 1,
+          "applied_rules": null,
+          "old_value": null,
+          "current_value": null,
+          "expected_value": null,
+          "type": "consumption",
+          "status": "processing",
+          "content": "anomaly1",
+          "total": 10000000,
+          "total_percentage": 4.97,
+          "profit": "client",
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  },
+  "restricted": {
+    "user": "blanc@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": null,
+    "sort_order": null,
+    "filters": null,
+    "expected": {
+      "count": 4,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 1,
+          "status": "processing"
+        },
+        {
+          "id": 2,
+          "status": "ignored"
+        },
+        {
+          "id": 3,
+          "status": "solved"
+        },
+        {
+          "id": 4,
+          "status": "solved"
+        }
+      ]
+    }
+  }
+}

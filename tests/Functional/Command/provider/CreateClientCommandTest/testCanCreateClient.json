@@ -1,0 +1,34 @@
+{
+  "basic": {
+    "arguments": {
+      "clientName": "LeClient",
+      "clientLanguage": "fr",
+      "userEmail": "client@test.fr",
+      "userPassword": "admin",
+      "userFirstname": "Eude-Grégoire",
+      "userLastname": "Martin"
+    },
+    "options": {},
+    "expected": "The client LeClient has been created successfully."
+  },
+  "full": {
+    "arguments": {
+      "clientName": "Marcel Patoulachi",
+      "clientLanguage": "fr",
+      "userEmail": "client@test.fr",
+      "userPassword": "admin",
+      "userFirstname": "Eude-Grégoire",
+      "userLastname": "Martin"        
+    },
+    "options": {
+      "userLanguage": "en",
+      "clientCity": "Antibes",
+      "clientZipCode": "06600",
+      "clientDescription": "Brigadier chef et agent de la paix avant tout.",
+      "clientAddress": "1er Boulevard Foch",
+      "clientDepartment": "06",
+      "clientInsee": "06004" 
+    },
+    "expected": "The client Marcel Patoulachi has been created successfully."
+  }
+}

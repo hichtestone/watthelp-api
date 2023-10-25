@@ -1,0 +1,44 @@
+{
+  "missing content": {
+    "user": "admin@test.fr",
+    "anomalyId": 1,
+    "post": {},
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "content": [
+          "Ce champ est manquant."
+        ]
+      }
+    }
+  },
+  "inexistant anomaly": {
+    "user": "admin@test.fr",
+    "anomalyId": 7894563,
+    "post": {
+      "content": "douze"
+    },
+    "errorCode": 404,
+    "expected": {
+      "error": "ResourceNotFound",
+      "messages": [
+        "Ressource non trouvée."
+      ]
+    }
+  },
+  "doesn't have permission": {
+    "user": "blanc@test.fr",
+    "anomalyId": 1,
+    "post": {
+      "content": "qdsklj"
+    },
+    "errorCode": 403,
+    "expected": {
+      "error": "AccessDenied",
+      "messages": [
+        "Accès rejeté."
+      ]
+    }
+  }
+}

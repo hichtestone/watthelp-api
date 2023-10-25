@@ -1,0 +1,22 @@
+{
+  "delete every analysis": {
+    "body": {},
+    "existingAnomaliesCount": 4
+  },
+  "delete ids 1 and 4": {
+    "body": {
+      "filters": {
+        "ids": [1, 4]
+      }
+    },
+    "existingAnomaliesCount": 2
+  },
+  "delete analyses of invoices 2 and 3": {
+    "body": {
+      "filters": {
+        "invoices": [2, 3]
+      }
+    },
+    "existingAnomaliesCount": 2
+  }
+}

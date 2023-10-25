@@ -1,0 +1,138 @@
+{
+  "missing fields": {
+    "user": "admin@test.fr",
+    "post": {},
+    "expected_status_code": 400,
+    "expected_response": {
+      "error": "InvalidRequest",
+      "messages": {
+        "name": [
+          "Ce champ est manquant."
+        ],
+        "type": [
+          "Ce champ est manquant."
+        ],
+        "consumption_base_price": [
+          "Ce champ est manquant."
+        ],
+        "started_at": [
+          "Ce champ est manquant."
+        ]
+      }
+    }
+  },
+  "invalid consumption_base_price": {
+    "user": "admin@test.fr",
+    "post": {
+      "name": "testname",
+      "type": "negotiated",
+      "consumption_base_price": "154",
+      "started_at": "2005-08-15",
+      "finished_at": "2020-07-16"
+    },
+    "expected_status_code": 400,
+    "expected_response": {
+      "error": "InvalidRequest",
+      "messages": {
+        "consumption_base_price": [
+          "Cette valeur doit être de type int."
+        ]
+      }
+    }
+  },
+  "finished_at before started_at": {
+    "user": "admin@test.fr",
+    "post": {
+      "name": "testname",
+      "type": "negotiated",
+      "consumption_base_price": 154,
+      "started_at": "2020-05-12",
+      "finished_at": "2019-05-12"
+    },
+    "expected_status_code": 400,
+    "expected_response": {
+      "error": "InvalidRequest",
+      "messages": {
+        "finished_at": [
+          "Cette valeur doit être supérieure ou égale à 2020-05-12."
+        ]
+      }
+    }
+  },
+  "subscription_price not provided if regulated": {
+    "user": "admin@test.fr",
+    "post": {
+      "name": "testname",
+      "type": "regulated",
+      "consumption_base_price": 154,
+      "started_at": "2019-08-15",
+      "finished_at": "2020-07-16"
+    },
+    "expected_status_code": 400,
+    "expected_response": {
+      "error": "InvalidRequest",
+      "messages": {
+        "subscription_price": [
+          "Le prix de l'abonnement doit être spécifié si la tarification est de type TRV."
+        ]
+      }
+    }
+  },
+  "subscription_price provided if negotiated": {
+    "user": "admin@test.fr",
+    "post": {
+      "name": "testname",
+      "type": "negotiated",
+      "subscription_price": 789,
+      "consumption_base_price": 154,
+      "started_at": "2019-08-15",
+      "finished_at": "2020-07-16"
+    },
+    "expected_status_code": 400,
+    "expected_response": {
+      "error": "InvalidRequest",
+      "messages": {
+        "subscription_price": [
+          "Le prix de l'abonnement ne doit pas être spécifié si la tarification est de type Offre de marché."
+        ]
+      }
+    }
+  },
+  "invalid type": {
+    "user": "admin@test.fr",
+    "post": {
+      "name": "testname",
+      "type": "invalidtype",
+      "consumption_base_price": 154,
+      "started_at": "2019-08-15",
+      "finished_at": "2020-07-16"
+    },
+    "expected_status_code": 400,
+    "expected_response": {
+      "error": "InvalidRequest",
+      "messages": {
+        "type": [
+          "Cette valeur doit être l'un des choix proposés."
+        ]
+      }
+    }
+  },
+  "doesn't have permission": {
+    "user": "blanc@test.fr",
+    "post": {
+      "name": "testname",
+      "type": "negotiated",
+      "subscription_price": 123,
+      "consumption_base_price": 154,
+      "started_at": "2019-08-15",
+      "finished_at": "2020-07-16"
+    },
+    "expected_status_code": 403,
+    "expected_response": {
+      "error": "AccessDenied",
+      "messages": [
+        "Accès rejeté."
+      ]
+    }
+  }
+}

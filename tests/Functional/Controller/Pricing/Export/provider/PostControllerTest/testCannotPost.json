@@ -1,0 +1,34 @@
+{
+  "nonexistent filter": {
+    "user": "admin@test.fr",
+    "post": {
+      "filters": {
+        "vamos": 46
+      }
+    },
+    "expected_status_code": 400,
+    "expected_response": {
+      "error": "InvalidRequest",
+      "messages": {
+        "filters": {
+          "vamos": [
+            "Ce champ n'a pas été prévu."
+          ]
+        }
+      }
+    }
+  },
+  "doesn't have permission": {
+    "user": "blanc@test.fr",
+    "post": {
+      "filters": {}
+    },
+    "errorCode": 403,
+    "expected": {
+      "error": "AccessDenied",
+      "messages": [
+        "Accès rejeté."
+      ]
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "delete every anomaly": {
+    "body": {},
+    "existingAnomalies": 4
+  },
+  "delete solved anomalies": {
+    "body": {
+      "filters": {
+        "status": "solved"
+      }
+    },
+    "existingAnomalies": 2
+  },
+  "delete by date": {
+    "body": {
+      "filters": {
+        "created": {
+          "from": "2017-01-01",
+          "to": "2017-02-15"
+        }
+      }
+    },
+    "existingAnomalies": 2
+  },
+  "by total": {
+    "body": {
+      "filters": {
+        "total": 10000000
+      }
+    },
+    "existingAnomalies": 2
+  },
+  "by total_percentage": {
+    "body": {
+      "filters": {
+        "total_percentage": 27.12
+      }
+    },
+    "existingAnomalies": 1
+  },
+  "by invoice": {
+    "body": {
+      "filters": {
+        "id": [
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    "existingAnomalies": 3
+  }
+}

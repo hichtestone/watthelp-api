@@ -1,0 +1,133 @@
+{
+  "basic": {
+    "user": "admin@test.fr",
+    "budgetId": 2,
+    "deliveryPointBudgetId": 3,
+    "expand": null,
+    "expected": {
+      "id": 3,
+      "installed_power": "12.00",
+      "equipment_power_percentage": 2000,
+      "gradation": 6500,
+      "gradation_hours": 1500,
+      "sub_total_consumption": 4500000,
+      "renovation": true,
+      "renovated_at": "@string@.isDateTime()",
+      "new_installed_power": "10.00",
+      "new_equipment_power_percentage": 0,
+      "new_gradation": 6500,
+      "new_gradation_hours": 1500,
+      "new_sub_total_consumption": 3125000,
+      "total_consumption": 4099867,
+      "total": 65597900000,
+      "created_at": "@string@.isDateTime()",
+      "updated_at": "@string@.isDateTime()"
+    }
+  },
+  "expand data": {
+    "user": "admin@test.fr",
+    "budgetId": 1,
+    "deliveryPointBudgetId": 2,
+    "expand": "delivery_point_budget_delivery_point,delivery_point_budget_budget,previous_delivery_point_budget",
+    "expected": {
+      "id": 2,
+      "delivery_point": {
+        "id": 2,
+        "name": "DeliveryPoint2",
+        "code": "CODE_DEV_POINT_2",
+        "address": "2 Bd de la Croisette",
+        "latitude": null,
+        "longitude": null,
+        "meter_reference": "whatever",
+        "power": "7.2",
+        "reference": "REF_DEV_POINT_2",
+        "created_at": "@string@.isDateTime()",
+        "updated_at": "@string@.isDateTime()",
+        "description": null,
+        "is_in_scope": false,
+        "scope_date": null,
+        "creation_mode": "manual"
+      },
+      "budget": {
+        "id": 1,
+        "year": 2018,
+        "total_hours": 3650,
+        "average_price": 1500000,
+        "total_consumption": 5834900,
+        "total_amount": 87523500000,
+        "created_at": "@string@.isDateTime()",
+        "updated_at": "@string@.isDateTime()"
+      },
+      "installed_power": "10.00",
+      "equipment_power_percentage": 1000,
+      "gradation": 5000,
+      "gradation_hours": 1800,
+      "sub_total_consumption": 3025000,
+      "renovation": true,
+      "renovated_at": "@string@.isDateTime()",
+      "new_installed_power": "5.00",
+      "new_equipment_power_percentage": 0,
+      "new_gradation": 5000,
+      "new_gradation_hours": 1800,
+      "new_sub_total_consumption": 1375000,
+      "total_consumption": 2200000,
+      "total": 33000000000,
+      "created_at": "@string@.isDateTime()",
+      "updated_at": "@string@.isDateTime()",
+      "previous": null
+    }
+  },
+  "has previous dpb": {
+    "user": "admin@test.fr",
+    "budgetId": 2,
+    "deliveryPointBudgetId": 4,
+    "expand": "previous_delivery_point_budget",
+    "expected": {
+      "id": 4,
+      "installed_power": "10.00",
+      "equipment_power_percentage": 1000,
+      "gradation": 6500,
+      "gradation_hours": 1500,
+      "sub_total_consumption": 3437500,
+      "renovation": true,
+      "renovated_at": "@string@.isDateTime()",
+      "new_installed_power": "5.00",
+      "new_equipment_power_percentage": 0,
+      "new_gradation": 6500,
+      "new_gradation_hours": 1600,
+      "new_sub_total_consumption": 1562500,
+      "total_consumption": 2812500,
+      "total": 45000000000,
+      "created_at": "@string@.isDateTime()",
+      "updated_at": "@string@.isDateTime()",
+      "previous": {
+        "id": 2,
+        "installed_power": "10.00",
+        "equipment_power_percentage": 1000,
+        "gradation": 5000,
+        "gradation_hours": 1800,
+        "sub_total_consumption": 3025000,
+        "renovation": true,
+        "renovated_at": "@string@.isDateTime()",
+        "new_installed_power": "5.00",
+        "new_equipment_power_percentage": 0,
+        "new_gradation": 5000,
+        "new_gradation_hours": 1800,
+        "new_sub_total_consumption": 1375000,
+        "total_consumption": 2200000,
+        "total": 33000000000,
+        "created_at": "@string@.isDateTime()",
+        "updated_at": "@string@.isDateTime()"
+      }
+    }
+  },
+  "restricted": {
+    "user": "blanc@test.fr",
+    "budgetId": 2,
+    "deliveryPointBudgetId": 4,
+    "expand": null,
+    "expected": {
+      "id": 4
+    }
+  }
+}

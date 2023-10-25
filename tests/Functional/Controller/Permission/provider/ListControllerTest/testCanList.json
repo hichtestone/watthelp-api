@@ -1,0 +1,567 @@
+{
+  "basic": {
+    "page": null,
+    "per_page": null,
+    "sort": null,
+    "sort_order": null,
+    "filters": null,
+    "expected": {
+      "count": 45,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 1,
+          "code": "system.user.view",
+          "description": "Voir les utilisateurs"
+        },
+        {
+          "id": 2,
+          "code": "system.user.edit",
+          "description": "Modifier un utilisateur"
+        },
+        {
+          "id": 3,
+          "code": "system.user.edit_password",
+          "description": "Modifier le mot de passe d'un utilisateur"
+        },
+        {
+          "id": 4,
+          "code": "system.user.delete",
+          "description": "Supprimer un utilisateur"
+        },
+        {
+          "id": 5,
+          "code": "system.tax.view",
+          "description": "Voir les taxes"
+        },
+        {
+          "id": 6,
+          "code": "system.tax.edit",
+          "description": "Modifier une taxe"
+        },
+        {
+          "id": 7,
+          "code": "system.tax.delete",
+          "description": "Supprimer une taxe"
+        },
+        {
+          "id": 8,
+          "code": "system.pricing.view",
+          "description": "Voir les tarifs"
+        },
+        {
+          "id": 9,
+          "code": "system.pricing.edit",
+          "description": "Modifier un tarif"
+        },
+        {
+          "id": 10,
+          "code": "system.pricing.delete",
+          "description": "Supprimer un tarif"
+        },
+        {
+          "id": 11,
+          "code": "system.role.view",
+          "description": "Voir les rôles"
+        },
+        {
+          "id": 12,
+          "code": "system.role.edit",
+          "description": "Modifier un rôle"
+        },
+        {
+          "id": 13,
+          "code": "system.role.delete",
+          "description": "Supprimer un rôle"
+        },
+        {
+          "id": 14,
+          "code": "system.permission.view",
+          "description": "Voir les permissions"
+        },
+        {
+          "id": 15,
+          "code": "management.contract.view",
+          "description": "Voir les contrats"
+        },
+        {
+          "id": 16,
+          "code": "management.contract.edit",
+          "description": "Modifier un contrat"
+        },
+        {
+          "id": 17,
+          "code": "management.contract.delete",
+          "description": "Supprimer un contrat"
+        },
+        {
+          "id": 18,
+          "code": "management.delivery_point.view",
+          "description": "Voir les points de livraison"
+        },
+        {
+          "id": 19,
+          "code": "management.delivery_point.edit",
+          "description": "Modifier un point de livraison"
+        },
+        {
+          "id": 20,
+          "code": "management.delivery_point.delete",
+          "description": "Supprimer un point de livraison"
+        },
+        {
+          "id": 21,
+          "code": "management.delivery_point.map",
+          "description": "Voir la cartographie"
+        },
+        {
+          "id": 22,
+          "code": "management.invoice.view",
+          "description": "Voir les factures"
+        },
+        {
+          "id": 23,
+          "code": "management.invoice.edit",
+          "description": "Modifier une facture"
+        },
+        {
+          "id": 24,
+          "code": "management.invoice.delete",
+          "description": "Supprimer une facture"
+        },
+        {
+          "id": 25,
+          "code": "management.invoice.analyze",
+          "description": "Analyser une facture"
+        },
+        {
+          "id": 26,
+          "code": "management.analysis.view",
+          "description": "Voir les analyses"
+        },
+        {
+          "id": 27,
+          "code": "management.analysis.delete",
+          "description": "Supprimer les analyses"
+        },
+        {
+          "id": 28,
+          "code": "management.budget.view",
+          "description": "Voir les budgets"
+        },
+        {
+          "id": 29,
+          "code": "management.budget.edit",
+          "description": "Modifier un budget"
+        },
+        {
+          "id": 30,
+          "code": "management.budget.delete",
+          "description": "Supprimer un budget"
+        },
+        {
+          "id": 31,
+          "code": "management.anomaly.view",
+          "description": "Voir les alertes"
+        },
+        {
+          "id": 32,
+          "code": "management.anomaly.edit",
+          "description": "Modifier une alerte"
+        },
+        {
+          "id": 33,
+          "code": "management.anomaly.delete",
+          "description": "Supprimer une alerte"
+        },
+        {
+          "id": 34,
+          "code": "management.anomaly_note.edit",
+          "description": "Modifier un commentaire"
+        },
+        {
+          "id": 35,
+          "code": "management.export.budget",
+          "description": "Exporter des budgets"
+        },
+        {
+          "id": 36,
+          "code": "management.export.anomaly",
+          "description": "Exporter des alertes"
+        },
+        {
+          "id": 37,
+          "code": "management.export.delivery_point",
+          "description": "Exporter des points de livraison"
+        },
+        {
+          "id": 38,
+          "code": "system.pricing.export",
+          "description": "Exporter les tarifs"
+        },
+        {
+          "id": 39,
+          "code": "management.import.budget",
+          "description": "Importer des budgets"
+        },
+        {
+          "id": 40,
+          "code": "management.import.invoice",
+          "description": "Importer une facture"
+        },
+        {
+          "id": 41,
+          "code": "management.import.scope",
+          "description": "Importer un périmètre"
+        },
+        {
+          "id": 42,
+          "code": "management.import.file",
+          "description": "Télécharger un document d'import"
+        },
+        {
+          "id": 43,
+          "code": "management.import_report.view",
+          "description": "Voir les rapports d'import"
+        },
+        {
+          "id": 44,
+          "code": "other.dashboard.view",
+          "description": "Voir le dashboard"
+        },
+        {
+          "id": 45,
+          "code": "system.pricing.import",
+          "description": "Importer un tarif"
+        }
+      ]
+    }
+  },
+  "sorted by id desc": {
+    "page": null,
+    "per_page": null,
+    "sort": "id",
+    "sort_order": "desc",
+    "filters": null,
+    "expected": {
+      "count": 45,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 45,
+          "code": "system.pricing.import",
+          "description": "Importer un tarif"
+        },
+        {
+          "id": 44,
+          "code": "other.dashboard.view",
+          "description": "Voir le dashboard"
+        },
+        {
+          "id": 43,
+          "code": "management.import_report.view",
+          "description": "Voir les rapports d'import"
+        },
+        {
+          "id": 42,
+          "code": "management.import.file",
+          "description": "Télécharger un document d'import"
+        },
+        {
+          "id": 41,
+          "code": "management.import.scope",
+          "description": "Importer un périmètre"
+        },
+        {
+          "id": 40,
+          "code": "management.import.invoice",
+          "description": "Importer une facture"
+        },
+        {
+          "id": 39,
+          "code": "management.import.budget",
+          "description": "Importer des budgets"
+        },
+        {
+          "id": 38,
+          "code": "system.pricing.export",
+          "description": "Exporter les tarifs"
+        },
+        {
+          "id": 37,
+          "code": "management.export.delivery_point",
+          "description": "Exporter des points de livraison"
+        },
+        {
+          "id": 36,
+          "code": "management.export.anomaly",
+          "description": "Exporter des alertes"
+        },
+        {
+          "id": 35,
+          "code": "management.export.budget",
+          "description": "Exporter des budgets"
+        },
+        {
+          "id": 34,
+          "code": "management.anomaly_note.edit",
+          "description": "Modifier un commentaire"
+        },
+        {
+          "id": 33,
+          "code": "management.anomaly.delete",
+          "description": "Supprimer une alerte"
+        },
+        {
+          "id": 32,
+          "code": "management.anomaly.edit",
+          "description": "Modifier une alerte"
+        },
+        {
+          "id": 31,
+          "code": "management.anomaly.view",
+          "description": "Voir les alertes"
+        },
+        {
+          "id": 30,
+          "code": "management.budget.delete",
+          "description": "Supprimer un budget"
+        },
+        {
+          "id": 29,
+          "code": "management.budget.edit",
+          "description": "Modifier un budget"
+        },
+        {
+          "id": 28,
+          "code": "management.budget.view",
+          "description": "Voir les budgets"
+        },
+        {
+          "id": 27,
+          "code": "management.analysis.delete",
+          "description": "Supprimer les analyses"
+        },
+        {
+          "id": 26,
+          "code": "management.analysis.view",
+          "description": "Voir les analyses"
+        },
+        {
+          "id": 25,
+          "code": "management.invoice.analyze",
+          "description": "Analyser une facture"
+        },
+        {
+          "id": 24,
+          "code": "management.invoice.delete",
+          "description": "Supprimer une facture"
+        },
+        {
+          "id": 23,
+          "code": "management.invoice.edit",
+          "description": "Modifier une facture"
+        },
+        {
+          "id": 22,
+          "code": "management.invoice.view",
+          "description": "Voir les factures"
+        },
+        {
+          "id": 21,
+          "code": "management.delivery_point.map",
+          "description": "Voir la cartographie"
+        },
+        {
+          "id": 20,
+          "code": "management.delivery_point.delete",
+          "description": "Supprimer un point de livraison"
+        },
+        {
+          "id": 19,
+          "code": "management.delivery_point.edit",
+          "description": "Modifier un point de livraison"
+        },
+        {
+          "id": 18,
+          "code": "management.delivery_point.view",
+          "description": "Voir les points de livraison"
+        },
+        {
+          "id": 17,
+          "code": "management.contract.delete",
+          "description": "Supprimer un contrat"
+        },
+        {
+          "id": 16,
+          "code": "management.contract.edit",
+          "description": "Modifier un contrat"
+        },
+        {
+          "id": 15,
+          "code": "management.contract.view",
+          "description": "Voir les contrats"
+        },
+        {
+          "id": 14,
+          "code": "system.permission.view",
+          "description": "Voir les permissions"
+        },
+        {
+          "id": 13,
+          "code": "system.role.delete",
+          "description": "Supprimer un rôle"
+        },
+        {
+          "id": 12,
+          "code": "system.role.edit",
+          "description": "Modifier un rôle"
+        },
+        {
+          "id": 11,
+          "code": "system.role.view",
+          "description": "Voir les rôles"
+        },
+        {
+          "id": 10,
+          "code": "system.pricing.delete",
+          "description": "Supprimer un tarif"
+        },
+        {
+          "id": 9,
+          "code": "system.pricing.edit",
+          "description": "Modifier un tarif"
+        },
+        {
+          "id": 8,
+          "code": "system.pricing.view",
+          "description": "Voir les tarifs"
+        },
+        {
+          "id": 7,
+          "code": "system.tax.delete",
+          "description": "Supprimer une taxe"
+        },
+        {
+          "id": 6,
+          "code": "system.tax.edit",
+          "description": "Modifier une taxe"
+        },
+        {
+          "id": 5,
+          "code": "system.tax.view",
+          "description": "Voir les taxes"
+        },
+        {
+          "id": 4,
+          "code": "system.user.delete",
+          "description": "Supprimer un utilisateur"
+        },
+        {
+          "id": 3,
+          "code": "system.user.edit_password",
+          "description": "Modifier le mot de passe d'un utilisateur"
+        },
+        {
+          "id": 2,
+          "code": "system.user.edit",
+          "description": "Modifier un utilisateur"
+        },
+        {
+          "id": 1,
+          "code": "system.user.view",
+          "description": "Voir les utilisateurs"
+        }
+      ]
+    }
+  },
+  "page 2": {
+    "page": 2,
+    "per_page": 3,
+    "sort": null,
+    "sort_order": null,
+    "filters": null,
+    "expected": {
+      "count": 45,
+      "page": 2,
+      "per_page": 3,
+      "data": [
+        {
+          "id": 4,
+          "code": "system.user.delete",
+          "description": "Supprimer un utilisateur"
+        },
+        {
+          "id": 5,
+          "code": "system.tax.view",
+          "description": "Voir les taxes"
+        },
+        {
+          "id": 6,
+          "code": "system.tax.edit",
+          "description": "Modifier une taxe"
+        }
+      ]
+    }
+  },
+  "filtered by ids": {
+    "page": null,
+    "per_page": null,
+    "sort": null,
+    "sort_order": null,
+    "filters": {
+      "ids": [
+        1,
+        4
+      ]
+    },
+    "expected": {
+      "count": 2,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 1,
+          "code": "system.user.view",
+          "description": "Voir les utilisateurs"
+        },
+        {
+          "id": 4,
+          "code": "system.user.delete",
+          "description": "Supprimer un utilisateur"
+        }
+      ]
+    }
+  },
+  "filtered by codes": {
+    "page": null,
+    "per_page": null,
+    "sort": null,
+    "sort_order": null,
+    "filters": {
+      "codes": [
+        "other.dashboard.view",
+        "management.invoice.edit"
+      ]
+    },
+    "expected": {
+      "count": 2,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 23,
+          "code": "management.invoice.edit",
+          "description": "Modifier une facture"
+        },
+        {
+          "id": 44,
+          "code": "other.dashboard.view",
+          "description": "Voir le dashboard"
+        }
+      ]
+    }
+  }
+}

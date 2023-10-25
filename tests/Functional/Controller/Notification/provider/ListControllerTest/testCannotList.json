@@ -1,0 +1,24 @@
+{
+  "nonexistent sort": {
+    "sort": "kook",
+    "filters": null,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "sort": [
+          "Cette valeur doit être l'un des choix proposés."
+        ]
+      }
+    }
+  },
+  "nonexistent filter": {
+    "sort": null,
+    "filters": {
+      "kook": "iygiugh"
+    },
+    "expected": {
+      "error": "Bad Request",
+      "messages": "The option \"kook\" does not exist. Defined options are: \"id\", \"is_read\", \"message\", \"user\"."
+    }
+  }
+}

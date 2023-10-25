@@ -1,0 +1,184 @@
+{
+  "basic": {
+    "user": "admin@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": null,
+    "sort_order": null,
+    "filters": null,
+    "expected": {
+      "count": 2,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 1,
+          "year": 2018,
+          "total_hours": 3650,
+          "average_price": 1500000,
+          "total_consumption": 5834900,
+          "total_amount": 87523500000,
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 2,
+          "year": 2019,
+          "total_hours": 3650,
+          "average_price": 1600000,
+          "total_consumption": 6912300,
+          "total_amount": 110596800000,
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  },
+  "sorted by year DESC": {
+    "user": "admin@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": "year",
+    "sort_order": "desc",
+    "filters": null,
+    "expected": {
+      "count": 2,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 2,
+          "year": 2019,
+          "total_hours": 3650,
+          "average_price": 1600000,
+          "total_consumption": 6912300,
+          "total_amount": 110596800000,
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 1,
+          "year": 2018,
+          "total_hours": 3650,
+          "average_price": 1500000,
+          "total_consumption": 5834900,
+          "total_amount": 87523500000,
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  },
+  "sorted by total_amount desc": {
+    "user": "admin@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": "total_amount",
+    "sort_order": "desc",
+    "filters": null,
+    "expected": {
+      "count": 2,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 2,
+          "year": 2019,
+          "total_hours": 3650,
+          "average_price": 1600000,
+          "total_consumption": 6912300,
+          "total_amount": 110596800000,
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 1,
+          "year": 2018,
+          "total_hours": 3650,
+          "average_price": 1500000,
+          "total_consumption": 5834900,
+          "total_amount": 87523500000,
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  },
+  "filtered by year": {
+    "user": "admin@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": null,
+    "sort_order": null,
+    "filters": {
+      "year": "2019"
+    },
+    "expected": {
+      "count": 1,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 2,
+          "year": 2019,
+          "total_hours": 3650,
+          "average_price": 1600000,
+          "total_consumption": 6912300,
+          "total_amount": 110596800000,
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  },
+  "filtered by max_year": {
+    "user": "admin@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": null,
+    "sort_order": null,
+    "filters": {
+      "max_year": "2018"
+    },
+    "expected": {
+      "count": 1,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 1,
+          "year": 2018,
+          "total_hours": 3650,
+          "average_price": 1500000,
+          "total_consumption": 5834900,
+          "total_amount": 87523500000,
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  },
+  "restricted": {
+    "user": "blanc@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": null,
+    "sort_order": null,
+    "filters": null,
+    "expected": {
+      "count": 2,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 1,
+          "year": 2018
+        },
+        {
+          "id": 2,
+          "year": 2019
+        }
+      ]
+    }
+  }
+}

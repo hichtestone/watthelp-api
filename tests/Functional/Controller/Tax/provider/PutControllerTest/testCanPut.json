@@ -1,0 +1,23 @@
+{
+  "basic": {
+    "user": "admin@test.fr",
+    "id": 4,
+    "put": {
+      "cspe": 514,
+      "tdcfe": 479,
+      "tccfe": 128,
+      "cta": 2703,
+      "started_at": "2019-05-12",
+      "finished_at": "2020-04-15"
+    },
+    "expected": {
+      "id": 4,
+      "cspe": 514,
+      "tdcfe": 479,
+      "tccfe": 128,
+      "cta": 2703,
+      "started_at": "@string@.isDateTime()",
+      "finished_at": "@string@.isDateTime()"
+    }
+  }
+}

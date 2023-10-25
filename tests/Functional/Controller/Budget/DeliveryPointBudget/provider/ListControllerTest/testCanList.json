@@ -1,0 +1,502 @@
+{
+  "basic": {
+    "user": "admin@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": null,
+    "sort_order": null,
+    "filters": {
+      "budget": 2
+    },
+    "expected": {
+      "count": 2,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 3,
+          "installed_power": "12.00",
+          "equipment_power_percentage": 2000,
+          "gradation": 6500,
+          "gradation_hours": 1500,
+          "sub_total_consumption": 4500000,
+          "renovation": true,
+          "renovated_at": "@string@.isDateTime()",
+          "new_installed_power": "10.00",
+          "new_equipment_power_percentage": 0,
+          "new_gradation": 6500,
+          "new_gradation_hours": 1500,
+          "new_sub_total_consumption": 3125000,
+          "total_consumption": 4099867,
+          "total": 65597900000,
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 4,
+          "installed_power": "10.00",
+          "equipment_power_percentage": 1000,
+          "gradation": 6500,
+          "gradation_hours": 1500,
+          "sub_total_consumption": 3437500,
+          "renovation": true,
+          "renovated_at": "@string@.isDateTime()",
+          "new_installed_power": "5.00",
+          "new_equipment_power_percentage": 0,
+          "new_gradation": 6500,
+          "new_gradation_hours": 1600,
+          "new_sub_total_consumption": 1562500,
+          "total_consumption": 2812500,
+          "total": 45000000000,
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  },
+  "sorted by id DESC": {
+    "user": "admin@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": "id",
+    "sort_order": "desc",
+    "filters": {
+      "budget": 2
+    },
+    "expected": {
+      "count": 2,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 4,
+          "installed_power": "10.00",
+          "equipment_power_percentage": 1000,
+          "gradation": 6500,
+          "gradation_hours": 1500,
+          "sub_total_consumption": 3437500,
+          "renovation": true,
+          "renovated_at": "@string@.isDateTime()",
+          "new_installed_power": "5.00",
+          "new_equipment_power_percentage": 0,
+          "new_gradation": 6500,
+          "new_gradation_hours": 1600,
+          "new_sub_total_consumption": 1562500,
+          "total_consumption": 2812500,
+          "total": 45000000000,
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 3,
+          "installed_power": "12.00",
+          "equipment_power_percentage": 2000,
+          "gradation": 6500,
+          "gradation_hours": 1500,
+          "sub_total_consumption": 4500000,
+          "renovation": true,
+          "renovated_at": "@string@.isDateTime()",
+          "new_installed_power": "10.00",
+          "new_equipment_power_percentage": 0,
+          "new_gradation": 6500,
+          "new_gradation_hours": 1500,
+          "new_sub_total_consumption": 3125000,
+          "total_consumption": 4099867,
+          "total": 65597900000,
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  },
+  "filtered by delivery_point": {
+    "user": "admin@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": null,
+    "sort_order": null,
+    "filters": {
+      "delivery_point": 2,
+      "budget": 1
+    },
+    "expected": {
+      "count": 1,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 2,
+          "installed_power": "10.00",
+          "equipment_power_percentage": 1000,
+          "gradation": 5000,
+          "gradation_hours": 1800,
+          "sub_total_consumption": 3025000,
+          "renovation": true,
+          "renovated_at": "@string@.isDateTime()",
+          "new_installed_power": "5.00",
+          "new_equipment_power_percentage": 0,
+          "new_gradation": 5000,
+          "new_gradation_hours": 1800,
+          "new_sub_total_consumption": 1375000,
+          "total_consumption": 2200000,
+          "total": 33000000000,
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  },
+  "filtered by dp reference": {
+    "user": "admin@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": null,
+    "sort_order": null,
+    "filters": {
+      "reference": "REF_DEV_POINT_1",
+      "budget": 1
+    },
+    "expected": {
+      "count": 1,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 1,
+          "installed_power": "12.00",
+          "equipment_power_percentage": 2000,
+          "gradation": 7000,
+          "gradation_hours": 1600,
+          "sub_total_consumption": 4564800,
+          "renovation": true,
+          "renovated_at": "@string@.isDateTime()",
+          "new_installed_power": "10.00",
+          "new_equipment_power_percentage": 0,
+          "new_gradation": 7000,
+          "new_gradation_hours": 1600,
+          "new_sub_total_consumption": 3170000,
+          "total_consumption": 3634933,
+          "total": 54524000000,
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  },
+  "sorted by code": {
+    "user": "admin@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": "code",
+    "sort_order": "asc",
+    "filters": {
+      "budget": 1
+    },
+    "expected": {
+      "count": 2,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 1,
+          "installed_power": "12.00",
+          "equipment_power_percentage": 2000,
+          "gradation": 7000,
+          "gradation_hours": 1600,
+          "sub_total_consumption": 4564800,
+          "renovation": true,
+          "renovated_at": "@string@.isDateTime()",
+          "new_installed_power": "10.00",
+          "new_equipment_power_percentage": 0,
+          "new_gradation": 7000,
+          "new_gradation_hours": 1600,
+          "new_sub_total_consumption": 3170000,
+          "total_consumption": 3634933,
+          "total": 54524000000,
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 2,
+          "installed_power": "10.00",
+          "equipment_power_percentage": 1000,
+          "gradation": 5000,
+          "gradation_hours": 1800,
+          "sub_total_consumption": 3025000,
+          "renovation": true,
+          "renovated_at": "@string@.isDateTime()",
+          "new_installed_power": "5.00",
+          "new_equipment_power_percentage": 0,
+          "new_gradation": 5000,
+          "new_gradation_hours": 1800,
+          "new_sub_total_consumption": 1375000,
+          "total_consumption": 2200000,
+          "total": 33000000000,
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  },
+  "sort by contract desc": {
+    "user": "admin@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": "contract",
+    "sort_order": "desc",
+    "filters": {
+      "budget": 1
+    },
+    "expected": {
+      "count": 2,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 2,
+          "installed_power": "10.00",
+          "equipment_power_percentage": 1000,
+          "gradation": 5000,
+          "gradation_hours": 1800,
+          "sub_total_consumption": 3025000,
+          "renovation": true,
+          "renovated_at": "@string@.isDateTime()",
+          "new_installed_power": "5.00",
+          "new_equipment_power_percentage": 0,
+          "new_gradation": 5000,
+          "new_gradation_hours": 1800,
+          "new_sub_total_consumption": 1375000,
+          "total_consumption": 2200000,
+          "total": 33000000000,
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 1,
+          "installed_power": "12.00",
+          "equipment_power_percentage": 2000,
+          "gradation": 7000,
+          "gradation_hours": 1600,
+          "sub_total_consumption": 4564800,
+          "renovation": true,
+          "renovated_at": "@string@.isDateTime()",
+          "new_installed_power": "10.00",
+          "new_equipment_power_percentage": 0,
+          "new_gradation": 7000,
+          "new_gradation_hours": 1600,
+          "new_sub_total_consumption": 3170000,
+          "total_consumption": 3634933,
+          "total": 54524000000,
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  },
+  "filter by contract": {
+    "user": "admin@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": null,
+    "sort_order": null,
+    "filters": {
+      "contract": "2",
+      "budget": 1
+    },
+    "expected": {
+      "count": 1,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 2,
+          "installed_power": "10.00",
+          "equipment_power_percentage": 1000,
+          "gradation": 5000,
+          "gradation_hours": 1800,
+          "sub_total_consumption": 3025000,
+          "renovation": true,
+          "renovated_at": "@string@.isDateTime()",
+          "new_installed_power": "5.00",
+          "new_equipment_power_percentage": 0,
+          "new_gradation": 5000,
+          "new_gradation_hours": 1800,
+          "new_sub_total_consumption": 1375000,
+          "total_consumption": 2200000,
+          "total": 33000000000,
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  },
+  "filter by no_invoice_for_months 6": {
+    "user": "admin@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": null,
+    "sort_order": null,
+    "filters": {
+      "no_invoice_for_months": "6",
+      "budget": 1
+    },
+    "expected": {
+      "count": 1,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 2,
+          "installed_power": "10.00",
+          "equipment_power_percentage": 1000,
+          "gradation": 5000,
+          "gradation_hours": 1800,
+          "sub_total_consumption": 3025000,
+          "renovation": true,
+          "renovated_at": "@string@.isDateTime()",
+          "new_installed_power": "5.00",
+          "new_equipment_power_percentage": 0,
+          "new_gradation": 5000,
+          "new_gradation_hours": 1800,
+          "new_sub_total_consumption": 1375000,
+          "total_consumption": 2200000,
+          "total": 33000000000,
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  },
+  "filter by no_invoice_for_months 12": {
+    "user": "admin@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": null,
+    "sort_order": null,
+    "filters": {
+      "no_invoice_for_months": "12",
+      "budget": 1
+    },
+    "expected": {
+      "count": 0,
+      "page": 1,
+      "per_page": 100,
+      "data": []
+    }
+  },
+  "filter by is_in_scope": {
+    "user": "admin@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": null,
+    "sort_order": null,
+    "filters": {
+      "is_in_scope": "0",
+      "budget": 1
+    },
+    "expected": {
+      "count": 1,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 2,
+          "installed_power": "10.00",
+          "equipment_power_percentage": 1000,
+          "gradation": 5000,
+          "gradation_hours": 1800,
+          "sub_total_consumption": 3025000,
+          "renovation": true,
+          "renovated_at": "@string@.isDateTime()",
+          "new_installed_power": "5.00",
+          "new_equipment_power_percentage": 0,
+          "new_gradation": 5000,
+          "new_gradation_hours": 1800,
+          "new_sub_total_consumption": 1375000,
+          "total_consumption": 2200000,
+          "total": 33000000000,
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  },
+  "sort by scope_date": {
+    "user": "admin@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": "scope_date",
+    "sort_order": "desc",
+    "filters": {
+      "budget": 1
+    },
+    "expected": {
+      "count": 2,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 1,
+          "installed_power": "12.00",
+          "equipment_power_percentage": 2000,
+          "gradation": 7000,
+          "gradation_hours": 1600,
+          "sub_total_consumption": 4564800,
+          "renovation": true,
+          "renovated_at": "@string@.isDateTime()",
+          "new_installed_power": "10.00",
+          "new_equipment_power_percentage": 0,
+          "new_gradation": 7000,
+          "new_gradation_hours": 1600,
+          "new_sub_total_consumption": 3170000,
+          "total_consumption": 3634933,
+          "total": 54524000000,
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 2,
+          "installed_power": "10.00",
+          "equipment_power_percentage": 1000,
+          "gradation": 5000,
+          "gradation_hours": 1800,
+          "sub_total_consumption": 3025000,
+          "renovation": true,
+          "renovated_at": "@string@.isDateTime()",
+          "new_installed_power": "5.00",
+          "new_equipment_power_percentage": 0,
+          "new_gradation": 5000,
+          "new_gradation_hours": 1800,
+          "new_sub_total_consumption": 1375000,
+          "total_consumption": 2200000,
+          "total": 33000000000,
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  },
+  "restricted": {
+    "user": "blanc@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": null,
+    "sort_order": null,
+    "filters": {
+      "budget": 1
+    },
+    "expected": {
+      "count": 2,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 1
+        },
+        {
+          "id": 2
+        }
+      ]
+    }
+  }
+}

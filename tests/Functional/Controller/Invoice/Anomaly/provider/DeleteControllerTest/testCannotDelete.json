@@ -1,0 +1,97 @@
+{
+  "Anomaly not found": {
+    "user": "admin@test.fr",
+    "body": {
+      "filters": {
+        "id": [
+          456564
+        ]
+      }
+    },
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "filters": {
+          "id": [
+            [
+              "Selected anomaly doesn't exist."
+            ]
+          ]
+        }
+      }
+    }
+  },
+  "Invoice not found": {
+    "user": "admin@test.fr",
+    "body": {
+      "filters": {
+        "invoices": [
+          456564
+        ]
+      }
+    },
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "filters": {
+          "invoices": [
+            [
+              "Selected invoice doesn't exist."
+            ]
+          ]
+        }
+      }
+    }
+  },
+  "Invalid status": {
+    "user": "admin@test.fr",
+    "body": {
+      "filters": {
+        "status": "whatever"
+      }
+    },
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "filters": {
+          "status": [
+            "Cette valeur doit être l'un des choix proposés."
+          ]
+        }
+      }
+    }
+  },
+  "Invalid total": {
+    "user": "admin@test.fr",
+    "body": {
+      "filters": {
+        "total": "whatever"
+      }
+    },
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "filters": {
+          "total": [
+            "Cette valeur doit être strictement positive."
+          ]
+        }
+      }
+    }
+  },
+  "doesn't have permission": {
+    "user": "blanc@test.fr",
+    "body": {},
+    "errorCode": 403,
+    "expected": {
+      "error": "AccessDenied",
+      "messages": [
+        "Accès rejeté."
+      ]
+    }
+  }
+}

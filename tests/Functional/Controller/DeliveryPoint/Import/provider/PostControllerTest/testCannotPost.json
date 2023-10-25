@@ -1,0 +1,63 @@
+{
+  "missing fields": {
+    "user": "admin@test.fr",
+    "post": {},
+    "expected_status_code": 400,
+    "expected_response": {
+      "error": "InvalidRequest",
+      "messages": {
+        "file": [
+          "Ce champ est manquant."
+        ]
+      }
+    }
+  },
+  "invalid date": {
+    "user": "admin@test.fr",
+    "post": {
+      "file": 6
+    },
+    "expected_status_code": 400,
+    "expected_response": {
+      "error": "Bad Request",
+      "messages": "Le fichier est incorrect: Cellule C3, le Code doit être unique.Le fichier est incorrect: Cellule B4, la Référence doit être unique."
+    }
+  },
+  "invalid columns": {
+    "user": "admin@test.fr",
+    "post": {
+      "file": 7
+    },
+    "expected_status_code": 400,
+    "expected_response": {
+      "error": "Bad Request",
+      "messages": "Le fichier import_perimetre.xlsx est incorrect: Cellule B1, valeur: Reference, nous attendions: Référence.Le fichier import_perimetre.xlsx est incorrect: Cellule I1, valeur: Descrption, nous attendions: Description."
+    }
+  },
+  "invalid mime type": {
+    "user": "admin@test.fr",
+    "post": {
+      "file": 4
+    },
+    "expected_status_code": 400,
+    "expected_response": {
+      "error": "InvalidRequest",
+      "messages": {
+        "file": [
+          "Le type du fichier est incorrect, un fichier excel est attendu."
+        ]
+      }
+    }
+  },
+  "doesn't have permission": {
+    "user": "polnareff@test.fr",
+    "post": {},
+    "expected_status_code": 403,
+    "expected_response": {
+      "error": "AccessDenied",
+      "messages": [
+        "Accès rejeté."
+      ]
+    }
+  }
+}

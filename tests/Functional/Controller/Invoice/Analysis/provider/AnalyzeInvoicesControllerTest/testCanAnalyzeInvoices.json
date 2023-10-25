@@ -1,0 +1,27 @@
+{
+  "basic": {
+    "post": {
+      "filters": {}
+    },
+    "existingAnalyses": [1, 2, 3, 4],
+    "expectedAnalyses": [6, 7, 8, 9, 10, 11, 12, 13]
+  },
+  "filtered by id": {
+    "post": {
+      "filters": {
+        "id": [1, 3, 5]
+      }
+    },
+    "existingAnalyses": [1, 3],
+    "expectedAnalyses": [6, 7, 8]
+  },
+  "filtered by has_analysis": {
+    "post": {
+      "filters": {
+        "has_analysis": "0"
+      }
+    },
+    "existingAnalyses": [],
+    "expectedAnalyses": [6, 7, 8, 9]
+  }
+}

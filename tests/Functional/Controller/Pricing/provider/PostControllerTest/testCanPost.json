@@ -1,0 +1,39 @@
+{
+  "negotiated": {
+    "post": {
+      "name": "testname",
+      "type": "negotiated",
+      "consumption_base_price": 154,
+      "started_at": "2005-08-15",
+      "finished_at": "2020-07-16"
+    },
+    "expected": {
+      "id": 7,
+      "name": "testname",
+      "type": "negotiated",
+      "subscription_price": null,
+      "consumption_base_price": 154,
+      "started_at": "@string@.isDateTime()",
+      "finished_at": "@string@.isDateTime()"
+    }
+  },
+  "regulated": {
+    "post": {
+      "name": "testname",
+      "type": "regulated",
+      "subscription_price": 4565,
+      "consumption_base_price": 727,
+      "started_at": "2005-08-15",
+      "finished_at": "2020-07-16"
+    },
+    "expected": {
+      "id": 7,
+      "name": "testname",
+      "type": "regulated",
+      "subscription_price": 4565,
+      "consumption_base_price": 727,
+      "started_at": "@string@.isDateTime()",
+      "finished_at": "@string@.isDateTime()"
+    }
+  }
+}

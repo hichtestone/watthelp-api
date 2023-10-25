@@ -1,0 +1,80 @@
+{
+  "nonexistent filter": {
+    "user": "admin@test.fr",
+    "post": {
+      "filters": {
+        "whatever": "dsqklj"
+      }
+    },
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "filters": {
+          "whatever": [
+            "Ce champ n'a pas été prévu."
+          ]
+        }
+      }
+    }
+  },
+  "nonexisting invoice id": {
+    "user": "admin@test.fr",
+    "post": {
+      "filters": {
+        "id": [
+          4656
+        ]
+      }
+    },
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "filters": {
+          "id": [
+            [
+              "Selected invoice doesn't exist."
+            ]
+          ]
+        }
+      }
+    }
+  },
+  "invoice belongs to another client": {
+    "user": "admin@test.fr",
+    "post": {
+      "filters": {
+        "id": [
+          9
+        ]
+      }
+    },
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "filters": {
+          "id": [
+            [
+              "Selected invoice doesn't exist."
+            ]
+          ]
+        }
+      }
+    }
+  },
+  "doesn't have permission": {
+    "user": "polnareff@test.fr",
+    "post": {
+      "filters": {}
+    },
+    "errorCode": 403,
+    "expected": {
+      "error": "AccessDenied",
+      "messages": [
+        "Accès rejeté."
+      ]
+    }
+  }  
+}

@@ -1,0 +1,108 @@
+{
+  "Nonexistent field": {
+    "user": "admin@test.fr",
+    "id": 2,
+    "patch": [
+      {
+        "op": "replace",
+        "path": "/nonexistentfield",
+        "value": "wow"
+      }
+    ],
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": [
+        {
+          "path": [
+            "Operation path is not valid."
+          ]
+        }
+      ]
+    }
+  },
+  "phone too many characters": {
+    "user": "admin@test.fr",
+    "id": 2,
+    "patch": [
+      {
+        "op": "replace",
+        "path": "/phone",
+        "value": "+33688771155449893377668"
+      }
+    ],
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": [
+        {
+          "value": [
+            "Cette chaîne est trop longue. Elle doit avoir au maximum 20 caractères."
+          ]
+        }
+      ]
+    }
+  },
+  "empty email": {
+    "user": "admin@test.fr",
+    "id": 2,
+    "patch": [
+      {
+        "op": "replace",
+        "path": "/email",
+        "value": ""
+      }
+    ],
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": [
+        {
+          "value": [
+            "Cette valeur ne doit pas être vide."
+          ]
+        }
+      ]
+    }
+  },
+  "avatar bad mimetype": {
+    "user": "admin@test.fr",
+    "id": 2,
+    "patch": [
+      {
+        "op": "replace",
+        "path": "/avatar",
+        "value": 10
+      }
+    ],
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": [
+        {
+          "value": [
+            "Seules les images sont acceptées."
+          ]
+        }
+      ]
+    }
+  },
+  "doesn't have permission": {
+    "user": "blanc@test.fr",
+    "id": 1,
+    "patch": [
+      {
+        "op": "replace",
+        "path": "/firstName",
+        "value": "Charlemagne"
+      }
+    ],
+    "errorCode": 403,
+    "expected": {
+      "error": "AccessDenied",
+      "messages": [
+        "Accès rejeté."
+      ]
+    }
+  }  
+}

@@ -1,0 +1,34 @@
+{
+  "nonexistent sort": {
+    "sort": "whatever",
+    "filters": null,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "sort": [
+          "Cette valeur doit être l'un des choix proposés."
+        ]
+      }
+    }
+  },
+  "nonexistent filter": {
+    "sort": null,
+    "filters": {
+      "created": {
+        "from": "2016-01-01",
+        "to": "2020-01-01"
+      },
+      "whatever": "dsqklj"
+    },
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "filters": {
+          "whatever": [
+            "Ce champ n'a pas été prévu."
+          ]
+        }
+      }
+    }
+  }
+}

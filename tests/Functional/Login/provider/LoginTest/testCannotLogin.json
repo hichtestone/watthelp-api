@@ -1,0 +1,12 @@
+{
+  "Invalid email": {
+    "email": "fake@fake.fr",
+    "password": "fake",
+    "expected": {
+      "error": "Bad credentials",
+      "messages": [
+        "Email ou mot de passe incorrect."
+      ]
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "DeliveryPointInvoice 456465 not found": {
+    "id": 456465,
+    "errorCode": 404,
+    "expected": {
+      "error": "ResourceNotFound",
+      "messages": [
+        "Ressource non trouvée."
+      ]
+    }
+  }
+}

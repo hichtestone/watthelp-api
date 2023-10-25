@@ -1,0 +1,182 @@
+{
+  "Budget 2021 - calculate from InvoiceConsumption": {
+    "expand": "budget_delivery_point_budgets,delivery_point_budget_delivery_point",
+    "post": {
+      "year": 2021
+    },
+    "expected": {
+      "id": 4,
+      "year": 2021,
+      "total_hours": null,
+      "average_price": null,
+      "total_consumption": 539000,
+      "total_amount": null,
+      "created_at": "@string@.isDateTime()",
+      "updated_at": "@string@.isDateTime()",
+      "delivery_point_budgets": [
+        {
+          "id": 6,
+          "delivery_point": {
+            "id": 1,
+            "name": "DeliveryPoint1",
+            "reference": "REF_DEV_POINT_1",
+            "code": "CODE_DEV_POINT_1",
+            "address": "1 Bd de la Croisette",
+            "latitude": "43.551420",
+            "longitude": "7.018060",
+            "meter_reference": "whatever",
+            "power": "7.2",
+            "created_at": "@string@.isDateTime()",
+            "updated_at": "@string@.isDateTime()",
+            "description": "description du pdl",
+            "is_in_scope": true,
+            "scope_date": "@string@.isDateTime()",
+            "creation_mode": "scope_import"
+          },
+          "installed_power": null,
+          "equipment_power_percentage": null,
+          "gradation": null,
+          "gradation_hours": null,
+          "sub_total_consumption": null,
+          "renovation": false,
+          "renovated_at": null,
+          "new_installed_power": null,
+          "new_equipment_power_percentage": null,
+          "new_gradation": null,
+          "new_gradation_hours": null,
+          "new_sub_total_consumption": null,
+          "total_consumption": 458700,
+          "total": 0,
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 7,
+          "delivery_point": {
+            "id": 2,
+            "name": "DeliveryPoint2",
+            "reference": "REF_DEV_POINT_2",
+            "code": "CODE_DEV_POINT_2",
+            "address": "2 Bd de la Croisette",
+            "latitude": null,
+            "longitude": null,
+            "meter_reference": "whatever",
+            "power": "7.2",
+            "created_at": "@string@.isDateTime()",
+            "updated_at": "@string@.isDateTime()",
+            "description": null,
+            "is_in_scope": false,
+            "scope_date": null,
+            "creation_mode": "manual"
+          },
+          "installed_power": null,
+          "equipment_power_percentage": null,
+          "gradation": null,
+          "gradation_hours": null,
+          "sub_total_consumption": null,
+          "renovation": false,
+          "renovated_at": null,
+          "new_installed_power": null,
+          "new_equipment_power_percentage": null,
+          "new_gradation": null,
+          "new_gradation_hours": null,
+          "new_sub_total_consumption": null,
+          "total_consumption": 80300,
+          "total": 0,
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  },
+  "Budget 2020 - get from last year budget": {
+    "expand": "budget_delivery_point_budgets,delivery_point_budget_delivery_point",
+    "post": {
+      "year": 2020
+    },
+    "expected": {
+      "id": 4,
+      "year": 2020,
+      "total_hours": 3650,
+      "average_price": 1600000,
+      "total_consumption": 6912300,
+      "total_amount": 110596800000,
+      "created_at": "@string@.isDateTime()",
+      "updated_at": "@string@.isDateTime()",
+      "delivery_point_budgets": [
+        {
+          "id": 6,
+          "delivery_point": {
+            "id": 1,
+            "name": "DeliveryPoint1",
+            "code": "CODE_DEV_POINT_1",
+            "address": "1 Bd de la Croisette",
+            "latitude": "43.551420",
+            "longitude": "7.018060",
+            "meter_reference": "whatever",
+            "power": "7.2",
+            "reference": "REF_DEV_POINT_1",
+            "created_at": "@string@.isDateTime()",
+            "updated_at": "@string@.isDateTime()",
+            "description": "description du pdl",
+            "is_in_scope": true,
+            "scope_date": "@string@.isDateTime()",
+            "creation_mode": "scope_import"
+          },
+          "installed_power": "10.00",
+          "equipment_power_percentage": 0,
+          "gradation": 6500,
+          "gradation_hours": 1500,
+          "sub_total_consumption": 3125000,
+          "renovation": false,
+          "renovated_at": null,
+          "new_installed_power": null,
+          "new_equipment_power_percentage": null,
+          "new_gradation": null,
+          "new_gradation_hours": null,
+          "new_sub_total_consumption": null,
+          "total_consumption": 3125000,
+          "total": 50000000000,
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 7,
+          "delivery_point": {
+            "id": 2,
+            "name": "DeliveryPoint2",
+            "code": "CODE_DEV_POINT_2",
+            "address": "2 Bd de la Croisette",
+            "latitude": null,
+            "longitude": null,
+            "meter_reference": "whatever",
+            "power": "7.2",
+            "reference": "REF_DEV_POINT_2",
+            "created_at": "@string@.isDateTime()",
+            "updated_at": "@string@.isDateTime()",
+            "description": null,
+            "is_in_scope": false,
+            "scope_date": null,
+            "creation_mode": "manual"
+          },
+          "installed_power": "5.00",
+          "equipment_power_percentage": 0,
+          "gradation": 6500,
+          "gradation_hours": 1600,
+          "sub_total_consumption": 1562500,
+          "renovation": false,
+          "renovated_at": null,
+          "new_installed_power": null,
+          "new_equipment_power_percentage": null,
+          "new_gradation": null,
+          "new_gradation_hours": null,
+          "new_sub_total_consumption": null,
+          "total_consumption": 1562500,
+          "total": 25000000000,
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  }
+}

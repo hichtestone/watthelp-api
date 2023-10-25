@@ -1,0 +1,21 @@
+{
+  "Get DeliveryPointInvoice 1": {
+    "user": "admin@test.fr",
+    "id": 1,
+    "expected": {
+      "id": 1,
+      "amount_ht": 4636,
+      "amount_tva": 5321,
+      "amount_ttc": 685,
+      "power_subscribed": "48.0",
+      "type": "estimated"
+    }
+  },
+  "restricted": {
+    "user": "polnareff@test.fr",
+    "id": 9,
+    "expected": {
+      "id": 9
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "Delete all delivery point budgets": {
+    "budgetId": 1,
+    "deliveryPointBudgetIds": [1, 2],
+    "body": {
+      "ids": "*"
+    }
+  },
+  "Delete delivery point budgets 3 and 4": {
+    "budgetId": 2,
+    "deliveryPointBudgetIds": [3, 4],
+    "body": {
+      "ids": [3, 4]
+    }
+  },
+  "Delete delivery point budgets 2": {
+    "budgetId": 1,
+    "deliveryPointBudgetIds": [2],
+    "body": {
+      "ids": [2]
+    }
+  }
+}

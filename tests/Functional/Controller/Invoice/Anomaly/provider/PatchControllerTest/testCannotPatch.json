@@ -1,0 +1,88 @@
+{
+  "No operations": {
+    "user": "admin@test.fr",
+    "id": 1,
+    "patch": {},
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "operations": [
+          "Ce champ est manquant."
+        ]
+      }
+    }
+  },
+  "Nonexistent path": {
+    "user": "admin@test.fr",
+    "id": 1,
+    "patch": {
+      "operations": [
+        {
+          "op": "replace",
+          "path": "/whatever",
+          "value": "solved"
+        }
+      ]
+    },
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "operations": [
+          {
+            "path": [
+              "Cette valeur doit être identique à string \"/status\"."
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "Invalid value": {
+    "user": "admin@test.fr",
+    "id": 1,
+    "patch": {
+      "operations": [
+        {
+          "op": "replace",
+          "path": "/status",
+          "value": "douze"
+        }
+      ]
+    },
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "operations": [
+          {
+            "value": [
+              "Cette valeur doit être l'un des choix proposés."
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "doesn't have permission": {
+    "user": "blanc@test.fr",
+    "id": 1,
+    "patch": {
+        "operations": [
+        {
+          "op": "replace",
+          "path": "/status",
+          "value": "solved"
+        }
+      ]
+    },
+    "errorCode": 403,
+    "expected": {
+      "error": "AccessDenied",
+      "messages": [
+        "Accès rejeté."
+      ]
+    }
+  }
+}

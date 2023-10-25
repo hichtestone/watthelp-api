@@ -1,0 +1,124 @@
+{
+  "missing fields": {
+    "user": "admin@test.fr",
+    "post": {},
+    "expected_status_code": 400,
+    "expected_response": {
+      "error": "InvalidRequest",
+      "messages": {
+        "email": [
+          "Ce champ est manquant."
+        ],
+        "password": [
+          "Ce champ est manquant."
+        ],
+        "first_name": [
+          "Ce champ est manquant."
+        ],
+        "last_name": [
+          "Ce champ est manquant."
+        ]
+      }
+    }
+  },
+  "email already in use": {
+    "user": "admin@test.fr",
+    "post": {
+      "email": "admin@test.fr",
+      "password": "testesT,!",
+      "first_name": "Michel",
+      "last_name": "Berger"
+    },
+    "expected_status_code": 400,
+    "expected_response": {
+      "error": "InvalidRequest",
+      "messages": {
+        "email": [
+          "Cette adresse email est déjà utilisée."
+        ]
+      }
+    }
+  },
+  "weak password": {
+    "user": "admin@test.fr",
+    "post": {
+      "email": "qslkjd@test.fr",
+      "password": "soweak",
+      "first_name": "Michel",
+      "last_name": "Berger"
+    },
+    "expected_status_code": 400,
+    "expected_response": {
+      "error": "InvalidRequest",
+      "messages": {
+        "password": [
+          "Votre mot de passe doit contenir au moins 8 caractères, une lettre majuscule, un caractère spécial."
+        ]
+      }
+    }
+  },
+  "nonexistent role": {
+    "user": "admin@test.fr",
+    "put": {
+      "email": "test@test.fr",
+      "first_name": "Michel",
+      "last_name": "Berger",
+      "password": "testtesT,",
+      "roles": [
+        456564,
+        2
+      ]
+    },
+    "expected_status_code": 400,
+    "expected_response": {
+      "error": "InvalidRequest",
+      "messages": {
+        "roles": [
+          [
+            "Selected role doesn't exist."
+          ]
+        ]
+      }
+    }
+  },
+  "role belongs to another client": {
+    "user": "admin@test.fr",
+    "put": {
+      "email": "test@test.fr",
+      "first_name": "Michel",
+      "last_name": "Berger",
+      "password": "testtesT,",
+      "roles": [
+        4,
+        2
+      ]
+    },
+    "expected_status_code": 400,
+    "expected_response": {
+      "error": "InvalidRequest",
+      "messages": {
+        "roles": [
+          [
+            "Selected role doesn't exist."
+          ]
+        ]
+      }
+    }
+  },
+  "doesn't have permission": {
+    "user": "blanc@test.fr",
+    "post": {
+      "email": "francis@lalanne.fr",
+      "first_name": "Francis",
+      "last_name": "Lalanne",
+      "password": "Fr@nCis!Lalanne"
+    },
+    "errorCode": 403,
+    "expected": {
+      "error": "AccessDenied",
+      "messages": [
+        "Accès rejeté."
+      ]
+    }
+  }  
+}

@@ -1,0 +1,33 @@
+{
+  "basic": {
+    "budgets": {
+      "2021": [6, 7],
+      "2022": [8, 9]
+    },
+    "existingBudgets": 0,
+    "post": {
+      "file": 19
+    },
+    "expected": {
+      "id": 6,
+      "type": "budget",
+      "provider": null,
+      "created_at": "@string@.isDateTime()"
+    }
+  },
+  "can import existing years": {
+    "budgets": {
+      "2019": [3, 4]
+    },
+    "existingBudgets": 1,
+    "post": {
+      "file": 23
+    },
+    "expected": {
+      "id": 6,
+      "type": "budget",
+      "provider": null,
+      "created_at": "@string@.isDateTime()"
+    }
+  }
+}

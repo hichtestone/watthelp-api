@@ -1,0 +1,35 @@
+{
+  "Delivery point 213654 not found": {
+    "user": "admin@test.fr",
+    "id": 213654,
+    "errorCode": 404,
+    "expected": {
+      "error": "ResourceNotFound",
+      "messages": [
+        "Ressource non trouvée."
+      ]
+    }
+  },
+  "Delivery point belongs to another client": {
+    "user": "admin@test.fr",
+    "id": 3,
+    "errorCode": 403,
+    "expected": {
+      "error": "AccessDenied",
+      "messages": [
+        "Accès rejeté."
+      ]
+    }
+  },
+  "doesn't have permission": {
+    "user": "polnareff@test.fr",
+    "id": 3,
+    "expected_status_code": 403,
+    "expected_response": {
+      "error": "AccessDenied",
+      "messages": [
+        "Accès rejeté."
+      ]
+    }
+  }
+}

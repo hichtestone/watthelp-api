@@ -1,0 +1,80 @@
+service: watthelp
+
+provider:
+  name: aws
+  region: eu-west-3
+  runtime: provided.al2
+  stage: ${opt:stage, 'dev'}
+  environment:
+    APP_ENV: prod
+    BREF_BINARY_RESPONSES: '1'
+  apiGateway:
+    binaryMediaTypes:
+      - '*/*'
+  
+plugins:
+  - ./vendor/bref/bref
+
+functions:
+
+  export:
+    handler: export.php
+    description: 'Export'
+    reservedConcurrency: 10 # 10 lambda invocations at the same time
+    memorySize: 2048
+    timeout: 900
+    layers:
+      - 'arn:aws:lambda:eu-west-3:209497400698:layer:php-74:18'
+    events:
+      - sqs:
+          arn: ${env:AWS_LAMBDA_ARN_EXPORT}
+          # We tell Amazon SQS to send only 1 message from the queue to the function,
+          # otherwise if we send more than 1 message and one of them fails, then ALL messages are put again in the queue.
+          batchSize: 1
+
+  import:
+    handler: import.php
+    description: 'Import'
+    reservedConcurrency: 10 # 10 lambda invocations at the same time
+    memorySize: 2048
+    timeout: 900
+    layers:
+      - 'arn:aws:lambda:eu-west-3:209497400698:layer:php-74:18'
+    events:
+      - sqs:
+          arn: ${env:AWS_LAMBDA_ARN_IMPORT}
+          # We tell Amazon SQS to send only 1 message from the queue to the function,
+          # otherwise if we send more than 1 message and one of them fails, then ALL messages are put again in the queue.
+          batchSize: 1
+
+  analyze:
+    handler: analyze.php
+    description: 'Analyze'
+    reservedConcurrency: 10 # 10 lambda invocations at the same time
+    memorySize: 2048
+    timeout: 900
+    layers:
+      - 'arn:aws:lambda:eu-west-3:209497400698:layer:php-74:18'
+    events:
+      - sqs:
+          arn: ${env:AWS_LAMBDA_ARN_ANALYZE}
+          # We tell Amazon SQS to send only 1 message from the queue to the function,
+          # otherwise if we send more than 1 message and one of them fails, then ALL messages are put again in the queue.
+          batchSize: 1
+
+  api:
+    handler: public/index.php
+    description: ''
+    timeout: 28 # in seconds (API Gateway has a timeout of 29 seconds)
+    layers:
+      - ${bref:layer.php-74-fpm}
+    events:
+      # - httpApi: '*'
+      - http: 'ANY /'
+      - http: 'ANY /{proxy+}'
+
+# Exclude files from deployment
+package:
+  exclude:
+    - 'node_modules/**'
+    - 'tests/**'

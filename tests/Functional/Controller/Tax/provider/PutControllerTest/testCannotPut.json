@@ -1,0 +1,111 @@
+{
+  "missing fields": {
+    "user": "admin@test.fr",
+    "id": 4,
+    "put": {},
+    "expected_status_code": 400,
+    "expected_response": {
+      "error": "InvalidRequest",
+      "messages": {
+        "cspe": [
+          "Ce champ est manquant."
+        ],
+        "tdcfe": [
+          "Ce champ est manquant."
+        ],
+        "tccfe": [
+          "Ce champ est manquant."
+        ],
+        "cta": [
+          "Ce champ est manquant."
+        ],
+        "started_at": [
+          "Ce champ est manquant."
+        ],
+        "finished_at": [
+          "Ce champ est manquant."
+        ]
+      }
+    }
+  },
+  "invalid cspe": {
+    "user": "admin@test.fr",
+    "id": 4,
+    "put": {
+      "cspe": 114,
+      "tdcfe": 479,
+      "tccfe": "12",
+      "cta": 0,
+      "started_at": "2020-05-12",
+      "finished_at": "2020-07-16"
+    },
+    "expected_status_code": 400,
+    "expected_response": {
+      "error": "InvalidRequest",
+      "messages": {
+        "tccfe": [
+          "Cette valeur doit être de type int."
+        ]
+      }
+    }
+  },
+  "invalid started_at": {
+    "user": "admin@test.fr",
+    "id": 4,
+    "put": {
+      "cspe": 114,
+      "tdcfe": 479,
+      "tccfe": 12,
+      "cta": 0,
+      "started_at": "2020-05-12aze",
+      "finished_at": "2020-07-16"
+    },
+    "expected_status_code": 400,
+    "expected_response": {
+      "error": "InvalidRequest",
+      "messages": {
+        "started_at": [
+          "Cette valeur n'est pas une date valide."
+        ]
+      }
+    }
+  },
+  "belongs to another client": {
+    "user": "admin@test.fr",
+    "id": 6,
+    "put": {
+      "cspe": 114,
+      "tdcfe": 479,
+      "tccfe": 12,
+      "cta": 0,
+      "started_at": "2020-05-12",
+      "finished_at": "2020-07-16"
+    },
+    "expected_status_code": 403,
+    "expected_response": {
+      "error": "AccessDenied",
+      "messages": [
+          "Accès rejeté."
+      ]
+    }
+  },
+  "doesn't have permission": {
+    "user": "blanc@test.fr",
+    "id": 1,
+    "put": {
+      "cspe": 114,
+      "tdcfe": 479,
+      "tccfe": 12,
+      "cta": 0,
+      "started_at": "2020-05-12",
+      "finished_at": "2020-07-16"
+    },
+    "errorCode": 403,
+    "expected": {
+      "error": "AccessDenied",
+      "messages": [
+        "Accès rejeté."
+      ]
+    }
+  }
+}

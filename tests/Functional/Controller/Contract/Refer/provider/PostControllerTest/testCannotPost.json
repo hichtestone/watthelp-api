@@ -1,0 +1,35 @@
+{
+  "Contract 456465 not found": {
+    "user": "admin@test.fr",
+    "id": 456465,
+    "errorCode": 404,
+    "expected": {
+      "error": "ResourceNotFound",
+      "messages": [
+        "Ressource non trouvée."
+      ]
+    }
+  },
+  "Belongs to a different client": {
+    "user": "admin@test.fr",
+    "id": 4,
+    "errorCode": 403,
+    "expected": {
+        "error": "AccessDenied",
+        "messages": [
+            "Accès rejeté."
+        ]
+    }
+  },
+  "doesn't have permission": {
+    "user": "blanc@test.fr",
+    "id": 1,
+    "errorCode": 403,
+    "expected": {
+      "error": "AccessDenied",
+      "messages": [
+        "Accès rejeté."
+      ]
+    }
+  }
+}

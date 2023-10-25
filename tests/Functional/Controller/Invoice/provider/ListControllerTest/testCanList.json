@@ -1,0 +1,302 @@
+{
+  "basic": {
+    "user": "admin@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": null,
+    "sort_order": null,
+    "filters": null,
+    "expected": {
+      "count": 8,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 1,
+          "reference": "FL012018",
+          "amount_ht": 900,
+          "amount_tva": 200,
+          "amount_ttc": 1100,
+          "emitted_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 2,
+          "reference": "FL032018",
+          "amount_ht": 1000,
+          "amount_tva": 200,
+          "amount_ttc": 1200,
+          "emitted_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 3,
+          "reference": "FL092018",
+          "amount_ht": 1000,
+          "amount_tva": 200,
+          "amount_ttc": 1200,
+          "emitted_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 4,
+          "reference": "FL012019",
+          "amount_ht": 900,
+          "amount_tva": 200,
+          "amount_ttc": 1100,
+          "emitted_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 5,
+          "reference": "FL032019",
+          "amount_ht": 1000,
+          "amount_tva": 200,
+          "amount_ttc": 1200,
+          "emitted_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 6,
+          "reference": "FL092019",
+          "amount_ht": 1000,
+          "amount_tva": 200,
+          "amount_ttc": 1200,
+          "emitted_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 7,
+          "reference": "FL032020",
+          "amount_ht": 1000,
+          "amount_tva": 200,
+          "amount_ttc": 1200,
+          "emitted_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 8,
+          "reference": "FL092020",
+          "amount_ht": 1000,
+          "amount_tva": 200,
+          "amount_ttc": 1200,
+          "emitted_at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  },
+  "sorted by reference DESC": {
+    "user": "admin@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": "reference",
+    "sort_order": "desc",
+    "filters": null,
+    "expected": {
+      "count": 8,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 8,
+          "reference": "FL092020",
+          "amount_ht": 1000,
+          "amount_tva": 200,
+          "amount_ttc": 1200,
+          "emitted_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 6,
+          "reference": "FL092019",
+          "amount_ht": 1000,
+          "amount_tva": 200,
+          "amount_ttc": 1200,
+          "emitted_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 3,
+          "reference": "FL092018",
+          "amount_ht": 1000,
+          "amount_tva": 200,
+          "amount_ttc": 1200,
+          "emitted_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 7,
+          "reference": "FL032020",
+          "amount_ht": 1000,
+          "amount_tva": 200,
+          "amount_ttc": 1200,
+          "emitted_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 5,
+          "reference": "FL032019",
+          "amount_ht": 1000,
+          "amount_tva": 200,
+          "amount_ttc": 1200,
+          "emitted_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 2,
+          "reference": "FL032018",
+          "amount_ht": 1000,
+          "amount_tva": 200,
+          "amount_ttc": 1200,
+          "emitted_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 4,
+          "reference": "FL012019",
+          "amount_ht": 900,
+          "amount_tva": 200,
+          "amount_ttc": 1100,
+          "emitted_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 1,
+          "reference": "FL012018",
+          "amount_ht": 900,
+          "amount_tva": 200,
+          "amount_ttc": 1100,
+          "emitted_at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  },
+  "page 2 - sorted by emitted_at": {
+    "user": "admin@test.fr",
+    "page": 2,
+    "per_page": 2,
+    "sort": "emitted_at",
+    "sort_order": "asc",
+    "filters": null,
+    "expected": {
+      "count": 8,
+      "page": 2,
+      "per_page": 2,
+      "data": [
+        {
+          "id": 3,
+          "reference": "FL092018",
+          "amount_ht": 1000,
+          "amount_tva": 200,
+          "amount_ttc": 1200,
+          "emitted_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 4,
+          "reference": "FL012019",
+          "amount_ht": 900,
+          "amount_tva": 200,
+          "amount_ttc": 1100,
+          "emitted_at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  },
+  "filtered by reference - sorted by amountTTC desc": {
+    "user": "admin@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": "amount_ttc",
+    "sort_order": "desc",
+    "filters": {
+      "reference": "2018"
+    },
+    "expected": {
+      "count": 3,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 2,
+          "reference": "FL032018",
+          "amount_ht": 1000,
+          "amount_tva": 200,
+          "amount_ttc": 1200,
+          "emitted_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 3,
+          "reference": "FL092018",
+          "amount_ht": 1000,
+          "amount_tva": 200,
+          "amount_ttc": 1200,
+          "emitted_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 1,
+          "reference": "FL012018",
+          "amount_ht": 900,
+          "amount_tva": 200,
+          "amount_ttc": 1100,
+          "emitted_at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  },
+  "filtered by has_analysis": {
+    "user": "admin@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": null,
+    "sort_order": null,
+    "filters": {
+      "has_analysis": "1"
+    },
+    "expected": {
+      "count": 4,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 1,
+          "reference": "FL012018",
+          "amount_ht": 900,
+          "amount_tva": 200,
+          "amount_ttc": 1100,
+          "emitted_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 2,
+          "reference": "FL032018",
+          "amount_ht": 1000,
+          "amount_tva": 200,
+          "amount_ttc": 1200,
+          "emitted_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 3,
+          "reference": "FL092018",
+          "amount_ht": 1000,
+          "amount_tva": 200,
+          "amount_ttc": 1200,
+          "emitted_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 4,
+          "reference": "FL012019",
+          "amount_ht": 900,
+          "amount_tva": 200,
+          "amount_ttc": 1100,
+          "emitted_at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  },
+  "restricted": {
+    "user": "polnareff@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": null,
+    "sort_order": null,
+    "filters": null,
+    "expected": {
+      "count": 2,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 9
+        },
+        {
+          "id": 11
+        }
+      ]
+    }
+  }
+}

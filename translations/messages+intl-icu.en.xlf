@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="fr" trgLang="en">
+    <file id="back">
+        <unit id="1" name="unauthorized_call">
+            <segment state="translated">
+                <source>unauthorized_call</source>
+                <target>Appel non autorisé.</target>
+            </segment>
+        </unit>
+        <unit id="2" name="access_denied">
+            <segment state="translated">
+                <source>access_denied</source>
+                <target>Accès rejeté.</target>
+            </segment>
+        </unit>
+        <unit id="3" name="resource_not_found">
+            <segment state="translated">
+                <source>resource_not_found</source>
+                <target>Ressource non trouvée.</target>
+            </segment>
+        </unit>
+        <unit id="4" name="method_not_allowed">
+            <segment state="translated">
+                <source>method_not_allowed</source>
+                <target>Méthode non autorisée.</target>
+            </segment>
+        </unit>
+        <unit id="5" name="unknown_error_has_occurred">
+            <segment state="translated">
+                <source>unknown_error_has_occurred</source>
+                <target>Une erreur inconnue est survenue.</target>
+            </segment>
+        </unit>
+        <unit id="6" name="incorrect_file_missing_sheet">
+            <segment state="translated">
+                <source>incorrect_file_missing_sheet</source>
+                <target>Le fichier est incorrect: l'onglet {sheet} n'existe pas.</target>
+            </segment>
+        </unit>
+        <unit id="7" name="incorrect_file_unexpected_value">
+            <segment state="translated">
+                <source>incorrect_file_unexpected_value</source>
+                <target>Le fichier{filename} est incorrect: Cellule {cell}, valeur: {actual_value}, nous attendions: {expected_value}.</target>
+            </segment>
+        </unit>
+        <unit id="8" name="sheet_is_incorrect">
+            <segment state="translated">
+                <source>sheet_is_incorrect</source>
+                <target>L'onglet {sheet} est incorrect:</target>
+            </segment>
+        </unit>
+        <unit id="9" name="cell">
+            <segment state="translated">
+                <source>cell</source>
+                <target>Cellule</target>
+            </segment>
+        </unit>
+        <unit id="10" name="year_is_required">
+            <segment state="translated">
+                <source>year_is_required</source>
+                <target>l'Année est obligatoire.</target>
+            </segment>
+        </unit>
+        <unit id="11" name="year_must_be_unique">
+            <segment state="translated">
+                <source>year_must_be_unique</source>
+                <target>l'Année doit être unique.</target>
+            </segment>
+        </unit>
+        <unit id="12" name="yearly_hours_operating_required">
+            <segment state="translated">
+                <source>yearly_hours_operating_required</source>
+                <target>le Nombre d'heures de fonctionnement annuel est obligatoire.</target>
+            </segment>
+        </unit>
+        <unit id="13" name="average_energy_price_excl_taxes_is_required">
+            <segment state="translated">
+                <source>average_energy_price_excl_taxes_is_required</source>
+                <target>le Prix moyen énergie HT est obligatoire.</target>
+            </segment>
+        </unit>
+        <unit id="14" name="year_is_missing_in_budget_sheet">
+            <segment state="translated">
+                <source>year_is_missing_in_budget_sheet</source>
+                <target>l'Année {year} n'existe pas dans l'onglet Budgets.</target>
+            </segment>
+        </unit>
+        <unit id="15" name="delivery_point_reference_is_required">
+            <segment state="translated">
+                <source>delivery_point_reference_is_required</source>
+                <target>la Référence PDL est obligatoire.</target>
+            </segment>
+        </unit>
+        <unit id="16" name="incorrect_file_ref_not_unique_for_year">
+            <segment state="translated">
+                <source>incorrect_file_ref_not_unique_for_year</source>
+                <target>Le fichier est incorrect: Cellule {cell}, la Référence {reference} pour l'année {year} n'est pas unique.</target>
+            </segment>
+        </unit>
+        <unit id="17" name="year_must_match_year_in_cell">
+            <segment state="translated">
+                <source>year_must_match_year_in_cell</source>
+                <target>la date doit appartenir à l'année {year} spécifiée dans la cellule {cell}.</target>
+            </segment>
+        </unit>
+        <unit id="18" name="delivery_point_does_not_exist">
+            <segment state="translated">
+                <source>delivery_point_does_not_exist</source>
+                <target>{count_delivery_points, plural,
+                    one {Le point de livraison {references} n'existe pas.}
+                    other {Les points de livraison {references} n'existent pas.}}</target>
+            </segment>
+        </unit>
+        <unit id="19" name="file_verification_ongoing">
+            <segment state="translated">
+                <source>file_verification_ongoing</source>
+                <target>Vérification du fichier en cours.</target>
+            </segment>
+        </unit>
+        <unit id="20" name="import_ongoing">
+            <segment state="translated">
+                <source>import_ongoing</source>
+                <target>Import en cours.</target>
+            </segment>
+        </unit>
+        <unit id="21" name="delivery_point_power_missing_on_invoice">
+            <segment state="translated">
+                <source>delivery_point_power_missing_on_invoice</source>
+                <target>La puissance du point de livraison {delivery_point} est manquante sur la facture {invoice}.</target>
+            </segment>
+        </unit>
+        <unit id="22" name="delivery_point_changed">
+            <segment state="translated">
+                <source>delivery_point_changed</source>
+                <target>{attribute, select, power {La puissance} address {L'adresse} other {}} du point de livraison {delivery_point} était {old_delivery_point_value} sur la facture {old_invoice}, mais elle est {new_delivery_point_value} sur la facture {new_invoice}.</target>
+            </segment>
+        </unit>
+        <unit id="23" name="could_not_find_delivery_point_corresponding_to_invoice">
+            <segment state="translated">
+                <source>could_not_find_delivery_point_corresponding_to_invoice</source>
+                <target>Impossible de trouver le point de livraison {delivery_point} correspondant à la facture {invoice} dans le fichier sites_elec.csv.</target>
+            </segment>
+        </unit>
+        <unit id="24" name="provider_not_supported">
+            <segment state="translated">
+                <source>provider_not_supported</source>
+                <target>Le fournisseur {provider} n'est pas pris en charge.</target>
+            </segment>
+        </unit>
+        <unit id="25" name="incorrect_file_attribute_mandatory">
+            <segment state="translated">
+                <source>incorrect_file_attribute_mandatory</source>
+                <target>Le fichier est incorrect: Cellule {cell}, le {attribute, select, name {le Nom} reference {la Référence} address {l'Adresse} meter_reference {la Référence du compteur} other {}} est obligatoire.</target>
+            </segment>
+        </unit>
+        <unit id="26" name="incorrect_file_attribute_must_be_unique">
+            <segment state="translated">
+                <source>incorrect_file_attribute_must_be_unique</source>
+                <target>Le fichier est incorrect: Cellule {cell}, {attribute, select, reference {la Référence} code {le Code} other {}} doit être unique.</target>
+            </segment>
+        </unit>
+        <unit id="27" name="between_0_and_36">
+            <segment state="translated">
+                <source>between_0_and_36</source>
+                <target>entre 0,1 et 36</target>
+            </segment>
+        </unit>
+        <unit id="28" name="invoices_already_imported">
+            <segment state="translated">
+                <source>invoices_already_imported</source>
+                <target>{count_invoices, plural,
+                    one {La facture {invoices} a déjà été importée.}
+                    other {Les factures {invoices} ont déjà été importées.}}</target>
+            </segment>
+        </unit>
+        <unit id="29" name="incorrect_file_wrong_city">
+            <segment state="translated">
+                <source>incorrect_file_wrong_city</source>
+                <target>Le fichier{filename} est incorrect: la commune de la ligne {row} est invalide. Nous attendions la ville {city} ou le code postal {zipcode}.</target>
+            </segment>
+        </unit>        
+        <unit id="30" name="zero_or_empty">
+            <segment state="translated">
+                <source>zero_or_empty</source>
+                <target>0 ou vide</target>
+            </segment>
+        </unit>
+        <unit id="31" name="import_type_not_supported">
+            <segment state="translated">
+                <source>import_type_not_supported</source>
+                <target>Le type d'import {type} n'est pas pris en charge.</target>
+            </segment>
+        </unit>        
+        <unit id="32" name="unit_price_missing">
+            <segment>
+                <source>unit_price_missing</source>
+                <target>Unit price is missing.</target>
+            </segment>
+        </unit>
+        <unit id="60" name="amount_incorrect">
+            <segment>
+                <source>amount_incorrect</source>
+                <target>The amount {amount_type, select, HT {HT } TVA {TVA } TTC {TTC } other{}}{type, select, subscription {of the subscription } consumption {of the consumption } TURPE {of the TURPE } tax {of the tax {tax} } other{}}is incorrect.</target>
+            </segment>
+        </unit>
+        <unit id="66" name="expected_value">
+            <segment>
+                <source>expected_value</source>
+                <target>Expected value: {expected_value}</target>
+            </segment>
+        </unit>
+    </file>
+</xliff>

@@ -1,0 +1,54 @@
+{
+  "budget does not exist": {
+    "user": "admin@test.fr",
+    "year": "2017",
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "year": [
+          "Le budget de cette année n'existe pas."
+        ]
+      }
+    }
+  },
+  "missing year": {
+    "user": "admin@test.fr",
+    "year": "",
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "year": [
+          "Cette valeur ne doit pas être vide.",
+          "Cette valeur doit être de type numeric."
+        ]
+      }
+    }
+  },
+  "year is not numeric": {
+    "user": "admin@test.fr",
+    "year": "douze",
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "year": [
+          "Cette valeur doit être de type numeric.",
+          "Le budget de cette année n'existe pas."
+        ]
+      }
+    }
+  },
+  "doesn't have permission": {
+    "user": "blanc@test.fr",
+    "year": "2019",
+    "expected_status_code": 403,
+    "expected_response": {
+      "error": "AccessDenied",
+      "messages": [
+        "Accès rejeté."
+      ]
+    }
+  }
+}

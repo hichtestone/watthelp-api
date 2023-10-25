@@ -1,0 +1,63 @@
+{
+  "Get user 2": {
+    "user": "admin@test.fr",
+    "id": 2,
+    "expand": "user_permission_codes,user_notifications,user_avatar",
+    "expected": {
+      "id": 2,
+      "email": "blanc@test.fr",
+      "first_name": "Michel",
+      "last_name": "Blanc",
+      "mobile": null,
+      "phone": "+376656652",
+      "avatar": null,
+      "created_at": "@string@.isDateTime()",
+      "updated_at": "@string@.isDateTime()",
+      "dashboard": null,
+      "super_admin": false,
+      "language": "fr",
+      "notifications": [
+        {
+          "id": 4,
+          "message": "Le rapport de l'import est disponible",
+          "progress": null,
+          "url": "",
+          "is_read": true,
+          "created_at": "@string@.isDateTime()",
+          "updated_at": "@string@.isDateTime()",
+          "data": null
+        }
+      ],
+      "permissions": [
+        "system.role.view",
+        "system.role.edit",
+        "system.role.delete",
+        "management.delivery_point.view",
+        "management.delivery_point.edit",
+        "management.delivery_point.delete",
+        "management.invoice.view",
+        "management.invoice.edit",
+        "management.invoice.delete",
+        "management.invoice.analyze"
+      ]
+    }
+  },
+  "Can see own user without user view permission": {
+    "user": "blanc@test.fr",
+    "id": 2,
+    "expand": null,
+    "expected": {
+      "id": 2,
+      "email": "blanc@test.fr",
+      "first_name": "Michel",
+      "last_name": "Blanc",
+      "mobile": null,
+      "phone": "+376656652",
+      "super_admin": false,
+      "language": "fr",
+      "created_at": "@string@.isDateTime()",
+      "updated_at": "@string@.isDateTime()",
+      "dashboard": null
+    }
+  }
+}

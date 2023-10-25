@@ -1,0 +1,29 @@
+{
+  "patch status": {
+    "id": 1,
+    "patch": {
+      "operations": [
+        {
+          "op": "replace",
+          "path": "/status",
+          "value": "ignored"
+        }
+      ]
+    },
+    "expected": {
+      "id": 1,
+      "applied_rules": null,
+      "old_value": null,
+      "current_value": null,
+      "expected_value": null,
+      "type": "consumption",
+      "status": "ignored",
+      "content": "anomaly1",
+      "total": 10000000,
+      "total_percentage": 4.97,
+      "profit": "client",
+      "created_at": "@string@.isDateTime()",
+      "updated_at": "@string@.isDateTime()"
+    }
+  }
+}

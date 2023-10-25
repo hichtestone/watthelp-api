@@ -1,0 +1,14 @@
+{
+  "basic": {
+    "anomalyId": 1,
+    "post": {
+      "content": "Mais pas d'oignons aux autrichiens"
+    },
+    "expected": {
+      "id": 2,
+      "content": "Mais pas d'oignons aux autrichiens",
+      "created_at": "@string@.isDateTime()",
+      "updated_at": "@string@.isDateTime()"
+    }
+  }
+}

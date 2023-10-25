@@ -1,0 +1,135 @@
+{
+  "missing fields": {
+    "user": "admin@test.fr",
+    "id": 2,
+    "put": {},
+    "expected_status_code": 400,
+    "expected_response": {
+      "error": "InvalidRequest",
+      "messages": {
+        "name": [
+          "Ce champ est manquant."
+        ],
+        "reference": [
+          "Ce champ est manquant."
+        ],
+        "address": [
+          "Ce champ est manquant."
+        ],
+        "meter_reference": [
+          "Ce champ est manquant."
+        ],
+        "power": [
+          "Ce champ est manquant."
+        ],
+        "contract": [
+          "Ce champ est manquant."
+        ]
+      }
+    }
+  },
+  "code already taken": {
+    "user": "admin@test.fr",
+    "id": 2,
+    "put": {
+      "name": "WXCOI",
+      "reference": "xlkdwxkllccv",
+      "code": "CODE_DEV_POINT_1",
+      "address": "465dsqjdklqsj",
+      "meter_reference": "whatever",
+      "power": "12.12",
+      "contract": 1
+    },
+    "expected_status_code": 400,
+    "expected_response": {
+      "error": "InvalidRequest",
+      "messages": {
+        "code": [
+          "Ce code existe déjà."
+        ]
+      }
+    }
+  },
+  "belongs to another client": {
+    "user": "admin@test.fr",
+    "id": 3,
+    "put": {
+      "email": "admin@test.fr",
+      "first_name": "Michel",
+      "last_name": "Berger"
+    },
+    "expected_status_code": 403,
+    "expected_response": {
+      "error": "AccessDenied",
+      "messages": [
+        "Accès rejeté."
+      ]
+    }
+  },
+  "contract belongs to another client": {
+    "user": "admin@test.fr",
+    "id": 1,
+    "put": {
+      "name": "WXCOIII",
+      "reference": "testref",
+      "code": "CODE_DEV_POINT_11",
+      "address": "465dsqjdklqsj",
+      "meter_reference": "whatever",
+      "power": "12.12",
+      "contract": 4
+    },
+    "expected_status_code": 400,
+    "expected_response": {
+      "error": "InvalidRequest",
+      "messages": {
+        "contract": [
+          "Selected contract doesn't exist."
+        ]
+      }
+    }
+  },
+  "photo doesn't exist": {
+    "user": "admin@test.fr",
+    "id": 1,
+    "put": {
+      "name": "WXCOI",
+      "reference": "xlkdwxkllccv",
+      "code": "CODE_DEV_POINT_12",
+      "address": "465dsqjdklqsj",
+      "meter_reference": "whatever",
+      "power": "12.12",
+      "contract": 1,
+      "photo": 156489
+    },
+    "expected_status_code": 400,
+    "expected_response": {
+      "error": "InvalidRequest",
+      "messages": {
+        "photo": [
+          "Selected photo doesn't exist."
+        ]
+      }
+    }
+  },
+  "doesn't have permission": {
+    "user": "polnareff@test.fr",
+    "id": 3,
+    "put": {
+      "name": "WXCOI",
+      "reference": "xlkdwxkllccv",
+      "code": null,
+      "address": "465dsqjdklqsj",
+      "latitude": null,
+      "longitude": null,
+      "meter_reference": "whatever",
+      "power": "12.12"
+    },
+    "expected_status_code": 403,
+    "expected_response": {
+      "error": "AccessDenied",
+      "messages": [
+        "Accès rejeté."
+      ]
+    }
+  }
+}

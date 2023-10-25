@@ -1,0 +1,122 @@
+{
+  "missing fields": {
+    "user": "admin@test.fr",
+    "post": {},
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "name": [
+          "Ce champ est manquant."
+        ]
+      }
+    }
+  },
+  "invalid name": {
+    "user": "admin@test.fr",
+    "post": {
+      "name": 147
+    },
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "name": [
+          "Cette valeur doit être de type string."
+        ]
+      }
+    }
+  },
+  "invalid description": {
+    "user": "admin@test.fr",
+    "post": {
+      "name": "douze",
+      "description": 147
+    },
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "description": [
+          "Cette valeur doit être de type string."
+        ]
+      }
+    }
+  },
+  "nonexistent user": {
+    "user": "admin@test.fr",
+    "post": {
+      "name": "douze",
+      "users": [
+        2,
+        458
+      ]
+    },
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "users": {
+          "1": [
+            "Selected user doesn't exist."
+          ]
+        }
+      }
+    }
+  },
+  "nonexistent code": {
+    "user": "admin@test.fr",
+    "post": {
+      "name": "douze",
+      "permissions": [
+        1,
+        456465
+      ]
+    },
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "permissions": {
+          "1": [
+            "Selected permission doesn't exist."
+          ]
+        }
+      }
+    }
+  },
+  "user belongs to another client": {
+    "user": "admin@test.fr",
+    "post": {
+      "name": "douze",
+      "users": [
+        1,
+        3
+      ]
+    },
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "users": {
+          "1": [
+            "Selected user doesn't exist."
+          ]
+        }
+      }
+    }
+  },
+  "doesn't have permission": {
+    "user": "polnareff@test.fr",
+    "post": {
+      "name": "dqslkj"
+    },
+    "errorCode": 403,
+    "expected": {
+      "error": "AccessDenied",
+      "messages": [
+        "Accès rejeté."
+      ]
+    }
+  }
+}

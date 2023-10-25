@@ -1,0 +1,36 @@
+{
+  "Analysis not found": {
+    "user": "admin@test.fr",
+    "body": {
+      "filters": {
+        "ids": [
+          54456456
+        ]
+      }
+    },
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "filters": {
+          "ids": [
+            [
+              "Selected analysis doesn't exist."
+            ]
+          ]
+        }
+      }
+    }
+  },
+  "doesn't have permission": {
+    "user": "blanc@test.fr",
+    "body": {},
+    "errorCode": 403,
+    "expected": {
+      "error": "AccessDenied",
+      "messages": [
+        "Accès rejeté."
+      ]
+    }
+  }  
+}

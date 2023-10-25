@@ -1,0 +1,65 @@
+{
+  "invalid path": {
+    "user": "admin@test.fr",
+    "patch": [
+      {
+        "op": "replace",
+        "path": "/invalid",
+        "value": {}
+      }
+    ],
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": [
+        {
+          "path": [
+            "Operation path is not valid."
+          ]
+        }
+      ]
+    }
+  },
+  "invalid dashboard": {
+    "user": "admin@test.fr",
+    "patch": [
+      {
+        "op": "replace",
+        "path": "/dashboard",
+        "value": 12
+      }
+    ],
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": [
+        {
+          "value": [
+            "Cette valeur doit être de type array."
+          ]
+        }
+      ]
+    }
+  },
+  "invalid language": {
+    "user": "admin@test.fr",
+    "patch": [
+      {
+        "op": "replace",
+        "path": "/language",
+        "value": "jp"
+      }
+    ],
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": [
+        {
+          "value": [
+            "Cette valeur doit être l'un des choix proposés."
+          ]
+        }
+      ]
+    }
+  }
+}

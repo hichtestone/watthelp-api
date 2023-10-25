@@ -1,0 +1,42 @@
+{
+  "Add pdf to invoice": {
+    "invoiceId": 1,
+    "expand": "invoice_pdf",
+    "post": {
+      "pdf": 8
+    },
+    "expected": {
+      "id": 1,
+      "reference": "FL012018",
+      "amount_ht": 900,
+      "amount_tva": 200,
+      "amount_ttc": 1100,
+      "emitted_at": "@string@.isDateTime()",
+      "pdf": {
+        "id": 8,
+        "name": "1/phpKblDKA.pdf",
+        "raw": "https://sprint-watthelp-file.s3.eu-west-3.amazonaws.com/1/phpKblDKA.pdf",
+        "thumb": "https://sprint-watthelp-file.s3.eu-west-3.amazonaws.com/thumb/1/phpKblDKA.pdf",
+        "mime": "application/pdf",
+        "created_at": "@string@.isDateTime()",
+        "updated_at": "@string@.isDateTime()"
+      }
+    }
+  },
+  "Remove pdf from invoice": {
+    "invoiceId": 2,
+    "expand": "invoice_pdf",
+    "post": {
+      "pdf": null
+    },
+    "expected": {
+      "id": 2,
+      "reference": "FL032018",
+      "amount_ht": 1000,
+      "amount_tva": 200,
+      "amount_ttc": 1200,
+      "emitted_at": "@string@.isDateTime()",
+      "pdf": null
+    }
+  }
+}

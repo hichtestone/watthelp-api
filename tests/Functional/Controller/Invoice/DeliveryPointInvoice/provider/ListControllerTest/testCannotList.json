@@ -1,0 +1,150 @@
+{
+  "nonexistent sort": {
+    "user": "admin@test.fr",
+    "parameters": {
+      "sort": "whatever"
+    },
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "sort": [
+          "Cette valeur doit être l'un des choix proposés."
+        ]
+      }
+    }
+  },
+  "nonexistent filter": {
+    "user": "admin@test.fr",
+    "parameters": {
+      "filters": {
+        "whatever": "douze"
+      }
+    },
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "filters": {
+          "whatever": [
+            "Ce champ n'a pas été prévu."
+          ]
+        }
+      }
+    }
+  },
+  "empty delivery_point_reference filter": {
+    "user": "admin@test.fr",
+    "parameters": {
+      "filters": {
+        "delivery_point_reference": ""
+      }
+    },
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "filters": {
+          "delivery_point_reference": [
+            "Cette valeur ne doit pas être vide."
+          ]
+        }
+      }
+    }
+  },
+  "empty delivery_point_name filter": {
+    "user": "admin@test.fr",
+    "parameters": {
+      "filters": {
+        "delivery_point_name": ""
+      }
+    },
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "filters": {
+          "delivery_point_name": [
+            "Cette valeur ne doit pas être vide."
+          ]
+        }
+      }
+    }
+  },
+  "empty invoice_reference filter": {
+    "user": "admin@test.fr",
+    "parameters": {
+      "filters": {
+        "invoice_reference": ""
+      }
+    },
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "filters": {
+          "invoice_reference": [
+            "Cette valeur ne doit pas être vide."
+          ]
+        }
+      }
+    }
+  },    
+  "dpi doesn't exist": {
+    "user": "admin@test.fr",
+    "parameters": {
+      "filters": {
+        "ids": [
+          456456
+        ]
+      }
+    },
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "filters": {
+          "ids": [
+            [
+              "Selected delivery point invoice doesn't exist."
+            ]
+          ]
+        }
+      }
+    }
+  },
+  "dpi belongs to another client": {
+    "user": "michel@berger.fr",
+    "parameters": {
+      "filters": {
+        "ids": [
+          1
+        ]
+      }
+    },
+    "errorCode": 400,
+    "expected": {
+      "error": "InvalidRequest",
+      "messages": {
+        "filters": {
+          "ids": [
+            [
+              "Selected delivery point invoice doesn't exist."
+            ]
+          ]
+        }
+      }
+    }
+  },
+  "doesn't have permission": {
+    "user": "polnareff@test.fr",
+    "parameters": {},
+    "errorCode": 403,
+    "expected": {
+      "error": "AccessDenied",
+      "messages": [
+        "Accès rejeté."
+      ]
+    }
+  }
+}

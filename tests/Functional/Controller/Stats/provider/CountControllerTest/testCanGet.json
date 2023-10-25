@@ -1,0 +1,14 @@
+{
+  "Get stats": {
+    "expected": {
+      "invoices": 8,
+      "anomalies": 1,
+      "delivery_points": [
+        {
+          "delivery_points_in_scope": "1",
+          "delivery_points_not_in_scope": "1"
+        }
+      ]
+    }
+  }
+}

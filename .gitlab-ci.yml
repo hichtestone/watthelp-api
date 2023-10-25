@@ -1,0 +1,245 @@
+stages:
+  - install
+  - test
+  - quality
+  - deploy:development
+  - deploy:staging
+  - deploy:production
+
+variables:
+  MYSQL_ROOT_PASSWORD: $MYSQL_ROOT_PASSWORD
+  MYSQL_DATABASE: $MYSQL_DATABASE
+
+# --- INSTALL ---
+install:
+  stage: install
+  image: registry.gitlab.com/sprint-technology/mobireport/docker-file/php7.4
+  script:
+    - ci/install/bin/install.sh
+  artifacts:
+    paths:
+      - config/jwt
+      - vendor
+      - .env
+    expire_in: 1 hour
+
+# --- TEST ---
+test:phpunit-with-coverage:
+  stage: test
+  image: registry.gitlab.com/sprint-technology/mobireport/docker-file/php7.4-xdebug
+  services:
+    - mysql:5.7
+  dependencies:
+    - install
+  script:
+    - bin/phpunit -c phpunit.xml.dist --coverage-html var/coverage --coverage-xml var/coverage --coverage-clover var/coverage/clover.xml # Todo check this for badges : --coverage-text --colors=never
+  artifacts:
+    paths:
+      - var/coverage
+  only:
+    - master
+    - develop
+
+test:phpunit:
+  stage: test
+  image: registry.gitlab.com/sprint-technology/mobireport/docker-file/php7.4
+  services:
+    - mysql:5.7
+  dependencies:
+    - install
+  script:
+    - bin/phpunit -c phpunit.xml.dist
+  except:
+    - master
+    - develop
+
+test:schema-validate:
+    stage: test
+    image: registry.gitlab.com/sprint-technology/mobireport/docker-file/php7.4
+    services:
+        - mysql:5.7
+    dependencies:
+        - install
+    script:
+        - bin/console doctrine:schema:validate --skip-sync
+
+#
+# --- QUALITY ---
+#
+quality:sonarqube:
+  image:
+    name: sonarsource/sonar-scanner-cli:latest
+    entrypoint: [""]
+  stage: quality
+  script:
+    - sonar-scanner -Dsonar.qualitygate.wait=true
+  allow_failure: true
+  variables:
+    SONAR_TOKEN: "a8754609b10b634bbb3907c0e635ed3a6a841898"
+    SONAR_HOST_URL: "http://91.121.81.151:9001"
+    GIT_DEPTH: 0
+  only:
+    - develop
+
+quality:phpstan:
+  image: registry.gitlab.com/sprint-technology/mobireport/docker-file/php7.4
+  stage: quality
+  dependencies:
+    - install
+  script: vendor/bin/phpstan analyse --memory-limit=4000M src tests
+  allow_failure: true
+
+quality:php-metrics:
+  image: jakzal/phpqa
+  stage: quality
+  dependencies:
+    - install
+  script: phpmetrics --report-html=var/php-metrics src
+  artifacts:
+    paths:
+      - var/php-metrics/
+  allow_failure: true
+
+quality:phpmd:
+  image: registry.gitlab.com/sprint-technology/mobireport/docker-file/php7.4
+  stage: quality
+  script: vendor/bin/phpmd src text codesize,unusedcode,naming
+  artifacts:
+    paths:
+      - var/phpmd.html
+  allow_failure: true
+
+quality:deprecation-detector:
+  image: jakzal/phpqa
+  stage: quality
+  dependencies:
+    - install
+  script:
+    - deprecation-detector check src vendor
+  allow_failure: true
+
+quality:security-checker:
+  image: registry.gitlab.com/sprint-technology/mobireport/docker-file/php7.4
+  stage: quality
+  dependencies:
+    - install
+  script: bin/console security:check composer.lock
+  allow_failure: true
+
+quality:php-cs-fixer:
+  image: registry.gitlab.com/sprint-technology/mobireport/docker-file/php7.4
+  stage: quality
+  dependencies:
+    - install
+  script:
+    - ci/quality/php-cs-fixer.sh
+  artifacts:
+    paths:
+      - var/patch.diff
+    expire_in: 24 hrs
+    when: on_failure
+  allow_failure: true
+
+###########################################################
+#                    DEPLOY DEVELOPMENT
+###########################################################
+development:migration: &deploy_migration
+  stage: deploy:development
+  image: registry.gitlab.com/sprint-technology/mobireport/docker-file/php7.4
+  script:
+    - cp ci/deploy/development/.env .env
+    - bin/console doctrine:migrations:migrate --no-interaction --allow-no-migration --all-or-nothing
+  only:
+    - develop
+  except:
+    - schedules
+
+development:api: &deploy
+  stage: deploy:development
+  image: registry.gitlab.com/sprint-technology/mobireport/docker-file/php7.4
+  variables:
+    APP_ENV: "development"
+    AWS_LAMBDA_KEY: $AWS_LAMBDA_KEY_DEV
+    AWS_LAMBDA_SECRET: $AWS_LAMBDA_SECRET_DEV
+    AWS_LAMBDA_ARN_EXPORT: $AWS_LAMBDA_ARN_EXPORT_DEVELOP
+    AWS_LAMBDA_ARN_IMPORT: $AWS_LAMBDA_ARN_IMPORT_DEVELOP
+    AWS_LAMBDA_ARN_ANALYZE: $AWS_LAMBDA_ARN_ANALYZE_DEVELOP
+    AWS_LAMBDA_SERVICE: $AWS_LAMBDA_SERVICE_DEVELOP
+  dependencies:
+    - install
+  script:
+    - cp ci/deploy/development/.env .env
+    - source ci/deploy/lambda.sh
+  environment:
+    name: develop
+  only:
+    - develop
+
+
+###########################################################
+#                    DEPLOY STAGING
+###########################################################
+staging:migration:
+  <<: *deploy_migration
+  stage: deploy:staging
+  environment:
+    name: staging
+  script:
+    - cp ci/deploy/staging/.env .env
+    - bin/console doctrine:migrations:migrate --no-interaction --allow-no-migration --all-or-nothing
+  only:
+    - master
+
+staging:api:
+  <<: *deploy
+  stage: deploy:staging
+  variables:
+    APP_ENV: "staging"
+    AWS_LAMBDA_KEY: $AWS_LAMBDA_KEY_DEV
+    AWS_LAMBDA_SECRET: $AWS_LAMBDA_SECRET_DEV
+    AWS_LAMBDA_ARN_EXPORT: $AWS_LAMBDA_ARN_EXPORT_STAGING
+    AWS_LAMBDA_ARN_IMPORT: $AWS_LAMBDA_ARN_IMPORT_STAGING
+    AWS_LAMBDA_ARN_ANALYZE: $AWS_LAMBDA_ARN_ANALYZE_STAGING
+    AWS_LAMBDA_SERVICE: $AWS_LAMBDA_SERVICE_STAGING
+  environment:
+    name: staging
+  script:
+    - cp ci/deploy/staging/.env .env
+    - source ci/deploy/lambda.sh
+  only:
+    - master
+
+###########################################################
+#                    DEPLOY PRODUCTION
+###########################################################
+prod:migration:
+  <<: *deploy_migration
+  stage: deploy:production
+  environment:
+    name: prod
+  when: manual
+  script:
+    - cp ci/deploy/production/.env .env
+    - bin/console doctrine:migrations:migrate --no-interaction --allow-no-migration --all-or-nothing
+  only:
+    - tags
+
+prod:api:
+  <<: *deploy
+  stage: deploy:production
+  variables:
+    APP_ENV: "prod"
+    AWS_LAMBDA_KEY: $AWS_LAMBDA_KEY_PROD
+    AWS_LAMBDA_SECRET: $AWS_LAMBDA_SECRET_PROD
+    AWS_LAMBDA_ARN_EXPORT: $AWS_LAMBDA_ARN_EXPORT_PROD
+    AWS_LAMBDA_ARN_IMPORT: $AWS_LAMBDA_ARN_IMPORT_PROD
+    AWS_LAMBDA_ARN_ANALYZE: $AWS_LAMBDA_ARN_ANALYZE_PROD
+    AWS_LAMBDA_SERVICE: $AWS_LAMBDA_SERVICE_PROD
+  environment:
+    name: production
+  script:
+    - cp ci/deploy/production/.env .env
+    - source ci/deploy/lambda.sh
+  when: manual
+  only:
+    - tags

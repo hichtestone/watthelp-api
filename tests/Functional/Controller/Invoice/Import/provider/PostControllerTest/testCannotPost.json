@@ -1,0 +1,208 @@
+{
+  "missing fields": {
+    "user": "admin@test.fr",
+    "post": {},
+    "expected_status_code": 400,
+    "expected_response": {
+      "error": "InvalidRequest",
+      "messages": {
+        "file": [
+          "Ce champ est manquant."
+        ],
+        "provider": [
+          "Ce champ est manquant."
+        ]
+      }
+    }
+  },
+  "EDF: invalid data": {
+    "user": "admin@test.fr",
+    "post": {
+      "file": 11,
+      "provider": "EDF"
+    },
+    "expected_status_code": 400,
+    "expected_response": {
+      "error": "Bad Request",
+      "messages": "Le fichier sites_elec.csv est incorrect: Cellule U2, valeur: 8, nous attendions: 0 ou vide.Le fichier sites_elec.csv est incorrect: la commune de la ligne 2 est invalide. Nous attendions la ville Blanzy ou le code postal 71450.Le fichier sites_elec.csv est incorrect: Cellule F3, valeur: C55, nous attendions: C5.Le fichier sites_elec.csv est incorrect: Cellule K3, valeur: F458:Eclairage public, nous attendions: F8.Le fichier sites_elec.csv est incorrect: Cellule T3, valeur: 17, nous attendions: 0 ou vide.Le fichier sites_elec.csv est incorrect: la commune de la ligne 3 est invalide. Nous attendions la ville Blanzy ou le code postal 71450.Le fichier sites_elec_phs.csv est incorrect: Cellule F2, valeur: 12, nous attendions: C5.Le fichier sites_elec_phs.csv est incorrect: Cellule O2, valeur: -7,8, nous attendions: entre 0,1 et 36.Le fichier sites_elec_phs.csv est incorrect: la commune de la ligne 2 est invalide. Nous attendions la ville Blanzy ou le code postal 71450.Le fichier sites_elec_phs.csv est incorrect: la commune de la ligne 3 est invalide. Nous attendions la ville Blanzy ou le code postal 71450."
+    }
+  },
+  "EDF: already existing invoices": {
+    "user": "admin@test.fr",
+    "post": {
+      "file": 12,
+      "provider": "EDF"
+    },
+    "expected_status_code": 400,
+    "expected_response": {
+      "error": "Bad Request",
+      "messages": "La facture FL032018 a déjà été importée."
+    }
+  },
+  "EDF: invalid columns": {
+    "user": "admin@test.fr",
+    "post": {
+      "file": 10,
+      "provider": "EDF"
+    },
+    "expected_status_code": 400,
+    "expected_response": {
+      "error": "Bad Request",
+      "messages": "Le fichier sites_elec.csv est incorrect: Cellule B1, valeur: Numero de facture, nous attendions: Numéro de facture.Le fichier sites_elec.csv est incorrect: Cellule H1, valeur: RUE, nous attendions: Rue.Le fichier sites_elec_phs.csv est incorrect: Cellule C1, valeur: Référence ENGIE, nous attendions: Référence EDF.Le fichier sites_elec_phs.csv est incorrect: Cellule N1, valeur: Libellé Poste Horosaisonier, nous attendions: Libellé Poste Horosaisonnier.Le fichier informations_contractuelles.csv est incorrect: Cellule B1, valeur: Nom, nous attendions: Nom du site.Le fichier informations_contractuelles.csv est incorrect: Cellule G1, valeur: , nous attendions: Référence PCE."
+    }
+  },
+  "EDF: invalid mime type": {
+    "user": "admin@test.fr",
+    "post": {
+      "file": 2,
+      "provider": "EDF"
+    },
+    "expected_status_code": 400,
+    "expected_response": {
+      "error": "InvalidRequest",
+      "messages": {
+        "file": [
+          "Le type du fichier est incorrect, une archive zip est attendue."
+        ]
+      }
+    }
+  },
+  "ENGIE: invalid data": {
+    "user": "michel@berger.fr",
+    "post": {
+      "file": 14,
+      "provider": "ENGIE"
+    },
+    "expected_status_code": 400,
+    "expected_response": {
+      "error": "Bad Request",
+      "messages": "Le fichier facture.xlsx est incorrect: Cellule AC14, valeur: 11265, nous attendions: 11268.Le fichier facture.xlsx est incorrect: Cellule AE14, valeur: 77, nous attendions: 0 ou vide.Le fichier facture.xlsx est incorrect: Cellule AG14, valeur: 48, nous attendions: entre 0,1 et 36.Le fichier facture.xlsx est incorrect: Cellule AN14, valeur: 5, nous attendions: 0 ou vide.Le fichier facture.xlsx est incorrect: Cellule AF15, valeur: -12, nous attendions: 0 ou vide.Le fichier facture.xlsx est incorrect: Cellule AO15, valeur: 7, nous attendions: 0 ou vide.Le fichier facture.xlsx est incorrect: Cellule AJ15, valeur: 146.65, nous attendions: 156.65.Le fichier facture.xlsx est incorrect: la commune de la ligne 15 est invalide. Nous attendions la ville Roquebrune sur Argens ou le code postal 83520."
+    }
+  },
+  "ENGIE: already existing invoices": {
+    "user": "michel@berger.fr",
+    "post": {
+      "file": 15,
+      "provider": "ENGIE"
+    },
+    "expected_status_code": 400,
+    "expected_response": {
+      "error": "Bad Request",
+      "messages": "La facture FL2092020 a déjà été importée."
+    }
+  },
+  "ENGIE: invalid columns": {
+    "user": "michel@berger.fr",
+    "post": {
+      "file": 13,
+      "provider": "ENGIE"
+    },
+    "expected_status_code": 400,
+    "expected_response": {
+      "error": "Bad Request",
+      "messages": "Le fichier facture.xlsx est incorrect: Cellule AE13, valeur: Consommation HPP (kWh), nous attendions: Consommation HP (kWh).Le fichier facture.xlsx est incorrect: Cellule AH13, valeur: , nous attendions: Part fixe.Le fichier index.xlsx est incorrect: Cellule A12, valeur: Nom du dqsjl, nous attendions: Nom du site.Le fichier index.xlsx est incorrect: Cellule H12, valeur: Numéro de PDL, nous attendions: Numéro de facture."
+    }
+  },
+  "ENGIE: invalid mime type": {
+    "user": "michel@berger.fr",
+    "post": {
+      "file": 2,
+      "provider": "ENGIE"
+    },
+    "expected_status_code": 400,
+    "expected_response": {
+      "error": "InvalidRequest",
+      "messages": {
+        "file": [
+          "Le type du fichier est incorrect, une archive zip est attendue."
+        ]
+      }
+    }
+  },
+  "DIRECT_ENERGIE: invalid data": {
+    "user": "marcel@patoulachi.fr",
+    "post": {
+      "file": 17,
+      "provider": "DIRECT_ENERGIE"
+    },
+    "expected_status_code": 400,
+    "expected_response": {
+      "error": "Bad Request",
+      "messages": "Le fichier facture.xlsx est incorrect: Cellule Z2, valeur: C512, nous attendions: C5.Le fichier facture.xlsx est incorrect: Cellule AD2, valeur: 0, nous attendions: entre 0,1 et 36.Le fichier est incorrect: la commune de la ligne 2 est invalide. Nous attendions la ville Aulnay sous Bois ou le code postal 93600.Le fichier facture.xlsx est incorrect: Cellule AA3, valeur: BT > 36 kVA, nous attendions: BT < 36 kVA.Le fichier facture.xlsx est incorrect: Cellule BH3, valeur: 42, nous attendions: 2232."
+    }
+  },
+  "DIRECT_ENERGIE: already existing invoices": {
+    "user": "marcel@patoulachi.fr",
+    "post": {
+      "file": 18,
+      "provider": "DIRECT_ENERGIE"
+    },
+    "expected_status_code": 400,
+    "expected_response": {
+      "error": "Bad Request",
+      "messages": "La facture DIRECT_ENERGIE_TEST_REF a déjà été importée."
+    }
+  },
+  "DIRECT_ENERGIE: invalid columns": {
+    "user": "marcel@patoulachi.fr",
+    "post": {
+      "file": 16,
+      "provider": "DIRECT_ENERGIE"
+    },
+    "expected_status_code": 400,
+    "expected_response": {
+      "error": "Bad Request",
+      "messages": "Le fichier facture.xlsx est incorrect: Cellule A1, valeur: NUM BP GROUPEE, nous attendions: NUM BP GROUPE.Le fichier facture.xlsx est incorrect: Cellule F1, valeur: LIB REGROUPEMNT, nous attendions: LIB REGROUPEMENT.Le fichier facture.xlsx est incorrect: Cellule L1, valeur: , nous attendions: DATE D'ECHEANCE.Le fichier facture.xlsx est incorrect: Cellule P1, valeur: REF SITEE, nous attendions: REF SITE."
+    }
+  },
+  "DIRECT_ENERGIE: invalid mime type": {
+    "user": "marcel@patoulachi.fr",
+    "post": {
+      "file": 3,
+      "provider": "DIRECT_ENERGIE"
+    },
+    "expected_status_code": 400,
+    "expected_response": {
+      "error": "InvalidRequest",
+      "messages": {
+        "file": [
+          "The file type is incorrect, an excel file was expected."
+        ]
+      }
+    }
+  },
+  "doesn't have permission": {
+    "user": "polnareff@test.fr",
+    "post": {
+      "filters": {}
+    },
+    "errorCode": 403,
+    "expected": {
+      "error": "AccessDenied",
+      "messages": [
+        "Accès rejeté."
+      ]
+    }
+  },
+  "Reimport missing invoice": {
+    "user": "marcel@patoulachi.fr",
+    "post": {
+      "file": 24,
+      "provider": "DIRECT_ENERGIE",
+      "reimport_invoices": [
+        "douze"
+      ]
+    },
+    "expected_status_code": 400,
+    "expected_response": {
+      "error": "InvalidRequest",
+      "messages": {
+        "reimport_invoices": [
+          [
+            "Selected invoice doesn't exist."
+          ]
+        ]
+      }
+    }
+  }
+}

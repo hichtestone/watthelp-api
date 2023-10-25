@@ -1,0 +1,179 @@
+{
+  "no data": {
+    "user": "admin@test.fr",
+    "params": {},
+    "expected": {
+      "count": 0,
+      "page": 1,
+      "per_page": 100,
+      "data": []
+    }
+  },
+  "data": {
+    "user": "michel@berger.fr",
+    "params": {},
+    "expected": {
+      "count": 1,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 12,
+          "amount_ht": -56360000000,
+          "amount_tva": -8850000000,
+          "amount_ttc": -65210000000,
+          "power_subscribed": "48.0",
+          "type": "real"
+        }
+      ]
+    }
+  },
+  "filtered by id - no data": {
+    "user": "michel@berger.fr",
+    "params": {
+      "filters": {
+        "ids": [11]
+      }
+    },
+    "expected": {
+      "count": 0,
+      "page": 1,
+      "per_page": 100,
+      "data": []
+    }
+  },
+  "filtered by id - data": {
+    "user": "michel@berger.fr",
+    "params": {
+      "filters": {
+        "ids": [12]
+      }
+    },
+    "expected": {
+      "count": 1,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 12,
+          "amount_ht": -56360000000,
+          "amount_tva": -8850000000,
+          "amount_ttc": -65210000000,
+          "power_subscribed": "48.0",
+          "type": "real"
+        }
+      ]
+    }
+  },
+  "filtered by invoice ref - no data": {
+    "user": "michel@berger.fr",
+    "params": {
+      "filters": {
+        "invoice_reference": "DIRECT_ENERGIE_TEST_REF"
+      }
+    },
+    "expected": {
+      "count": 0,
+      "page": 1,
+      "per_page": 100,
+      "data": []
+    }
+  },
+  "filtered by invoice ref - data": {
+    "user": "michel@berger.fr",
+    "params": {
+      "filters": {
+        "invoice_reference": "CLIENT2_CREDIT_NOTE"
+      }
+    },
+    "expected": {
+      "count": 1,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 12,
+          "amount_ht": -56360000000,
+          "amount_tva": -8850000000,
+          "amount_ttc": -65210000000,
+          "power_subscribed": "48.0",
+          "type": "real"
+        }
+      ]
+    }
+  },
+  "filtered by delivery point ref - no data": {
+    "user": "michel@berger.fr",
+    "params": {
+      "filters": {
+        "delivery_point_reference": "REF_DEV_POINT_3333"
+      }
+    },
+    "expected": {
+      "count": 0,
+      "page": 1,
+      "per_page": 100,
+      "data": []
+    }
+  },
+  "filtered by delivery point ref - data": {
+    "user": "michel@berger.fr",
+    "params": {
+      "filters": {
+        "delivery_point_reference": "REF_DEV_POINT_3"
+      }
+    },
+    "expected": {
+      "count": 1,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 12,
+          "amount_ht": -56360000000,
+          "amount_tva": -8850000000,
+          "amount_ttc": -65210000000,
+          "power_subscribed": "48.0",
+          "type": "real"
+        }
+      ]
+    }
+  },
+  "filtered by delivery point name - no data": {
+    "user": "michel@berger.fr",
+    "params": {
+      "filters": {
+        "delivery_point_name": "NEIN"
+      }
+    },
+    "expected": {
+      "count": 0,
+      "page": 1,
+      "per_page": 100,
+      "data": []
+    }
+  },
+  "filtered by delivery point name - data": {
+    "user": "michel@berger.fr",
+    "params": {
+      "filters": {
+        "delivery_point_name": "DeliveryPoint"
+      }
+    },
+    "expected": {
+      "count": 1,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 12,
+          "amount_ht": -56360000000,
+          "amount_tva": -8850000000,
+          "amount_ttc": -65210000000,
+          "power_subscribed": "48.0",
+          "type": "real"
+        }
+      ]
+    }
+  }
+}

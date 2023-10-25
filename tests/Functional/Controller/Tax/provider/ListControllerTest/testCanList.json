@@ -1,0 +1,181 @@
+{
+  "basic": {
+    "user": "admin@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": null,
+    "sort_order": null,
+    "expected": {
+      "count": 5,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 1,
+          "cspe": 1412,
+          "tdcfe": 4654,
+          "tccfe": 1107,
+          "cta": 2704,
+          "started_at": "@string@.isDateTime()",
+          "finished_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 2,
+          "cspe": 2112,
+          "tdcfe": 4654,
+          "tccfe": 489,
+          "cta": 2704,
+          "started_at": "@string@.isDateTime()",
+          "finished_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 3,
+          "cspe": 812,
+          "tdcfe": 4654,
+          "tccfe": 489,
+          "cta": 2704,
+          "started_at": "@string@.isDateTime()",
+          "finished_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 4,
+          "cspe": 512,
+          "tdcfe": 4654,
+          "tccfe": 489,
+          "cta": 2704,
+          "started_at": "@string@.isDateTime()",
+          "finished_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 5,
+          "cspe": 140,
+          "tdcfe": 4654,
+          "tccfe": 489,
+          "cta": 2704,
+          "started_at": "@string@.isDateTime()",
+          "finished_at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  },
+  "sorted by cspe DESC": {
+    "user": "admin@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": "cspe",
+    "sort_order": "desc",
+    "expected": {
+      "count": 5,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 2,
+          "cspe": 2112,
+          "tdcfe": 4654,
+          "tccfe": 489,
+          "cta": 2704,
+          "started_at": "@string@.isDateTime()",
+          "finished_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 1,
+          "cspe": 1412,
+          "tdcfe": 4654,
+          "tccfe": 1107,
+          "cta": 2704,
+          "started_at": "@string@.isDateTime()",
+          "finished_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 3,
+          "cspe": 812,
+          "tdcfe": 4654,
+          "tccfe": 489,
+          "cta": 2704,
+          "started_at": "@string@.isDateTime()",
+          "finished_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 4,
+          "cspe": 512,
+          "tdcfe": 4654,
+          "tccfe": 489,
+          "cta": 2704,
+          "started_at": "@string@.isDateTime()",
+          "finished_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 5,
+          "cspe": 140,
+          "tdcfe": 4654,
+          "tccfe": 489,
+          "cta": 2704,
+          "started_at": "@string@.isDateTime()",
+          "finished_at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  },
+  "page 2 - sorted by startedAt": {
+    "user": "admin@test.fr",
+    "page": 2,
+    "per_page": 2,
+    "sort": "started_at",
+    "sort_order": "desc",
+    "expected": {
+      "count": 5,
+      "page": 2,
+      "per_page": 2,
+      "data": [
+        {
+          "id": 5,
+          "cspe": 140,
+          "tdcfe": 4654,
+          "tccfe": 489,
+          "cta": 2704,
+          "started_at": "@string@.isDateTime()",
+          "finished_at": "@string@.isDateTime()"
+        },
+        {
+          "id": 2,
+          "cspe": 2112,
+          "tdcfe": 4654,
+          "tccfe": 489,
+          "cta": 2704,
+          "started_at": "@string@.isDateTime()",
+          "finished_at": "@string@.isDateTime()"
+        }
+      ]
+    }
+  },
+  "restricted": {
+    "user": "blanc@test.fr",
+    "page": null,
+    "per_page": null,
+    "sort": null,
+    "sort_order": null,
+    "expected": {
+      "count": 5,
+      "page": 1,
+      "per_page": 100,
+      "data": [
+        {
+          "id": 1
+        },
+        {
+          "id": 2
+        },
+        {
+          "id": 3
+        },
+        {
+          "id": 4
+        },
+        {
+          "id": 5
+        }
+      ]
+    }
+  }
+}

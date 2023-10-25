@@ -1,0 +1,35 @@
+framework:
+  messenger:
+    transports:
+      export:
+        dsn: '%env(MESSENGER_TRANSPORT_DSN_EXPORT)%'
+        options:
+          access_key: '%env(AWS_KEY)%'
+          secret_key: '%env(AWS_SECRET)%'
+          auto_setup: false
+        retry_strategy:
+          max_retries: 1
+      import:
+        dsn: '%env(MESSENGER_TRANSPORT_DSN_IMPORT)%'
+        options:
+          access_key: '%env(AWS_KEY)%'
+          secret_key: '%env(AWS_SECRET)%'
+          auto_setup: false
+        retry_strategy:
+          max_retries: 1
+      analyze:
+        dsn: '%env(MESSENGER_TRANSPORT_DSN_ANALYZE)%'
+        options:
+          access_key: '%env(AWS_KEY)%'
+          secret_key: '%env(AWS_SECRET)%'
+          auto_setup: false
+        retry_strategy:
+          max_retries: 1
+
+    routing:
+      'App\Message\ExportMessage': export
+      'App\Message\ImportMessage': import
+      'App\Message\AnalyzeInvoiceMessage': analyze
+
+bref_messenger:
+  sqs: true # Register the SQS transport
