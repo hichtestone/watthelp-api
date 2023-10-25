@@ -75,7 +75,7 @@ quality:sonarqube:
     - sonar-scanner -Dsonar.qualitygate.wait=true
   allow_failure: true
   variables:
-    SONAR_TOKEN: "a8754609b10b634bbb3907c0e635ed3a6a841898"
+    SONAR_TOKEN: "SONAR_TOKEN"
     SONAR_HOST_URL: "http://91.121.81.151:9001"
     GIT_DEPTH: 0
   only:
